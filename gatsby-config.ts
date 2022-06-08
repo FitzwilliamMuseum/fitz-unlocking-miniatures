@@ -1,9 +1,11 @@
 import type { GatsbyConfig } from "gatsby";
+const fs = require("fs")
+const { buildSchema, buildClientSchema } = require("graphql")
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `gatsby_fitzwilliam_miniatures`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Fitzwilliam Miniatures`,
+    siteUrl: `https://miniatures.fitzwilliam.ms`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -19,10 +21,30 @@ const config: GatsbyConfig = {
   }, {
     resolve: 'gatsby-source-filesystem',
     options: {
-      "name": "pages",
+      "name": "systemPages",
       "path": "./src/pages/"
     },
-    __key: "pages"
+    __key: "SystemPages"
+  }, {
+    resolve: 'gatsby-source-graphql',
+    options: {
+      url: `https://content.fitz.ms/fitz-website/gql?access_token=R37HZ4FjU4gPJL1ixMAvye5g`,
+      typeName: 'directus',
+      fieldName: 'directus',
+      createSchema: async () => {
+        const json = JSON.parse(
+          fs.readFileSync(`${__dirname}/directus.edited_introspection.json`)
+        )
+        return buildClientSchema(json.data)
+      },
+    }
+  }, {
+    resolve: 'gatsby-plugin-react-svg',
+    options: {
+      rules: {
+        include: "src/assets/svg"
+      }
+    }
   }]
 };
 
