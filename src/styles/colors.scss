@@ -1,6 +1,7 @@
 // Project
 $black: #020202;
 $white: #fff;
+$very-dark-grey: #0b0e0b;
 $dark-grey: #0f1a21;
 $blue: #0067a0;
 $dark-blue: #1f2a3e;
@@ -18,6 +19,7 @@ $defaultColors: (
   title: $font-blue,
   background: $white,
   background-dark: $dark-grey,
+  background-darker: $very-dark-grey,
   background-black: $black,
   border: $divider-grey,
   primary: $blue,
@@ -27,19 +29,32 @@ $defaultColors: (
   highlight: $green
 );
 
-///////////
-// Usage //
-///////////
-// This color function makes it easy for you to call a color by it's functional
-// name anywhere you need.
-// E.g. to use the `text` color, you type: `color: clr(text);`
+
+// Create CSS custom properties
+// This is what powers the built-in OS light/dark mode switching.
+// For each color variable above (e.g. `text` and `background`) a css custom
+// property will be created. (e.g. `--c-text:` and `--c-background:`).
 //
-// How it works:
-// This function works in conjunction with the dynamic css custom properties
-// declarations below. The item called in the function is prefixed with
-// `var(--c-` to call the custom property for that color.
-// E.g. `color: clr(text);` will return `color: var(--c-text);`
-// Note: (The `--c-` is added via the `@each` loops below)
-@function clr($colorChoice) {
-    @return var(--c-#{$colorChoice});
+// The first `@each` below will create a custom property for each item in the
+// `$defaultColors` map. So put all of your default colors there.
+//
+// The `prefers-color-scheme: dark` media query below will then create custom
+// properties for each of the colors in the `$darkColors` map only if the
+// browser supports that feature. If there is an exact match (e.g. `text`) in
+// both maps, the one from `$darkColors` will be used on machines that have
+// opted to use the 'dark mode' on their OS.
+:root {
+  // Create custom properties for default colors
+  @each $name, $color in $defaultColors {
+    --c-#{$name}: #{$color};
+  }
+
+  // Use the default color scheme for the "Default Theme" section of the
+  // component library regardless of OS setting.
+  // This is required to show the correct colors in the component library at all times
+  [data-theme='default'] {
+    @each $name, $color in $defaultColors {
+      --c-#{$name}: #{$color};
+    }
+  }
 }

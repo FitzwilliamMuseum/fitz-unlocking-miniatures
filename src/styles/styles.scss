@@ -1,5 +1,187 @@
+@use 'reset.scss';
 @use 'simple-grid.scss';
-@use 'colors.scss';
+@use './colors.scss';
+
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+
+//Typography
+$base-font-family: 'Lora', 'Helvetica', sans-serif;
+$base-font: 18px;
+
+$font-size-header-1: 1.4rem;
+$font-size-header-2: 1.2rem;
+$font-size-header-3: 1rem;
+
+//Spacing
+$outer-padding: 5vw;
+$space: 25px;
+
+$space-double: calc($space * 2);
+
+$space-one-half: calc($space / 2);
 
 
+///////////
+// Usage //
+///////////
+// This color function makes it easy for you to call a color by it's functional
+// name anywhere you need.
+// E.g. to use the `text` color, you type: `color: clr(text);`
+//
+// How it works:
+// This function works in conjunction with the dynamic css custom properties
+// declarations below. The item called in the function is prefixed with
+// `var(--c-` to call the custom property for that color.
+// E.g. `color: clr(text);` will return `color: var(--c-text);`
+// Note: (The `--c-` is added via the `@each` loops below)
+@function clr($colorChoice) {
+    @return var(--c-#{$colorChoice});
+  }
 
+//Breakpoints
+@mixin for-size($size) {
+    @if $size == phone-only {
+      @media (max-width: 599px) { @content; }
+    } @else if $size == tablet-portrait-up {
+      @media (min-width: 600px) { @content; }
+    } @else if $size == tablet-landscape-up {
+      @media (min-width: 900px) { @content; }
+    } @else if $size == desktop-up {
+      @media (min-width: 1200px) { @content; }
+    } @else if $size == big-desktop-up {
+      @media (min-width: 1800px) { @content; }
+    }
+  }
+
+
+html {
+    font-size: $base-font;
+    font-family: $base-font-family;
+}
+
+body {
+    line-height: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: $space;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: $font-size-header-1;
+}
+
+h2 {
+    font-size: $font-size-header-2;
+}
+
+h3 {
+    font-size: $font-size-header-3;
+}
+
+ul.main-menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: $space-one-half $space-one-half $space-one-half $outer-padding;
+    li {
+        margin-right: $space;
+        font-weight: 600;
+        font-size: $font-size-header-2;
+        a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+.section--main {
+    padding: $space $outer-padding;
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        margin-bottom: $space-double;
+        svg {
+            width: 80%;
+        }
+    }
+}
+.background--black {
+    background-color: clr(background-black);
+    color: clr(text-inverse);
+    * {
+        color: clr(text-inverse);
+    }
+}
+
+.section--fb {
+    display: flex;
+    flex-wrap: wrap;
+
+    .section--fb-item {
+        width: 100%;
+        display: flex;
+        background-color: clr(background-dark);
+        * {
+            color: clr(text-inverse);
+        }
+    }
+
+    &.double {
+        .section--fb-item {
+            text-decoration: none;
+
+            &:nth-child(2), &:nth-child(3), &:nth-child(5), &:nth-child(6), &:nth-child(8), &:nth-child(9) {
+                background-color: clr(background-darker);
+            }
+            .fb--image, .fb--content {
+                width: 100%;
+            }
+            .fb--content {
+                padding: $space;
+            }
+
+            @include for-size(tablet-landscape-up) {
+                width: 50%;
+                .fb--image, .fb--content {
+                    width: 50%;
+                }
+            }
+        }
+        a.section--fb-item:hover {
+            text-decoration: underline;
+            text-decoration-color: clr(text-inverse);
+        }
+    }
+
+    .section--fb-item--left, .section--fb-item--right {
+        width: 100%;
+    }
+    .section--fb-item--left {
+        padding: $space $space $space $outer-padding;
+        display: flex;
+        align-items: center;
+    }
+    .section--fb-item--right {
+        padding: $space $outer-padding $space $space;
+        display: flex;
+        justify-content: center;
+    }
+
+    @include for-size(tablet-landscape-up) {
+        .section--fb-item--left, .section--fb-item--right {
+            width: 50%;
+        }
+        .section--fb-item--right {
+            .fb--image {
+                width: 60%;
+            }
+        }
+    }
+
+}
