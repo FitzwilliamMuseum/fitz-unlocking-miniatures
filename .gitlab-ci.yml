@@ -23,7 +23,7 @@ deploy_prod:
     - coryphe
   stage: deploy
   script:
-    - rsync -av public/ gitlab-runner@78.129.168.4:/var/www/gitlab-runner-static/miniatures.fitzwilliam.ms/
+    - rsync -av public/ gitlab-runner@78.129.168.4:/var/www/gitlab-runner-static/miniatures.fitz.ms/
   environment:
     name: production
     url: https://minatures.fitzwilliam.ms
