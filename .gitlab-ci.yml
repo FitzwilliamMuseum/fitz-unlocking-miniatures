@@ -1,4 +1,4 @@
-image: olamalu/node-rsync:10.15.0
+image: olamalu/node-rsync:16.15.0
 
 pages:
   tags:
