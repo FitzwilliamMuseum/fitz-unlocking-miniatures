@@ -42,7 +42,18 @@ sections:
           21st Century technologies which include the development of portable equpment have allowed us to travel to study and photograph these delicate items  in situ.  <strong>Non invasive</strong> multi-wavelenght, ultra-zoomed image taking and spectography allow us to discover extraordinary details such as the use of rare mercury based paints or the myriage of blues and greens Oliver used.
         link:
           url: /pages/catalog
-          title: More on the heritage science        
+          title: More on the heritage science     
+  - type: supporters
+    title: 'Supporters'
+    items:
+      - image_src: ../../content/assets/main-banner-image.png
+        link:
+          url: https://www.fitzwilliam.ms
+          title: Fitzwilliam Museum
+      - image_src: ../../content/assets/main-banner-image.png
+        link:
+          url: https://www.fitzwilliam.ms
+          title: Fitzwilliam Museum          
 ---
 
 This is my first blog post! Isn't it *great*?

@@ -9,6 +9,21 @@ const config: GatsbyConfig = {
     mainMenu: [
       {link: '/', title: 'Home'},
       {link: '/collections', title: 'Collections'}
+    ],
+    quickLinks: [
+      {link: '/', title: 'Home'},
+      {link: '/collections', title: 'Collections'}
+    ],
+    contact: [
+      {line: "The Fizwilliam Museum"},
+      {line: "University of Cambridge"}
+    ],
+    footerLogos: [
+      {image_src: '../../content/assets/main-banner-image.png', image_alt: 'Logo'}
+    ],
+    socialMedia: [
+      {type: 'twitter', url: 'https://www.twitter.com/fitzwilliam', 'title': '@FitzProjectHandle'},
+      {type: 'youtube', url: 'https://www.twitter.com/fitzwilliam', 'title': 'on YouTube'},
     ]
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
