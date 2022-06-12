@@ -1,0 +1,32 @@
+image: olamalu/node-rsync:10.15.0
+
+pages:
+  tags:
+    - coryphe
+  stage: build
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - npm install
+    - npm run build
+    - mv dist public
+    - gzip -k -6 $(find public -type f)
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+
+deploy_prod:
+  tags:
+    - coryphe
+  stage: deploy
+  script:
+    - rsync -av public/ gitlab-runner@78.129.168.4:/var/www/gitlab-runner-static/miniatures.fitzwilliam.ms/
+  environment:
+    name: production
+    url: https://minatures.fitzwilliam.ms
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: manual
