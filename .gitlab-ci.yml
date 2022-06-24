@@ -1,6 +1,6 @@
 image: olamalu/node-rsync:16
 
-pages:
+build:
   tags:
     - coryphe
   stage: build

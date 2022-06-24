@@ -14,7 +14,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   actions
 }) => {
   const { createPage } = actions
-  const standardTemplate = path.resolve(`src/pages/standard.tsx`)
+  const standardTemplate = path.resolve(`src/pages/index.tsx`)
   const result = await graphql(`
     query {
       allMarkdownRemark {

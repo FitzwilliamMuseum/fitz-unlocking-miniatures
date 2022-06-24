@@ -8,7 +8,8 @@ const config: GatsbyConfig = {
     siteUrl: `https://miniatures.fitzwilliam.ms`,
     mainMenu: [
       {link: '/', title: 'Home'},
-      {link: '/collections', title: 'Collections'}
+      {link: '/collections', title: 'Collections'},
+      {link: 'http://miniatures.fitz.ms/mirador-demo/', title: 'Mirador demo'}
     ],
     quickLinks: [
       {link: '/', title: 'Home'},
