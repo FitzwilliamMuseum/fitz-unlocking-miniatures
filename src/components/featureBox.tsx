@@ -32,13 +32,13 @@ const FeatureBox: React.FC<FeatureBoxProps> = ( {item, direction} ) => {
     const linkUri = item?.link && item?.link.url ? item.link.url : ''
     const linkExternal = isExternalUrl(linkUri)
     const linkInternal = !linkExternal && linkUri
-    if (linkInternal) {
+    if (linkExternal) {
         return (
             <a className="section--fb-item" href={linkUri}>
                 { featureBoxStructure(item, d, true) }
             </a>
         )
-    } else if (linkExternal) {
+    } else if (linkInternal) {
         <Link className="section--fb-item" to={linkUri}>
            { featureBoxStructure(item, d, true) }
         </Link>

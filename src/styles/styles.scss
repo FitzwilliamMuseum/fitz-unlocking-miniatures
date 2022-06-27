@@ -80,6 +80,11 @@ h3 {
     font-size: $font-size-header-3;
 }
 
+// Non front page generic styling of main body - apply via additionalClasses in layout
+.standard-page {
+    padding: $space $outer-padding;
+}
+
 ul.main-menu {
     display: flex;
     flex-wrap: wrap;
@@ -212,22 +217,54 @@ ul.main-menu {
 }
 
 // Collections display
+.miniature-items-search {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: $space;
+    padding: $space;
+    background-color: clr(background-light);
+    align-items: center;
+    .search-label {
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding-right: $space;
+    }
+    input {
+        flex: 1;
+        height: $space-double;
+        font-size: 2rem;
+
+    }
+}
 .miniature-items {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: $space-double;
+    justify-content: flex-start;
+    @include for-size(tablet-portrait-up) {
+        margin-right: -$space-double;
+    }
 
     .miniature-item {
         width: 100%;
         margin-bottom: $space-double;
-        @include for-size(tablet-portrait-up) {
-            width: calc(50% - 10px);
+        text-decoration: none;
+        flex-grow: 0;
+        flex-shrink: 0;
+        img {
+            width: 100%;
+        }
+        &:hover {
+            text-decoration: underline;
         }
         @include for-size(tablet-portrait-up) {
-            width: calc(33% - 10px);
+            width: calc(50% - $space-double);
+        }
+        @include for-size(tablet-portrait-up) {
+            width: calc(33.3% - $space-double);
         }
         @include for-size(desktop-up) {
-            width: calc(33% - 10px);
+            width: calc(33.3% - $space-double);
         }
     }
 }

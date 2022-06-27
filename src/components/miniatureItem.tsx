@@ -7,6 +7,7 @@ import { isExternalUrl } from "../util";
 import { link } from "fs";
 
 export interface MiniatureItemInterface {
+    readonly id: string | null;
     readonly title: string | null;
     readonly artist_text: string | null;
     readonly sitter_text: string | null;
@@ -23,9 +24,10 @@ export interface MiniatureItemProps {
 const MiniatureItem: React.FC<MiniatureItemProps> = ( {item} ) => {
     const iiifUri = item?.iiif_manifest_new ? item.iiif_manifest_new : ''
     const image_src: string = item?.image_normal_light ? `https://rlq782oa.directus.app/assets/${item.image_normal_light}?fit=cover&width=300&height=400&quality=80` : ''
+    const linkUri: string = `/explore/${item?.id}`
     return (
         <React.Fragment>
-            <div className="miniature-item">
+            <Link className="miniature-item" to={linkUri}>
                 <div className="miniature-item__image">
                     { image_src && <img src={image_src} alt={item.image_alt ? item.image_alt : 'Placeholder'} /> }
                 </div>
@@ -34,7 +36,7 @@ const MiniatureItem: React.FC<MiniatureItemProps> = ( {item} ) => {
                     <div className="artist">{item.artist_text}</div>
                     <div className="sitter">{item.sitter_text}</div>
                 </div>
-            </div>
+            </Link>
         </React.Fragment>
     )
 }

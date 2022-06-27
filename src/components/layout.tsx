@@ -11,14 +11,16 @@ interface Props {
     readonly children: React.ReactNode
     readonly displayLogo: boolean
     readonly footer: FooterProps
+    readonly additionalClasses: Array<string>
   }
 
-const Layout: React.FC<Props> = ({ menu, children, displayLogo, footer }) => {
+const Layout: React.FC<Props> = ({ menu, children, displayLogo, footer, additionalClasses = [] }) => {
   const menuItems = [];
+  const classNames = ['content', ...additionalClasses] 
     return (
         <>
         <Header displayLogo={displayLogo} menu={menu}/>
-        <main className="content" role="main">
+        <main className={classNames.join(' ')} role="main">
           {children}
         </main>
         {footer.content && <Footer content={ footer.content }/>}

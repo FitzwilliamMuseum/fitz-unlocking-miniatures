@@ -21,21 +21,40 @@ const CollectionsPage = ({data}: PageProps<Queries.SiteDataQuery>) => {
     }
   }
   const [miniatures, setMiniatures] = useState<Array<MiniatureItemInterface>>([])
+  const [filteredMiniatures, setFilteredMiniatures] = useState<Array<MiniatureItemInterface>>([])
   useEffect(() => {
     // get data from GitHub api
-    fetch(`https://rlq782oa.directus.app/items/miniatures?fields[]=title&fields[]=artist_text&fields[]=sitter_text&fields[]=image_normal_light`)
+    fetch(`https://rlq782oa.directus.app/items/miniatures?fields[]=title&fields[]=artist_text&fields[]=sitter_text&fields[]=image_normal_light&fields[]=id`)
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
         setMiniatures(resultData.data)
+        setFilteredMiniatures(resultData.data)
       })
   }, [])
+
+    function handleSearchKeywords(event: React.ChangeEvent<HTMLInputElement>) {
+      const searchText = event.target.value
+      // Find any matching miniatures via the text in their fields
+      const filtered = miniatures.filter(item => {
+        return Object.entries(item).some((value, key) => {
+          const v = JSON.stringify(Array.isArray(value) && value[1] ? value[1] : '')
+          return v.toLowerCase().includes(searchText.toLowerCase())
+        })
+      })
+      setFilteredMiniatures(filtered)
+    }
    
+    
     return (
-      <Layout displayLogo={false} menu={data.site?.siteMetadata?.mainMenu} footer={footerData}>
+      <Layout displayLogo={false} menu={data.site?.siteMetadata?.mainMenu} footer={footerData} additionalClasses={['standard-page']}>
         {/* <Head title={post.frontmatter.title} description={post.excerpt} /> */}
         <section>
+          <div className={`miniature-items-search`}>
+            <div className="search-label">Search for an item</div>
+            <input name="searchKeywords" onChange={handleSearchKeywords} placeholder="Search"/>
+          </div>
           <div className={`miniature-items`}>
-            {Array.isArray(miniatures) && miniatures.map(item => {
+            {Array.isArray(filteredMiniatures) && filteredMiniatures.map(item => {
               return (<MiniatureItem item={item}/>)
             })}
           </div>
