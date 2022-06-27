@@ -7,7 +7,7 @@ import { isExternalUrl } from "../util"
 import FeatureBox, { FeatureBoxItem, FeatureBoxProps } from "../components/featureBox"
 import Supporter, { SupporterProps } from "../components/supporter"
 import { FooterLogo, FooterProps, SocialMedia } from "../components/footer"
-import MiniatureItem from "../components/miniatureItem"
+import MiniatureItem, { MiniatureItemInterface } from "../components/miniatureItem"
 
 
 const CollectionsPage = ({data}: PageProps<Queries.SiteDataQuery>) => {
@@ -20,10 +20,10 @@ const CollectionsPage = ({data}: PageProps<Queries.SiteDataQuery>) => {
       footerLogos: data.site?.siteMetadata?.footerLogos ? data.site?.siteMetadata?.footerLogos as Array<FooterLogo> : []
     }
   }
-  const [miniatures, setMiniatures] = useState<Array<any>>([])
+  const [miniatures, setMiniatures] = useState<Array<MiniatureItemInterface>>([])
   useEffect(() => {
     // get data from GitHub api
-    fetch(`https://rlq782oa.directus.app/items/miniatures?fields[]=title&fields[]=artist_text&fields[]=sitter_text`)
+    fetch(`https://rlq782oa.directus.app/items/miniatures?fields[]=title&fields[]=artist_text&fields[]=sitter_text&fields[]=image_normal_light`)
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
         setMiniatures(resultData.data)
@@ -34,7 +34,7 @@ const CollectionsPage = ({data}: PageProps<Queries.SiteDataQuery>) => {
       <Layout displayLogo={false} menu={data.site?.siteMetadata?.mainMenu} footer={footerData}>
         {/* <Head title={post.frontmatter.title} description={post.excerpt} /> */}
         <section>
-          <div className={`page-content`}>
+          <div className={`miniature-items`}>
             {Array.isArray(miniatures) && miniatures.map(item => {
               return (<MiniatureItem item={item}/>)
             })}

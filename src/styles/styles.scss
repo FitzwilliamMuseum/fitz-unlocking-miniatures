@@ -211,6 +211,27 @@ ul.main-menu {
     }
 }
 
+// Collections display
+.miniature-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .miniature-item {
+        width: 100%;
+        margin-bottom: $space-double;
+        @include for-size(tablet-portrait-up) {
+            width: calc(50% - 10px);
+        }
+        @include for-size(tablet-portrait-up) {
+            width: calc(33% - 10px);
+        }
+        @include for-size(desktop-up) {
+            width: calc(33% - 10px);
+        }
+    }
+}
+
 .footer {
     width: 100%;
     padding: $space $outer-padding;
