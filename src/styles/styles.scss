@@ -268,6 +268,17 @@ ul.main-menu {
         }
     }
 }
+.search-card {
+    background-color: clr(background-light);
+    padding: $space-one-half;
+    margin-top: $space;
+    .search-card__item-value {
+        margin-bottom: $space-one-half;
+    }
+    .search-card__item-title {
+        font-weight: bold;
+    }
+}
 
 .footer {
     width: 100%;

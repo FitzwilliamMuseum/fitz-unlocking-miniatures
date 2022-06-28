@@ -8,7 +8,14 @@ import FeatureBox, { FeatureBoxItem, FeatureBoxProps } from "../components/featu
 import Supporter, { SupporterProps } from "../components/supporter"
 import { FooterLogo, FooterProps, SocialMedia } from "../components/footer"
 import MiniatureItem, { MiniatureItemInterface } from "../components/miniatureItem"
+import { buildDirectusRequestUrl, createSearchIndex } from "../util/search"
+import { Index } from "lunr"
 
+
+interface MiniatureItemWithSearchResultInterface {
+  item: MiniatureItemInterface
+  result: Index.Result | null
+}
 
 const CollectionsPage = ({data}: PageProps<Queries.SiteDataQuery>) => {
 
@@ -20,26 +27,36 @@ const CollectionsPage = ({data}: PageProps<Queries.SiteDataQuery>) => {
       footerLogos: data.site?.siteMetadata?.footerLogos ? data.site?.siteMetadata?.footerLogos as Array<FooterLogo> : []
     }
   }
-  const [miniatures, setMiniatures] = useState<Array<MiniatureItemInterface>>([])
-  const [filteredMiniatures, setFilteredMiniatures] = useState<Array<MiniatureItemInterface>>([])
+  const [miniatures, setMiniatures] = useState<Map<string, MiniatureItemInterface>>()
+  const [searchIndex, setSearchIndex] = useState<Index>()
+  const [filteredMiniatures, setFilteredMiniatures] = useState<Array<MiniatureItemWithSearchResultInterface>>([])
   useEffect(() => {
     // get data from GitHub api
-    fetch(`https://rlq782oa.directus.app/items/miniatures?fields[]=title&fields[]=artist_text&fields[]=sitter_text&fields[]=image_normal_light&fields[]=id`)
+    fetch(buildDirectusRequestUrl())
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
-        setMiniatures(resultData.data)
-        setFilteredMiniatures(resultData.data)
+        const m = new Map<string, MiniatureItemInterface>()
+        const filtered: Array<MiniatureItemWithSearchResultInterface> = []
+        resultData.data.forEach((item: any) => {
+          m.set(String(item.id), item)
+          filtered.push({item, result: null})
+        })
+        setMiniatures(m)
+        setFilteredMiniatures(filtered)
+        const idx = createSearchIndex(resultData.data)
+        setSearchIndex(idx)
       })
   }, [])
 
     function handleSearchKeywords(event: React.ChangeEvent<HTMLInputElement>) {
       const searchText = event.target.value
-      // Find any matching miniatures via the text in their fields
-      const filtered = miniatures.filter(item => {
-        return Object.entries(item).some((value, key) => {
-          const v = JSON.stringify(Array.isArray(value) && value[1] ? value[1] : '')
-          return v.toLowerCase().includes(searchText.toLowerCase())
-        })
+      const results = searchIndex?.search(searchText)
+      const filtered: Array<MiniatureItemWithSearchResultInterface> = []
+      results?.forEach((result) => {
+        const i = miniatures?.get(result.ref)
+        if (i) {
+          filtered.push({item: i, result})
+        }
       })
       setFilteredMiniatures(filtered)
     }
@@ -50,12 +67,12 @@ const CollectionsPage = ({data}: PageProps<Queries.SiteDataQuery>) => {
         {/* <Head title={post.frontmatter.title} description={post.excerpt} /> */}
         <section>
           <div className={`miniature-items-search`}>
-            <div className="search-label">Search for an item</div>
+            <div className="search-label">Search for artist, sitter or pigment</div>
             <input name="searchKeywords" onChange={handleSearchKeywords} placeholder="Search"/>
           </div>
           <div className={`miniature-items`}>
             {Array.isArray(filteredMiniatures) && filteredMiniatures.map(item => {
-              return (<MiniatureItem item={item}/>)
+              return (<MiniatureItem item={item.item} result={item.result}/>)
             })}
           </div>
         </section>

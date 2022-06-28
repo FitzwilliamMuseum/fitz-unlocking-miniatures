@@ -5,6 +5,8 @@ import '../styles/styles.scss'
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { isExternalUrl } from "../util";
 import { link } from "fs";
+import { Index } from "lunr";
+import MiniatureItemSearchCard from "./miniatureSearchCard";
 
 export interface MiniatureItemInterface {
     readonly id: string | null;
@@ -18,13 +20,15 @@ export interface MiniatureItemInterface {
 
 export interface MiniatureItemProps {
     item: MiniatureItemInterface;
+    result: Index.Result | null;
 }
 
 
-const MiniatureItem: React.FC<MiniatureItemProps> = ( {item} ) => {
+const MiniatureItem: React.FC<MiniatureItemProps> = ( {item, result} ) => {
     const iiifUri = item?.iiif_manifest_new ? item.iiif_manifest_new : ''
     const image_src: string = item?.image_normal_light ? `https://rlq782oa.directus.app/assets/${item.image_normal_light}?fit=cover&width=300&height=400&quality=80` : ''
     const linkUri: string = `/explore/${item?.id}`
+    console.log('restul', result)
     return (
         <React.Fragment>
             <Link className="miniature-item" to={linkUri}>
@@ -36,6 +40,7 @@ const MiniatureItem: React.FC<MiniatureItemProps> = ( {item} ) => {
                     <div className="artist">{item.artist_text}</div>
                     <div className="sitter">{item.sitter_text}</div>
                 </div>
+                <MiniatureItemSearchCard item={item} result={result}/>
             </Link>
         </React.Fragment>
     )
