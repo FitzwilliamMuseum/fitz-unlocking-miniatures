@@ -85,6 +85,11 @@ h3 {
     padding: $space $outer-padding;
 }
 
+.loading {
+    display: flex;
+    justify-content: center;
+}
+
 ul.main-menu {
     display: flex;
     flex-wrap: wrap;
@@ -276,6 +281,14 @@ ul.main-menu {
         margin-bottom: $space-one-half;
     }
     .search-card__item-title {
+        font-weight: bold;
+    }
+}
+
+.no-search-results {
+    text-align: center;
+    .search-text {
+        font-size: 1.4rem;
         font-weight: bold;
     }
 }
