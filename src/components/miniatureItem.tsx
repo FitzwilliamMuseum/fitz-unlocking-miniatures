@@ -7,6 +7,9 @@ import { isExternalUrl } from "../util";
 import { link } from "fs";
 import { Index } from "lunr";
 import MiniatureItemSearchCard from "./miniatureSearchCard";
+import config from "../../gatsby-config";
+import InfoIcon from "../assets/svg/info-icon.svg"
+import ViewerIcon from "../assets/svg/viewer-icon.svg"
 
 export interface MiniatureItemInterface {
     readonly id: string | null;
@@ -26,12 +29,11 @@ export interface MiniatureItemProps {
 
 const MiniatureItem: React.FC<MiniatureItemProps> = ( {item, result} ) => {
     const iiifUri = item?.iiif_manifest_new ? item.iiif_manifest_new : ''
-    const image_src: string = item?.image_normal_light ? `https://rlq782oa.directus.app/assets/${item.image_normal_light}?fit=cover&width=300&height=400&quality=80` : ''
+    const image_src: string = item?.image_normal_light ? `${config?.siteMetadata?.api.url}/assets/${item.image_normal_light}?fit=cover&width=300&height=400&quality=80` : ''
     const linkUri: string = `/explore/${item?.id}`
-    console.log('restul', result)
     return (
         <React.Fragment>
-            <Link className="miniature-item" to={linkUri}>
+            <div className="miniature-item">
                 <div className="miniature-item__image">
                     { image_src && <img src={image_src} alt={item.image_alt ? item.image_alt : 'Placeholder'} /> }
                 </div>
@@ -41,7 +43,10 @@ const MiniatureItem: React.FC<MiniatureItemProps> = ( {item, result} ) => {
                     <div className="sitter">{item.sitter_text}</div>
                 </div>
                 <MiniatureItemSearchCard item={item} result={result}/>
-            </Link>
+                <div className="miniature-item__actions">
+                    <Link className="miniature-item__button" to={`/object/${item?.id}`}><span className="icon"><InfoIcon/></span><span>More information</span></Link><Link className="miniature-item__button" to={`/view/${item?.id}`}><span className="icon"><ViewerIcon/></span><span>Viewer</span></Link>
+                </div>
+            </div>
         </React.Fragment>
     )
 }

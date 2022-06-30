@@ -14,7 +14,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   actions
 }) => {
   const { createPage } = actions
-  const standardTemplate = path.resolve(`src/pages/index.tsx`)
+  const standardTemplate = path.resolve(`src/pages/standard.tsx`)
   const result = await graphql(`
     query {
       allMarkdownRemark {
@@ -32,7 +32,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   `)
   result.data.allMarkdownRemark.edges.forEach((edge: any) => {
     const page = {
-      path: `${edge.node.frontmatter.slug}`,
+      path: edge.node.frontmatter.slug == 'home' ? '/' : `${edge.node.frontmatter.slug}`,
       component: standardTemplate,
       context: {
         title: edge.node.frontmatter.title,

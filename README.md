@@ -52,3 +52,9 @@
 Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+
+
+[09:41] Daniel Pett
+    https://data.fitzmuseum.cam.ac.uk/search/results?query=roman&operator=AND&sort=desc
+Search resultsSearch results from our highlightsdata.fitzmuseum.cam.ac.uk​[09:51] Daniel Pett
+    https://rlq782oa.directus.app/items/miniatures - new directus endpoint example

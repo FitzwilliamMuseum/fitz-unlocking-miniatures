@@ -90,6 +90,20 @@ h3 {
     justify-content: center;
 }
 
+.logo-header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: $space-one-half $outer-padding $space-one-half $outer-padding;
+    svg {
+        width: 250px;
+    }
+    ul.main-menu { 
+        padding-right: 0;
+        padding-top: 0;
+    }
+}
+
 ul.main-menu {
     display: flex;
     flex-wrap: wrap;
@@ -129,6 +143,11 @@ ul.main-menu {
     }
 }
 
+.section--content {
+    p {
+        margin-bottom: $space-one-half;
+    }
+}
 .section--fb {
     display: flex;
     flex-wrap: wrap;
@@ -256,11 +275,13 @@ ul.main-menu {
         text-decoration: none;
         flex-grow: 0;
         flex-shrink: 0;
-        img {
+        display: flex;
+        flex-wrap: wrap;
+        > div {
             width: 100%;
         }
-        &:hover {
-            text-decoration: underline;
+        img {
+            width: 100%;
         }
         @include for-size(tablet-portrait-up) {
             width: calc(50% - $space-double);
@@ -270,6 +291,53 @@ ul.main-menu {
         }
         @include for-size(desktop-up) {
             width: calc(33.3% - $space-double);
+        }
+    }
+    .miniature-item__actions {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: $space-one-half;
+        align-items: flex-end;
+        flex: 1;
+        padding-top: $space;
+    }
+    .miniature-item__button {
+        border: 1px solid clr(text);
+        padding: $space-one-half;
+        display: flex;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        span {
+            display: inline-block;
+            z-index: 1;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+        .icon {
+            margin-right: $space-one-half;
+            width: 25px;
+            display: flex;
+            align-items: center;
+            svg {
+                width: 100%;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 100%;
+            background-color: clr(button-slide);
+            opacity: 0.5;
+            transition: all 0.3s ease-in-out;
+        }
+        &:hover::after {
+            right:0;
         }
     }
 }

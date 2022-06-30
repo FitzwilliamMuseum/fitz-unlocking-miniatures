@@ -1,4 +1,5 @@
 import lunr, { Index } from 'lunr'
+import config from '../../gatsby-config';
 
 // TODO: should we move this to config?
 export const collectionsFields = () : Array<any> => {
@@ -24,7 +25,8 @@ export const buildDirectusRequestUrl = (): string => {
     const fields = collectionsFields().map((item) => {
         return 'fields[]=' + item.fieldname
     })
-    return 'https://rlq782oa.directus.app/items/miniatures?' + fields.join('&')
+    const url = config?.siteMetadata?.api.url + config?.siteMetadata?.api.collections.miniatures
+    return url + '?' + fields.join('&')
 }
 
 export const createSearchIndex = (documents: Array<any>) : Index => {

@@ -1,5 +1,4 @@
 import type { GatsbyConfig } from "gatsby";
-const fs = require("fs")
 const { buildSchema, buildClientSchema } = require("graphql")
 
 const config: GatsbyConfig = {
@@ -23,9 +22,15 @@ const config: GatsbyConfig = {
       {image_src: '../../content/assets/main-banner-image.png', image_alt: 'Logo'}
     ],
     socialMedia: [
-      {type: 'twitter', url: 'https://www.twitter.com/fitzwilliam', 'title': '@FitzProjectHandle'},
-      {type: 'youtube', url: 'https://www.twitter.com/fitzwilliam', 'title': 'on YouTube'},
-    ]
+      {type: 'twitter', url: 'https://www.twitter.com/FitzMuseum_UK', 'title': '@FitzMuseum_UK'},
+      {type: 'youtube', url: 'www.youtube.com/c/FitzMuseum', 'title': 'on YouTube'},
+    ],
+    api: {
+      url: 'https://unlocking-miniatures.fitz.ms/', //Always / at end
+      collections: {
+        miniatures: 'items/miniatures' //No back slash at end
+      }
+    }
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

@@ -70,7 +70,7 @@ const CollectionsPage = ({data}: PageProps<Queries.SiteDataQuery>) => {
    
     
     return (
-      <Layout displayLogo={false} menu={data.site?.siteMetadata?.mainMenu} footer={footerData} additionalClasses={['standard-page']}>
+      <Layout displayLogo={true} menu={data.site?.siteMetadata?.mainMenu} footer={footerData} additionalClasses={['standard-page']}>
         {/* <Head title={post.frontmatter.title} description={post.excerpt} /> */}
         <section>
           <div className={`miniature-items-search`}>
