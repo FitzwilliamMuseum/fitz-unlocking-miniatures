@@ -1,32 +1,43 @@
 import * as React from "react"
-import { graphql, Link, PageProps } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import '../styles/styles.scss'
 import MainMenu from "./mainMenu";
 import LogoDark from "../assets/svg/logo-dark.svg"
 
-
-export interface HeaderProps {
+interface HeaderProps {
     displayLogo: boolean;
-    menu: Array<any>;
 }
 
+const Header: React.FC<HeaderProps> = ({ displayLogo }) => {
 
+    const data = useStaticQuery(graphql`
+    query HeaderQuery {
+        site {
+            siteMetadata {
+                mainMenu {
+                    link
+                    title
+                }
+            }
+        }
+    }    
+  `)
 
-const Header: React.FC<HeaderProps> = ( { displayLogo, menu} ) => {
+    const menu = data.site.siteMetadata.mainMenu;
 
     if (displayLogo) {
         return (
             <React.Fragment>
                 <section className="logo-header">
-                    <Link to="/"><LogoDark/></Link>
-                    <MainMenu menu={menu}/>
+                    <Link to="/"><LogoDark /></Link>
+                    <MainMenu menu={menu} />
                 </section>
             </React.Fragment>
         )
     }
     return (
         <React.Fragment>
-            <MainMenu menu={menu}/>
+            <MainMenu menu={menu} />
         </React.Fragment>
     )
 }
