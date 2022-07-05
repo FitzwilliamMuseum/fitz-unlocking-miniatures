@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react"
 import Layout from '../components/layout'
-import MiniatureItem, { MiniatureItemInterface } from "../components/miniatureItem"
+import MiniatureItem from "../components/miniatureItem"
 import { buildDirectusRequestUrl, createSearchIndex } from "../util/search"
 import { Index } from "lunr"
 import Loading from '../images/loading-spin.svg'
+import { Link } from 'gatsby'
 
-
-interface MiniatureItemWithSearchResultInterface {
-  item: MiniatureItemInterface
-  result: Index.Result | null
+type Compare = {
+  [id: string]: MiniatureItemInterface;
 }
 
 export default function CollectionsPage() {
@@ -18,6 +17,7 @@ export default function CollectionsPage() {
   const [miniatures, setMiniatures] = useState<Map<string, MiniatureItemInterface>>()
   const [searchIndex, setSearchIndex] = useState<Index>()
   const [filteredMiniatures, setFilteredMiniatures] = useState<Array<MiniatureItemWithSearchResultInterface>>([])
+  const [compare, setCompare] = useState<Compare>()
 
   useEffect(() => {
     // get data from GitHub api
@@ -54,6 +54,19 @@ export default function CollectionsPage() {
     setLoading(0)
   }
 
+  function onClickCompareItem(item: MiniatureItemInterface) {
+    const updatedCompare = {
+      ...compare,
+    }
+    if (updatedCompare[item.id!!]) {
+      delete updatedCompare[item.id!!];
+    }
+    else {
+      updatedCompare[item.id!!] = item;
+    }
+    setCompare(updatedCompare)
+  }
+
   return (
     <Layout displayLogo={true} additionalClasses={['standard-page']}>
       {/* <Head title={post.frontmatter.title} description={post.excerpt} /> */}
@@ -69,11 +82,24 @@ export default function CollectionsPage() {
           {loading != 0 && <Loading />}
         </div>
         <div className={`miniature-items`}>
-          {Array.isArray(filteredMiniatures) && filteredMiniatures.map(item => {
-            return (<MiniatureItem item={item.item} result={item.result} />)
-          })}
+          {Array.isArray(filteredMiniatures) && filteredMiniatures.map(item => (
+            <MiniatureItem
+              item={item.item}
+              result={item.result}
+              onClickCompare={() => onClickCompareItem(item.item)}
+              compareActive={!!compare?.[item.item.id!!]}
+            />
+          ))}
         </div>
       </section>
+      {(Object.keys(compare || {}).length > 0) && <div className="miniature-collection--compare">
+        {Object.values(compare || {}).map(compareItem => (
+          <div>{compareItem.title}</div>
+        ))}
+        <Link to={`/collections-compare?items=${Object.keys(compare || {}).join(",")}`}>
+          <span>Compare</span>
+        </Link>
+      </div>}
     </Layout>
   )
 }

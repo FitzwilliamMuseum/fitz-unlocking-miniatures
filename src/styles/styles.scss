@@ -309,6 +309,7 @@ ul.main-menu {
         text-decoration: none;
         position: relative;
         overflow: hidden;
+        cursor: pointer;
         span {
             display: inline-block;
             z-index: 1;
@@ -407,6 +408,39 @@ ul.main-menu {
                 content: '|';
                 margin-left: $space;
             }
+        }
+    }
+}
+
+/* Compare miniature collection */
+
+.miniature-collection--compare {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background: white;
+    padding: 16px;
+    border: 1px solid var(--c-text);
+    z-index: 10;
+}
+
+.collections-compare--section {
+    margin: 64px;
+
+    table {
+        table-layout: fixed;
+        th {
+            text-align: start;
+            padding: 16px;
+        }
+
+        td {
+            padding: 4px 16px;
+            min-width: 10%;
+        }
+
+        tr:nth-child(even) {
+            background-color: #E7E9EB;
         }
     }
 }
