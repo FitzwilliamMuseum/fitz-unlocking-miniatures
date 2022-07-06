@@ -5,6 +5,8 @@ import { buildDirectusRequestUrl, createSearchIndex } from "../util/search"
 import { Index } from "lunr"
 import Loading from '../images/loading-spin.svg'
 import { Link } from 'gatsby'
+import ViewerIcon from "../assets/svg/viewer-icon.svg"
+import config from "../../gatsby-config";
 
 type Compare = {
   [id: string]: MiniatureItemInterface;
@@ -102,6 +104,11 @@ export default function CollectionsPage() {
             to={`/collections-compare?items=${Object.keys(compare || {}).join(",")}`}>
             Compare
           </Link>
+          <a
+            className="miniature-item__button"
+            href={`/view/?${Object.values(compare || {}).map(item => `manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`)}`}>
+            <span className="icon"><ViewerIcon /></span><span>View all</span>
+          </a>
         </div>
       </div>}
     </Layout>
