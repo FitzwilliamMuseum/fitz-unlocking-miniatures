@@ -54,8 +54,6 @@ export default function CollectionsComparePage() {
           </tbody>
         </table>
       </section>
-
     </Layout>
   )
 }
-

@@ -75,12 +75,9 @@ export const createPages: GatsbyNode["createPages"] = async ({
         dimensions_unframed_height
         pigments_background
         pigments_costume
-        pigments_flesh_tones
-        pigments_hair
+        pigments_flesh_tones_and_lips
+        pigments_hair_and_beard
         pigments_jewellery
-        pigments_lace
-        pigments_lips
-        pigments_ruff_or_collar
         materials_supports
         analytical_techniques_used
         exhibitions {
