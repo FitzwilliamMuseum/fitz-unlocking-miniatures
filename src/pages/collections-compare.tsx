@@ -137,6 +137,9 @@ export default function CollectionsComparePage() {
   return (
     <Layout displayLogo={false}>
       <section className="collections-compare--section">
+        <div className="miniature-items">
+          <Link className="miniature-item__button" to="/collections">Back</Link>
+        </div>
         <table>
           <thead>
             <th ></th>
