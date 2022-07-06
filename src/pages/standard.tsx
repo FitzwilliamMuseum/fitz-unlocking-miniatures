@@ -1,27 +1,16 @@
 import * as React from "react"
-import {Link, graphql, PageProps} from 'gatsby'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { graphql, PageProps} from 'gatsby'
+import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from '../components/layout'
 import Logo from '../assets/svg/logo.svg'
 import { isExternalUrl } from "../util"
-import FeatureBox, { FeatureBoxItem, FeatureBoxProps } from "../components/featureBox"
+import FeatureBox, { FeatureBoxItem } from "../components/featureBox"
 import Supporter, { SupporterProps } from "../components/supporter"
-import { FooterLogo, FooterProps, SocialMedia } from "../components/footer"
-
 
 const StandardTemplate = ({data}: PageProps<Queries.StandardTemplateQuery>) => {
-
-  const footerData: FooterProps = {
-    content: {
-      quickLinks: data.site?.siteMetadata?.quickLinks ? data.site?.siteMetadata?.quickLinks as Array<any> : [],
-      socialMedia: data.site?.siteMetadata?.socialMedia ? data.site?.siteMetadata?.socialMedia as Array<SocialMedia> : [],
-      contact: data.site?.siteMetadata?.contact ? data.site?.siteMetadata?.contact as Array<any> : [],
-      footerLogos: data.site?.siteMetadata?.footerLogos ? data.site?.siteMetadata?.footerLogos as Array<FooterLogo> : []
-    }
-  }
    
     return (
-      <Layout displayLogo={false} menu={data.site?.siteMetadata?.mainMenu} footer={footerData}>
+      <Layout displayLogo={false} >
         {/* <Head title={post.frontmatter.title} description={post.excerpt} /> */}
         <article>
           <div className={`page-content`}>
@@ -106,88 +95,46 @@ const StandardTemplate = ({data}: PageProps<Queries.StandardTemplateQuery>) => {
     )
   }
 
-interface PageQueryData {
-    site: {
-      siteMetadata: {
-        title: string
-      }
-    }
-    markdownRemark: {
-      id?: string
-      excerpt?: string
-      html: string
-      frontmatter: {
-        title: string
-        date: string
-      }
-    }
-}
-
 export const query = graphql`
-    query StandardTemplate($slug: String) {
-        markdownRemark(frontmatter: {slug: {eq: $slug}}) {
-        id
-        html
-        frontmatter {
-          sections {
-            image_src {
-              childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
-              }
-            }
-            image_alt
-            title
-            content
-            fb_type
-            logo
-            type
-            link {
-              title
-              url
-            }
-            items {
-              title
-              content
-              link {
-                url
-                title
-              }
-              image_alt
-              image_src {
-                childImageSharp {
-                  gatsbyImageData(layout: FULL_WIDTH)
-                }
-              }
-            }
-          }
-        }
-      }
-      site {
-        siteMetadata {
-            title
-            mainMenu {
-              link
-              title
-            }
-            quickLinks {
-              link
-              title
-            }
-            contact {
-              line
-            }
-            footerLogos {
-              image_src
-              image_alt
-            }
-            socialMedia {
-              type
-              url
-              title
-            }
-        }
-    }
-  }
+query StandardTemplate($slug: String) {
+	markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+		id
+		html
+		frontmatter {
+			sections {
+				image_src {
+					childImageSharp {
+						gatsbyImageData(layout: FULL_WIDTH)
+					}
+				}
+				image_alt
+				title
+				content
+				fb_type
+				logo
+				type
+				link {
+					title
+					url
+				}
+				items {
+					title
+					content
+					link {
+						url
+						title
+					}
+					image_alt
+					image_src {
+						childImageSharp {
+							gatsbyImageData(layout: FULL_WIDTH)
+						}
+					}
+				}
+			}
+		}
+	}
+}
 `
 
 export default StandardTemplate

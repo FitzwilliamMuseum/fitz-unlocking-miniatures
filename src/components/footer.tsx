@@ -1,44 +1,37 @@
 import * as React from "react"
-import { graphql, Link, PageProps } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import '../styles/styles.scss'
-import MainMenu from "./mainMenu";
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { isExternalUrl } from "../util";
 
+export default function Footer() {
 
-export interface FooterProps {
-    readonly content: {
-        readonly quickLinks: Array<{
-            readonly link: string
-            readonly title: string
-        }> | null | undefined;
-        readonly contact: Array<{
-            readonly line: string;
-        }> | null | undefined;
-        readonly footerLogos: Array<FooterLogo> | null | undefined;
-        readonly socialMedia: Array<SocialMedia> | null | undefined;
-    }
-}
+    const data = useStaticQuery(graphql`
+    query FooterQuery {
+        site {
+            siteMetadata {
+                quickLinks {
+                    link
+                    title
+                }
+                contact {
+                    line
+                }
+                footerLogos {
+                    image_src
+                    image_alt
+                }
+                socialMedia {
+                    type
+                    url
+                    title
+                }
+            }
+        }
+    }    
+  `)
 
-export interface FooterLogo {
-    readonly image_alt: string;
-        readonly image_src: {
-            readonly childImageSharp: {
-                readonly gatsbyImageData: IGatsbyImageData;
-            } | null;
-        } | null;
-}
-
-export interface SocialMedia {
-    readonly type: string;
-    readonly url: string;
-    readonly title: string;
-}
-
-
-const Footer: React.FC<FooterProps> = ( footerData ) => {
-
-    const { quickLinks, contact, footerLogos, socialMedia } = footerData.content
+    const { quickLinks, contact, footerLogos, socialMedia } = data.site.siteMetadata;
 
     const socialMediaItems: Array<any> = []
     const quickLinksItems: Array<any> = []
@@ -57,12 +50,12 @@ const Footer: React.FC<FooterProps> = ( footerData ) => {
         })
     }
     if (contact) {
-        contact.forEach((item)=> {
+        contact.forEach((item) => {
             contactItems.push(<div className="contact--line">{item.line}</div>)
         })
     }
     if (footerLogos) {
-        footerLogos.forEach((logo)=> {
+        footerLogos.forEach((logo) => {
             if (logo?.image_src?.childImageSharp?.gatsbyImageData) {
                 const img = (<GatsbyImage objectFit="contain" alt={logo.image_alt} image={logo.image_src.childImageSharp.gatsbyImageData} />);
                 footerLogoItems.push(img)
@@ -98,5 +91,3 @@ const Footer: React.FC<FooterProps> = ( footerData ) => {
         </React.Fragment>
     )
 }
-
-export default Footer

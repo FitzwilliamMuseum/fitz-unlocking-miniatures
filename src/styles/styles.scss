@@ -309,6 +309,7 @@ ul.main-menu {
         text-decoration: none;
         position: relative;
         overflow: hidden;
+        cursor: pointer;
         span {
             display: inline-block;
             z-index: 1;
@@ -406,6 +407,129 @@ ul.main-menu {
             &::after {
                 content: '|';
                 margin-left: $space;
+            }
+        }
+    }
+}
+
+/* Compare miniature collection */
+
+.miniature-collection--compare {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background: white;
+    padding: 16px;
+    border: 1px solid var(--c-text);
+    z-index: 10;
+}
+
+.collections-compare--section {
+    margin: 64px;
+
+    table {
+        table-layout: fixed;
+        th {
+            text-align: start;
+            padding: 16px;
+        }
+
+        td {
+            padding: 4px 16px;
+            min-width: 10%;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--c-background-light);
+        }
+    }
+
+    a {
+        margin-right: 16px;
+    }
+}
+
+/* Object Miniature */
+
+.object--hero-wrapper {
+    background-color: var(--c-background-black);
+
+    & * {
+        color: var(--c-text-inverse);
+    }
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    .object--hero-content {
+        display: flex;
+        flex-wrap: wrap;
+        width: 75%;
+        padding: 16px 0px;
+
+        .object--hero-info {
+            padding: 0px 16px;
+
+            .object--hero-info-table {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+
+        img {
+            max-height: 200px;
+            width: auto;
+            height: auto;
+        }
+    }
+}
+
+.object--actions {
+    margin: 1.5rem 0px 0px 13%;
+}
+
+.object--description-wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    .object--description-content {
+        width: 75%;
+
+        border-left: 1px solid var(--c-border);
+        border-right: 1px solid var(--c-border);
+        padding: 0px 1rem;
+        margin: 1.5rem 0px;
+
+        p {
+            span {
+                padding: 0px 8px 8px 0px;
+            }
+        }
+
+        .object--description-dimentions {
+            margin-top: 1.5rem;
+        }
+
+        .object--description-pigments {
+            margin-top: 1.5rem;
+
+            td {
+                padding: 4px;
+            }
+
+            tr:nth-child(even) {
+                background-color: var(--c-background-light);
+            }
+        }
+
+        .object--description-materials-and-techniques {
+            margin-top: 1.5rem;
+
+            p {
+                display: grid;
+                grid-template-columns: 1fr 5fr;
             }
         }
     }

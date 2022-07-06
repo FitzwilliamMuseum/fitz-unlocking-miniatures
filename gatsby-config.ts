@@ -89,6 +89,14 @@ const config: GatsbyConfig = {
         include: "src/assets/svg"
       }
     }
+  },
+  {
+    resolve: "gatsby-source-graphql",
+    options: {
+      typeName: "DirectusGraphQL",
+      fieldName: "directusgraphql",
+      url: "https://unlocking-miniatures.fitz.ms/graphql",
+    },
   }]
 };
 
