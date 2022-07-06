@@ -3,10 +3,15 @@ import Layout from '../components/layout';
 import config from "../../gatsby-config";
 import { Link } from 'gatsby'
 
+const isBrowser = typeof window !== "undefined"
+
 export default function CollectionsComparePage() {
 
-  const params = new URLSearchParams(document.location.search);
-  const queryItems = params.get("items");
+  let queryItems = "";
+  if (isBrowser) {
+    const params = new URLSearchParams(document.location.search);
+    queryItems = params.get("items") || "";
+  }
 
   const [items, setItems] = useState<Array<MiniatureItemInterface>>([]);
 
@@ -130,7 +135,7 @@ export default function CollectionsComparePage() {
   function objectLinkElement(miniature: MiniatureItemInterface) {
     return <span>
       <Link to={`/object/${miniature.id}`} >Information</Link>
-      <a href={`/view/?manifestId[]=${config.siteMetadata.iiif.url}${miniature.accession_number}/manifest.json`}>Viewer</a>
+      <a href={`/view/?manifestId[]=${config.siteMetadata.iiif.url + miniature.accession_number}/manifest.json`}>Viewer</a>
     </span>
   }
 

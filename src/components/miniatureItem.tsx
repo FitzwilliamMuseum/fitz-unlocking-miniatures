@@ -36,7 +36,7 @@ class MiniatureItem extends React.Component<MiniatureItemProps> {
                         </Link>
                         <a
                             className="miniature-item__button"
-                            href={`/view/?manifestId[]=${config.siteMetadata.iiif.url}${item.accession_number}/manifest.json`}>
+                            href={`/view/?manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`}>
                             <span className="icon"><ViewerIcon /></span><span>Viewer</span>
                         </a>
                         <div className="miniature-item__button" onClick={onClickCompare}>

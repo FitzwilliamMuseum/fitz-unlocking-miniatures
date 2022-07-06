@@ -8,8 +8,8 @@ build:
     paths:
       - node_modules/
   script:
-    - yarn
-    - yarn build
+    - npm install --legacy-peer-deps 
+    - npm run build
   artifacts:
     paths:
       - public
