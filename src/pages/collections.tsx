@@ -106,7 +106,7 @@ export default function CollectionsPage() {
           </Link>
           <a
             className="miniature-item__button"
-            href={`/view/?${Object.values(compare || {}).map(item => `manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`)}`}>
+            href={`/view/?${Object.values(compare || {}).map(item => `manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`).join("&")}`}>
             <span className="icon"><ViewerIcon /></span><span>View all</span>
           </a>
         </div>
