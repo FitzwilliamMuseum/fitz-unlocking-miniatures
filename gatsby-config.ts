@@ -8,7 +8,7 @@ const config: GatsbyConfig = {
     mainMenu: [
       {link: '/', title: 'Home'},
       {link: '/collections', title: 'Collections'},
-      {link: 'http://miniatures.fitz.ms/mirador-demo/', title: 'Mirador demo'}
+      {link: 'https://miniatures.fitz.ms/view/?manifestId[]=https://miniatures.fitz.ms/iiif/3868/manifest.json', title: 'Mirador demo'}
     ],
     quickLinks: [
       {link: '/', title: 'Home'},
@@ -30,6 +30,9 @@ const config: GatsbyConfig = {
       collections: {
         miniatures: 'items/miniatures' //No back slash at end
       }
+    },
+    iiif:{
+      url: 'https://miniatures.fitz.ms/iiif/'
     }
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.

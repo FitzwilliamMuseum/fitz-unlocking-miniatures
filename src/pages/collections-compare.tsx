@@ -128,7 +128,10 @@ export default function CollectionsComparePage() {
   }
 
   function objectLinkElement(miniature: MiniatureItemInterface) {
-    return <span><Link to={`/object/${miniature.id}`} >Information</Link><a href={`/view/${miniature.id}`}>Viewer</a></span>
+    return <span>
+      <Link to={`/object/${miniature.id}`} >Information</Link>
+      <a href={`/view/?manifestId[]=${config.siteMetadata.iiif.url}${miniature.accession_number}/manifest.json`}>Viewer</a>
+    </span>
   }
 
   return (

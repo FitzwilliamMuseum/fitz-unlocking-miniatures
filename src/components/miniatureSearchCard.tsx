@@ -1,5 +1,4 @@
 import * as React from "react"
-import { MiniatureItemInterface } from "./miniatureItem";
 import { Index } from 'lunr'
 import '../styles/styles.scss'
 import { collectionsFields } from "../util/search";

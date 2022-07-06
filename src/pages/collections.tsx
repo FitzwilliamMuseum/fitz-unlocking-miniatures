@@ -96,9 +96,13 @@ export default function CollectionsPage() {
         {Object.values(compare || {}).map(compareItem => (
           <div>{compareItem.title}</div>
         ))}
-        <Link to={`/collections-compare?items=${Object.keys(compare || {}).join(",")}`}>
-          <span>Compare</span>
-        </Link>
+        <div className="miniature-items">
+          <Link
+            className="miniature-item__button"
+            to={`/collections-compare?items=${Object.keys(compare || {}).join(",")}`}>
+            Compare
+          </Link>
+        </div>
       </div>}
     </Layout>
   )

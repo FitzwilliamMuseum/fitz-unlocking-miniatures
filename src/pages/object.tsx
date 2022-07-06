@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout";
-import { Link } from 'gatsby'
+import config from "../../gatsby-config";
 import ViewerIcon from "../assets/svg/viewer-icon.svg"
 
 type ObjectPageContext = {
@@ -32,9 +32,11 @@ export default function ObjectPage({ pageResources: { json: { pageContext } } }:
 			</div>
 		</div>
 		<div className="miniature-items object--actions">
-			<Link className="miniature-item__button" to={`/view/${miniature.id}`}>
+			<a
+				className="miniature-item__button"
+				href={`/view/?manifestId[]=${config.siteMetadata.iiif.url}${miniature.accession_number}/manifest.json`}>
 				<span className="icon"><ViewerIcon /></span><span>Viewer</span>
-			</Link>
+			</a>
 		</div>
 		<div className="object--description-wrapper">
 			<div className="object--description-content">
