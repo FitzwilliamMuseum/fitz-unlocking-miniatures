@@ -18,7 +18,7 @@ type MiniatureGraphQLItem = {
         name: string
     }
     accession_number: string
-    production_date: string
+    production_date_text: string
     artist_text: string
     artist_reference: {
         id: string

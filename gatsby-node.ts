@@ -55,7 +55,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
           name
         }
         accession_number
-        production_date
+        production_date_text
         artist_text
         artist_reference {
           id
