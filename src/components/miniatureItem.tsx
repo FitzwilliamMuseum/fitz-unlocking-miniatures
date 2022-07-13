@@ -17,21 +17,26 @@ class MiniatureItem extends React.Component<MiniatureItemProps> {
     render() {
         const { item, result, onClickCompare, compareActive } = this.props;
         const image_src: string = item?.image_normal_light ?
-            `${config?.siteMetadata?.api.url}/assets/${item.image_normal_light}?fit=cover&width=300&height=400&quality=80` : ''
+            `${config?.siteMetadata?.api.url}/assets/${item.image_normal_light}?fit=cover&width=300&height=400&quality=80` : '';
+        const objectPageUrl = `/object/${item?.id}`;
         return (
             <React.Fragment>
                 <div className="miniature-item">
                     <div className="miniature-item__image">
-                        {image_src && <img src={image_src} alt={item.image_alt ? item.image_alt : 'Placeholder'} />}
+                        <Link to={objectPageUrl}>
+                            {image_src && <img src={image_src} alt={item.image_alt ? item.image_alt : 'Placeholder'} />}
+                        </Link>
                     </div>
                     <div className="miniature-item__content">
-                        <h2>{item.title}</h2>
+                        <Link to={objectPageUrl}>
+                            <h2>{item.title}</h2>
+                        </Link>
                         <div className="artist">{item.artist_text}</div>
                         <div className="sitter">{item.sitter_text}</div>
                     </div>
                     <MiniatureItemSearchCard item={item} result={result} />
                     <div className="miniature-item__actions">
-                        <Link className="miniature-item__button" to={`/object/${item?.id}`}>
+                        <Link className="miniature-item__button" to={objectPageUrl}>
                             <span className="icon"><InfoIcon /></span><span>More information</span>
                         </Link>
                         <a
