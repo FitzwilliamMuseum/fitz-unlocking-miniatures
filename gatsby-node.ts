@@ -107,6 +107,15 @@ export const createPages: GatsbyNode["createPages"] = async ({
           filename_disk
           filename_download
         }
+        images_micrographs {
+          id
+          file_name
+          hotspot
+          description
+          micrograph {
+            id
+          }
+        }
       }
     }
   }`,

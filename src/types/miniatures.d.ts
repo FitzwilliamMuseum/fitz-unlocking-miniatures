@@ -42,7 +42,7 @@ type MiniatureGraphQLItem = {
     pigments_hair_and_beard: string
     pigments_jewellery: string
     materials_supports: string
-    analytical_techniques_used: string
+    analytical_techniques_used: Array<string>
     exhibitions: {
         id: string
         exhibitions_id: {
@@ -70,6 +70,15 @@ type MiniatureGraphQLItem = {
         filename_disk: string
         filename_download: string
     }
+    images_micrographs: Array<{
+        id: string
+        file_name: string
+        hotspot: boolean
+        description: string
+        micrograph: {
+            id: string
+        }
+    }>
 }
 
 type MiniatureItemProps = {

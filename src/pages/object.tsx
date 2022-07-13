@@ -16,7 +16,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 	render() {
 		const mockMiniature = { image_normal_light: { id: "", title: "" }, collection: { name: "" } } //required for production build
 		const miniature: MiniatureGraphQLItem = this.props?.pageResources?.json?.pageContext || mockMiniature;
-		const imageUrl = `https://unlocking-miniatures.fitz.ms/assets/${miniature.image_normal_light.id}?&height=200&quality=80`;
+		const imageUrl = `https://unlocking-miniatures.fitz.ms/assets/${miniature.image_normal_light.id}?format=jpg&height=200&quality=80`;
 		const imageAlt = miniature.image_normal_light.title;
 
 		return <Layout displayLogo={false} >
@@ -47,8 +47,8 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 					<h2>Description</h2>
 					<div>{miniature.description_content}</div>
 					<div>{miniature.description_physical}</div>
-					<p className="object--description-dimentions">
-						<span><strong>Dimentions</strong></span>
+					<p className="object--description-dimensions">
+						<span><strong>Dimensions</strong></span>
 						<span>{miniature.dimensions_unframed_width} x {miniature.dimensions_unframed_height} cm</span>
 					</p>
 					<div className="object--description-pigments">
@@ -63,7 +63,24 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 					</div>
 					<div className="object--description-materials-and-techniques">
 						<p><span><strong>Materials</strong></span><span>{miniature.materials_supports}</span></p>
-						<p><span><strong>Analytical techniques</strong></span><span>{miniature.analytical_techniques_used}</span></p>
+						<p>
+							<span><strong>Analytical techniques</strong></span>
+							<span>{miniature.analytical_techniques_used.join(', ')}</span>
+						</p>
+					</div>
+					<div className="object--miniatures">
+						{miniature.images_micrographs.map(micrograph => {
+							const micrographImageUrl = `https://unlocking-miniatures.fitz.ms/assets/${micrograph.micrograph.id}?format=jpg&height=200&quality=80`;
+							const micrographImageAlt = micrograph.file_name;
+							return (
+								<div>
+									<img src={micrographImageUrl} alt={micrographImageAlt} />
+									<p><span><strong>Description</strong></span><span>{micrograph.description}</span></p>
+									<p><span><strong>Filename</strong></span><span>{micrograph.file_name}</span></p>
+									<p><span><strong>Hotspot</strong></span><span>{micrograph.hotspot ? 'Yes' : 'No'}</span></p>
+								</div>
+							)
+						})}
 					</div>
 				</div>
 			</div>

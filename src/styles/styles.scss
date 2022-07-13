@@ -508,7 +508,7 @@ ul.main-menu {
             }
         }
 
-        .object--description-dimentions {
+        .object--description-dimensions {
             margin-top: 1.5rem;
         }
 
@@ -533,4 +533,9 @@ ul.main-menu {
             }
         }
     }
+}
+
+.object--miniatures {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
 }
