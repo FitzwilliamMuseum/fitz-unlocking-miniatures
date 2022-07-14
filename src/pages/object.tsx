@@ -52,7 +52,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						<span>{miniature.dimensions_unframed_width} x {miniature.dimensions_unframed_height} cm</span>
 					</p>
 					<div className="object--description-pigments">
-						<h3>Pigments</h3>
+						<a href="#pigments"><h3 id="pigments">Pigments</h3></a>
 						<table>
 							<tr><td>Background</td><td>{miniature.pigments_background}</td></tr>
 							<tr><td>Costume</td><td>{miniature.pigments_costume}</td></tr>
@@ -68,16 +68,19 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 							<span>{miniature.analytical_techniques_used.join(', ')}</span>
 						</p>
 					</div>
-					<div className="object--miniatures">
+					<a href="#micrographs"><h2 id="micrographs">Micrographs</h2></a>
+					<div className="object--micrographs">
 						{miniature.images_micrographs.map(micrograph => {
-							const micrographImageUrl = `https://unlocking-miniatures.fitz.ms/assets/${micrograph.micrograph.id}?format=jpg&height=200&quality=80`;
+							const micrographImageUrl = `${config.siteMetadata.api.url}assets/${micrograph.micrograph.id}?format=jpg&height=200&quality=80`;
 							const micrographImageAlt = micrograph.file_name;
 							return (
-								<div>
-									<img src={micrographImageUrl} alt={micrographImageAlt} />
-									<p><span><strong>Description</strong></span><span>{micrograph.description}</span></p>
-									<p><span><strong>Filename</strong></span><span>{micrograph.file_name}</span></p>
-									<p><span><strong>Hotspot</strong></span><span>{micrograph.hotspot ? 'Yes' : 'No'}</span></p>
+								<div id={micrograph.file_name}>
+									<img loading="lazy" src={micrographImageUrl} alt={micrographImageAlt} />
+									<p>
+										<a href={`#${micrograph.file_name}`}><strong>{micrograph.file_name}</strong></a>
+										{!!micrograph.hotspot && <span> Hotspot</span>}
+										<div>{micrograph.description}</div>
+									</p>
 								</div>
 							)
 						})}

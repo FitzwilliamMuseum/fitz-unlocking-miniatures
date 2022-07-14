@@ -525,7 +525,7 @@ ul.main-menu {
         }
 
         .object--description-materials-and-techniques {
-            margin-top: 1.5rem;
+            margin: 1.5rem 0px;
 
             p {
                 display: grid;
@@ -535,7 +535,12 @@ ul.main-menu {
     }
 }
 
-.object--miniatures {
+.object--micrographs {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap: 32px;
+
+    img {
+        width: 100%;
+    }
 }
