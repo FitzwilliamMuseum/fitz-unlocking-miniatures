@@ -12,9 +12,8 @@ sections:
         url: /pages/catalog
         title: Explore
     content: |
-      <p>Portrait miniatures were important signs of wealth and status in Elizabethan and Stuart England and often carried highly personal and symbolic meaning to their owners. They were an important part of English artistic tradition and much more popular than elsewhere in early modern Europe.</p>
-      <p>Made to fit within the palm of a hand, and often set within tiny lockets adorned with precious stones and enamel-detailing, English portrait miniatures need protection from the damaging effects of handling, light and moisture. Today, surviving examples are therefore typically viewed through the cover glasses of their lockets while set securely within dimly lit display cases in museums. The extraordinary detail and exquisite artistry of miniatures is hard to appreciate under these circumstances.</p>
-      <p>This resource offers the opportunity to study a large number of these intricate portraits of men and women of a previous age in greater detail than has ever before been possible. Unlock for yourself centuries-old secrets surrounding the artists, the sitters, the materials used and more.</p>
+      <p>Portrait miniatures were important signs of wealth and status in Elizabethan and Stuart England and often carried highly personal, symbolic meaning to their owners. Made to fit within the palm of a hand, and often set within lockets adorned with precious stones and enamel detailing, English portrait miniatures need protection from the damaging effects of handling, light and moisture. Today, they are typically displayed within dimly lit display cases in museums, and the extraordinary detail and exquisite artistry of miniatures is therefore hard to appreciate.</p>
+      <p>This resource offers the opportunity to study a large number of miniature portraits of men and women of a previous age in greater detail than has ever before been possible. Unlock for yourself centuries old secrets surrounding the sitters, the artists, the materials used and more.</p>
 
   - type: feature_box
     fb_type: double
