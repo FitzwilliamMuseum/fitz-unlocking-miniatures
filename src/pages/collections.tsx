@@ -7,6 +7,7 @@ import Loading from '../images/loading-spin.svg'
 import { Link } from 'gatsby'
 import ViewerIcon from "../assets/svg/viewer-icon.svg"
 import config from "../../gatsby-config";
+import CompareRemoveIcon from "../assets/svg/remove-icon.svg"
 
 type Compare = {
   [id: string]: MiniatureItemInterface;
@@ -95,18 +96,28 @@ export default function CollectionsPage() {
         </div>
       </section>
       {(Object.keys(compare || {}).length > 0) && <div className="miniature-collection--compare">
+        <h3>Compare objects</h3>
         {Object.values(compare || {}).map(compareItem => (
-          <div>{compareItem.title}</div>
+          <div className="miniature-items">
+            <div className="miniature-item__button" onClick={() => onClickCompareItem(compareItem)}>
+              <span className="icon">
+                <CompareRemoveIcon />
+              </span>
+              <span>{compareItem.title}</span>
+            </div>
+          </div>
         ))}
+        {(Object.keys(compare || {}).length < 2) && <p>Add another item to compare</p>}
         <div className="miniature-items">
           <Link
             className="miniature-item__button"
             to={`/collections-compare?items=${Object.keys(compare || {}).join(",")}`}>
-            Compare
+            Open comparison
           </Link>
           <a
             className="miniature-item__button"
-            href={`/view/?${Object.values(compare || {}).map(item => `manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`).join("&")}`}>
+            href={`/view/?${Object.values(compare || {}).map(
+              item => `manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`).join("&")}`}>
             <span className="icon"><ViewerIcon /></span><span>View all</span>
           </a>
         </div>

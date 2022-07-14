@@ -422,6 +422,12 @@ ul.main-menu {
     padding: 16px;
     border: 1px solid var(--c-text);
     z-index: 10;
+    min-width: 40%;
+
+    .miniature-item__button {
+        padding: 8px 10px;
+        margin-bottom: 4px;
+    }
 }
 
 .collections-compare--section {
