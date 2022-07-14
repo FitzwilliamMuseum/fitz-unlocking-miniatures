@@ -166,7 +166,7 @@ export default function CollectionsComparePage() {
                 <td>{fieldItem.lable}</td>
                 {Object.values(items || []).map(item => (
                   <td>
-                    {fieldItem.type == "boolean" && (!!item[fieldItem.field]).toString()}
+                    {fieldItem.type == "boolean" && ((!!item[fieldItem.field]) ? 'Yes' : 'No')}
                     {fieldItem.type == "string" && item[fieldItem.field]}
                   </td>
                 ))}
