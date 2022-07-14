@@ -23,7 +23,7 @@ const config: GatsbyConfig = {
     ],
     socialMedia: [
       {type: 'twitter', url: 'https://www.twitter.com/FitzMuseum_UK', 'title': '@FitzMuseum_UK'},
-      {type: 'youtube', url: 'www.youtube.com/c/FitzMuseum', 'title': 'on YouTube'},
+      {type: 'youtube', url: 'https://www.youtube.com/c/FitzMuseum', 'title': 'on YouTube'},
     ],
     api: {
       url: 'https://unlocking-miniatures.fitz.ms/', //Always / at end

@@ -46,7 +46,10 @@ export default function Footer() {
     }
     if (socialMedia) {
         socialMedia.forEach((item) => {
-            socialMediaItems.push(<div className="sm--item"><a className={item.type} href={item?.url}>{item.title}</a></div>)
+            socialMediaItems.push(
+                <div className="sm--item">
+                    <a className={item.type} href={item?.url} target="__black" rel="noopener">{item.title}</a>
+                </div>)
         })
     }
     if (contact) {
