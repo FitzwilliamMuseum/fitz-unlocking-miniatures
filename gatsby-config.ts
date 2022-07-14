@@ -19,7 +19,7 @@ const config: GatsbyConfig = {
       {line: "University of Cambridge"}
     ],
     footerLogos: [
-      {image_src: '../../content/assets/main-banner-image.png', image_alt: 'Logo'}
+      {image_src: '../../content/assets/main-banner-image.jpeg', image_alt: 'Logo'}
     ],
     socialMedia: [
       {type: 'twitter', url: 'https://www.twitter.com/FitzMuseum_UK', 'title': '@FitzMuseum_UK'},

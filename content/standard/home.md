@@ -4,7 +4,7 @@ date: "2022-06-01"
 slug: "home"
 sections:
   - type: banner
-    image_src: ../../content/assets/main-banner-image.png
+    image_src: ../../content/assets/main-banner-image.jpeg
     image_alt: 'Miniature'
     title: ''
     logo: true
