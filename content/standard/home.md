@@ -61,7 +61,7 @@ sections:
       - image_src: ../../content/assets/British-Academy-logo.svg
         link:
           url: https://www.thebritishacademy.ac.uk/
-          title: British Academy/Leverhulme Small Research Gran               
+          title: British Academy/Leverhulme Small Research Grant
 ---
 
 This is my first blog post! Isn't it *great*?
