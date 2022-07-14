@@ -54,10 +54,10 @@ sections:
         link:
           url: https://www.fitzwilliam.ms
           title: Fitzwilliam Museum          
-      - title:  David Thomson
+      - title:  David Thomson and Ken Thomson
         link:
           url: https://www.fitzwilliam.ms
-          title: David Thomson     
+          title: David Thomson and Ken Thomson
       - image_src: ../../content/assets/British-Academy-logo.svg
         link:
           url: https://www.thebritishacademy.ac.uk/
