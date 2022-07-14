@@ -65,12 +65,12 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						<p><span><strong>Materials</strong></span><span>{miniature.materials_supports}</span></p>
 						<p>
 							<span><strong>Analytical techniques</strong></span>
-							<span>{miniature.analytical_techniques_used.join(', ')}</span>
+							<span>{miniature.analytical_techniques_used?.join(', ') || ''}</span>
 						</p>
 					</div>
 					<a href="#micrographs"><h2 id="micrographs">Micrographs</h2></a>
 					<div className="object--micrographs">
-						{miniature.images_micrographs.map(micrograph => {
+						{miniature.images_micrographs && miniature.images_micrographs?.map(micrograph => {
 							const micrographImageUrl = `${config.siteMetadata.api.url}assets/${micrograph.micrograph.id}?format=jpg&height=200&quality=80`;
 							const micrographImageAlt = micrograph.file_name;
 							return (
