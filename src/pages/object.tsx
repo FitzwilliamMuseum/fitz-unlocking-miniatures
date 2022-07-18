@@ -71,16 +71,18 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 					<a href="#micrographs"><h2 id="micrographs">Micrographs</h2></a>
 					<div className="object--micrographs">
 						{miniature.images_micrographs && miniature.images_micrographs?.map(micrograph => {
-							const micrographImageUrl = `${config.siteMetadata.api.url}assets/${micrograph.micrograph.id}?format=jpg&height=200&quality=80`;
+							const micrographImageDownloadUrl = `${config.siteMetadata.api.url}assets/${micrograph.micrograph.id}?format=jpg`;
+							const micrographImageAnchorUrl = `${config.siteMetadata.api.url}assets/${micrograph.micrograph.id}?format=jpg&height=200&quality=80`;
 							const micrographImageAlt = micrograph.file_name;
 							return (
 								<div id={micrograph.file_name}>
-									<img loading="lazy" src={micrographImageUrl} alt={micrographImageAlt} />
+									<img loading="lazy" src={micrographImageAnchorUrl} alt={micrographImageAlt} />
 									<p>
 										<a href={`#${micrograph.file_name}`}><strong>{micrograph.file_name}</strong></a>
 										{!!micrograph.hotspot && <span> Hotspot</span>}
 										<div>{micrograph.description}</div>
 									</p>
+									<a href={micrographImageDownloadUrl} target="__blank">Open full size</a>
 								</div>
 							)
 						})}
