@@ -18,6 +18,7 @@ export const collectionsFields = () : Array<any> => {
         {label: "Costume pigments", fieldname: 'pigments_costume'},
         {label: "Jewellery pigments", fieldname: 'pigments_jewellery'},
         {label: "Accession number", fieldname: "accession_number"},
+        {label: "Slug", fieldname: "slug"},
     ]
     return fields;
 }

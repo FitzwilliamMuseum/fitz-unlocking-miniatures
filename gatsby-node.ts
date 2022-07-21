@@ -116,13 +116,14 @@ export const createPages: GatsbyNode["createPages"] = async ({
             id
           }
         }
+        slug
       }
     }
   }`,
   {});
   objectTemplateResult.data.directusgraphql.miniatures.forEach(miniatureObject => {
     createPage({
-      path: 'object/' + miniatureObject.id,
+      path: 'object/' + miniatureObject.slug,
       component: objectTemplate,
       context: { ...miniatureObject },
     })

@@ -18,7 +18,7 @@ class MiniatureItem extends React.Component<MiniatureItemProps> {
         const { item, result, onClickCompare, compareActive } = this.props;
         const image_src: string = item?.image_normal_light ?
             `${config?.siteMetadata?.api.url}/assets/${item.image_normal_light}?fit=cover&width=300&height=400&quality=80` : '';
-        const objectPageUrl = `/object/${item?.id}`;
+        const objectPageUrl = `/object/${item.slug}`;
         return (
             <React.Fragment>
                 <div className="miniature-item">

@@ -8,6 +8,7 @@ type MiniatureItemInterface = {
     image_alt: string | null;
     iiif_manifest_new: string | null;
     accession_number: string
+    slug: string
 }
 
 type MiniatureGraphQLItem = {
