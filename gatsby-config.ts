@@ -1,6 +1,7 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
+  pathPrefix: "/fitz-unlocking-miniatures",
   siteMetadata: {
     title: `Fitzwilliam Miniatures`,
     siteUrl: `https://miniatures.fitzwilliam.ms`,
