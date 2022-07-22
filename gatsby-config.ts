@@ -1,5 +1,4 @@
 import type { GatsbyConfig } from "gatsby";
-const { buildSchema, buildClientSchema } = require("graphql")
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -7,8 +6,7 @@ const config: GatsbyConfig = {
     siteUrl: `https://miniatures.fitzwilliam.ms`,
     mainMenu: [
       {link: '/', title: 'Home'},
-      {link: '/collections', title: 'Collections'},
-      {link: 'https://miniatures.fitz.ms/view/?manifestId[]=https://miniatures.fitz.ms/iiif/3868/manifest.json', title: 'Mirador demo'}
+      {link: '/collections', title: 'Collections'}
     ],
     quickLinks: [
       {link: '/', title: 'Home'},
@@ -32,7 +30,7 @@ const config: GatsbyConfig = {
       }
     },
     iiif:{
-      url: 'https://miniatures.fitz.ms/iiif/'
+      url: 'https://github.fitzmuseum.cam.ac.uk/fitz-unlocking-miniatures-iiif-generator/'
     }
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.

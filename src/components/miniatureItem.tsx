@@ -17,8 +17,11 @@ class MiniatureItem extends React.Component<MiniatureItemProps> {
     render() {
         const { item, result, onClickCompare, compareActive } = this.props;
         const image_src: string = item?.image_normal_light ?
+            // @ts-ignore
             `${config?.siteMetadata?.api.url}/assets/${item.image_normal_light}?fit=cover&width=300&height=400&quality=80` : '';
         const objectPageUrl = `/object/${item.slug}`;
+        // @ts-ignore
+        const viewerUrl = `/view/?manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`
         return (
             <React.Fragment>
                 <div className="miniature-item">
@@ -41,7 +44,7 @@ class MiniatureItem extends React.Component<MiniatureItemProps> {
                         </Link>
                         <a
                             className="miniature-item__button"
-                            href={`/view/?manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`}>
+                            href={viewerUrl}>
                             <span className="icon"><ViewerIcon /></span><span>Viewer</span>
                         </a>
                         <div className="miniature-item__button" onClick={onClickCompare}>

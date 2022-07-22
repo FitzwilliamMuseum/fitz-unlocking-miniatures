@@ -3,12 +3,6 @@
 import type { GatsbyNode } from "gatsby"
 import * as path from "path"
 
-type Standard = {
-  id: number
-  slug: string
-  title: string
-}
-
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
   actions
@@ -31,6 +25,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       }
     }
   `)
+  // @ts-ignore
   standardTemplateResult.data.allMarkdownRemark.edges.forEach((edge: any) => {
     const page = {
       path: edge.node.frontmatter.slug == 'home' ? '/' : `${edge.node.frontmatter.slug}`,
@@ -121,6 +116,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
     }
   }`,
   {});
+  // @ts-ignore
   objectTemplateResult.data.directusgraphql.miniatures.forEach(miniatureObject => {
     createPage({
       path: 'object/' + miniatureObject.slug,

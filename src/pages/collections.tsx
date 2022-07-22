@@ -111,12 +111,13 @@ export default function CollectionsPage() {
         <div className="miniature-items">
           <Link
             className="miniature-item__button"
-            to={`/collections-compare?items=${Object.keys(compare || {}).join(",")}`}>
+            to={`/collections-compare?items=${Object.values(compare || {}).map(item => item.accession_number).join(",")}`}>
             Open comparison
           </Link>
           <a
             className="miniature-item__button"
             href={`/view/?${Object.values(compare || {}).map(
+              // @ts-ignore
               item => `manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`).join("&")}`}>
             <span className="icon"><ViewerIcon /></span><span>View all</span>
           </a>

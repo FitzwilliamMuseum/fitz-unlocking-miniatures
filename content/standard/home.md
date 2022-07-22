@@ -63,11 +63,3 @@ sections:
           url: https://www.thebritishacademy.ac.uk/
           title: British Academy/Leverhulme Small Research Grant
 ---
-
-This is my first blog post! Isn't it *great*?
-
-Some of my **favorite** things are:
-
-* Petting dogs
-* Singing
-* Eating potato-based foods

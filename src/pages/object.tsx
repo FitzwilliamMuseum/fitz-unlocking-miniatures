@@ -16,7 +16,8 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 	render() {
 		const mockMiniature = { image_normal_light: { id: "", title: "" }, collection: { name: "" } } //required for production build
 		const miniature: MiniatureGraphQLItem = this.props?.pageResources?.json?.pageContext || mockMiniature;
-		const imageUrl = `https://unlocking-miniatures.fitz.ms/assets/${miniature.image_normal_light.id}?format=jpg&height=200&quality=80`;
+		// @ts-ignore
+		const imageUrl = `${config.siteMetadata.api.url}assets/${miniature.image_normal_light.id}?format=jpg&height=200&quality=80`;
 		const imageAlt = miniature.image_normal_light.title;
 
 		return <Layout displayLogo={false} >
@@ -38,6 +39,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 			<div className="miniature-items object--actions">
 				<a
 					className="miniature-item__button"
+					// @ts-ignore
 					href={`/view/?manifestId[]=${config.siteMetadata.iiif.url + miniature.accession_number}/manifest.json`}>
 					<span className="icon"><ViewerIcon /></span><span>Viewer</span>
 				</a>
@@ -71,7 +73,9 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 					<a href="#micrographs"><h2 id="micrographs">Micrographs</h2></a>
 					<div className="object--micrographs">
 						{miniature.images_micrographs && miniature.images_micrographs?.map(micrograph => {
+							// @ts-ignore
 							const micrographImageDownloadUrl = `${config.siteMetadata.api.url}assets/${micrograph.micrograph.id}?format=jpg`;
+							// @ts-ignore
 							const micrographImageAnchorUrl = `${config.siteMetadata.api.url}assets/${micrograph.micrograph.id}?format=jpg&height=200&quality=80`;
 							const micrographImageAlt = micrograph.file_name;
 							return (

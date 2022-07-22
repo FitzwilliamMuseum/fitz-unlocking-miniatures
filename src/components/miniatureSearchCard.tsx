@@ -24,7 +24,7 @@ const MiniatureItemSearchCard: React.FC<MiniatureItemSearchCardProps> = ( {item,
     if (matchingFields.length == 0) {
         return <></>
     }
-    const searchResults = []
+    const searchResults: any = []
     matchingFields.forEach((key) => {
         if (item[key]) {
             const title = availableFields.map(item => {

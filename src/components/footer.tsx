@@ -39,13 +39,13 @@ export default function Footer() {
     const footerLogoItems: Array<any> = []
 
     if (quickLinks) {
-        quickLinks.forEach((link) => {
+        quickLinks.forEach((link: any) => {
             const linkItem = isExternalUrl(link.link) ? (<a href={link?.link}>{link.title}</a>) : (<Link to={link.link}>{link.title}</Link>)
             quickLinksItems.push(<li>{linkItem}</li>)
         })
     }
     if (socialMedia) {
-        socialMedia.forEach((item) => {
+        socialMedia.forEach((item: any) => {
             socialMediaItems.push(
                 <div className="sm--item">
                     <a className={item.type} href={item?.url} target="__black" rel="noopener">{item.title}</a>
@@ -53,12 +53,12 @@ export default function Footer() {
         })
     }
     if (contact) {
-        contact.forEach((item) => {
+        contact.forEach((item: any) => {
             contactItems.push(<div className="contact--line">{item.line}</div>)
         })
     }
     if (footerLogos) {
-        footerLogos.forEach((logo) => {
+        footerLogos.forEach((logo: any) => {
             if (logo?.image_src?.childImageSharp?.gatsbyImageData) {
                 const img = (<GatsbyImage objectFit="contain" alt={logo.image_alt} image={logo.image_src.childImageSharp.gatsbyImageData} />);
                 footerLogoItems.push(img)

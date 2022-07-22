@@ -17,8 +17,8 @@ export default function CollectionsComparePage() {
 
   const fields = [
     {
-      field: "id",
-      lable: "ID",
+      field: "accession_number",
+      lable: "Accession number",
       type: "string"
     },
     {
@@ -114,11 +114,13 @@ export default function CollectionsComparePage() {
   ];
 
   useEffect(() => {
-    const url = config.siteMetadata.api.url + `items/miniatures/?filter=${JSON.stringify({
-      "id": {
+    const filterQuery = JSON.stringify({
+      "accession_number": {
         "_in": queryItems?.split(",")
       }
-    })}`
+    });
+    // @ts-ignore
+    const url = `${config.siteMetadata.api.url}items/miniatures/?filter=${filterQuery}`
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -127,15 +129,18 @@ export default function CollectionsComparePage() {
   }, [])
 
   function objectImageElement(miniature: MiniatureItemInterface) {
-    const imageUrl = `https://unlocking-miniatures.fitz.ms/assets/${miniature.image_normal_light}?&height=200&quality=80`;
+    // @ts-ignore
+    const imageUrl = `${config.siteMetadata.api.url}/assets/${miniature.image_normal_light}?&height=200&quality=80`;
     const imageAlt = miniature.title || "";
     return <img src={imageUrl} alt={imageAlt} />
   }
 
   function objectLinkElement(miniature: MiniatureItemInterface) {
+    // @ts-ignore
+    const manifestUrl = config.siteMetadata.iiif.url + miniature.accession_number + '/manifest.json';
     return <span>
       <Link to={`/object/${miniature.id}`} >Information</Link>
-      <a href={`/view/?manifestId[]=${config.siteMetadata.iiif.url + miniature.accession_number}/manifest.json`}>Viewer</a>
+      <a href={`/view/?manifestId[]=${manifestUrl}`}>Viewer</a>
     </span>
   }
 
@@ -166,8 +171,14 @@ export default function CollectionsComparePage() {
                 <td>{fieldItem.lable}</td>
                 {Object.values(items || []).map(item => (
                   <td>
-                    {fieldItem.type == "boolean" && ((!!item[fieldItem.field]) ? 'Yes' : 'No')}
-                    {fieldItem.type == "string" && item[fieldItem.field]}
+                    {
+                      // @ts-ignore
+                      fieldItem.type == "boolean" && ((!!item[fieldItem.field]) ? 'Yes' : 'No')
+                    }
+                    {
+                      // @ts-ignore
+                      fieldItem.type == "string" && item[fieldItem.field]
+                    }
                   </td>
                 ))}
               </tr>
