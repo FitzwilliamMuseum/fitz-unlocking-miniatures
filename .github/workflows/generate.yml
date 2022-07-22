@@ -1,4 +1,4 @@
-name: Generate iiif manifests
+name: Build static site
 on: workflow_dispatch
 jobs:
   generate:
