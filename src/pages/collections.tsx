@@ -116,6 +116,7 @@ export default function CollectionsPage() {
           </Link>
           <a
             className="miniature-item__button"
+            // @ts-ignore
             href={`${config.siteMetadata.viewer.url}?${Object.values(compare || {}).map(
               // @ts-ignore
               item => `manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`).join("&")}`}>

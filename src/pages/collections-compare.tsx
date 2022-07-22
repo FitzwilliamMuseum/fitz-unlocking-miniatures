@@ -138,9 +138,11 @@ export default function CollectionsComparePage() {
   function objectLinkElement(miniature: MiniatureItemInterface) {
     // @ts-ignore
     const manifestUrl = config.siteMetadata.iiif.url + miniature.accession_number + '/manifest.json';
+    // @ts-ignore
+    const viewerUrl = `${config.siteMetadata.viewer.url}?manifestId[]=${manifestUrl}`;
     return <span>
       <Link to={`/object/${miniature.id}`} >Information</Link>
-      <a href={`${config.siteMetadata.viewer.url}?manifestId[]=${manifestUrl}`}>Viewer</a>
+      <a href={viewerUrl}>Viewer</a>
     </span>
   }
 
