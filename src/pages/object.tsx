@@ -40,7 +40,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 				<a
 					className="miniature-item__button"
 					// @ts-ignore
-					href={`/view/?manifestId[]=${config.siteMetadata.iiif.url + miniature.accession_number}/manifest.json`}>
+					href={`${config.siteMetadata.viewer.url}?manifestId[]=${config.siteMetadata.iiif.url + miniature.accession_number}/manifest.json`}>
 					<span className="icon"><ViewerIcon /></span><span>Viewer</span>
 				</a>
 			</div>

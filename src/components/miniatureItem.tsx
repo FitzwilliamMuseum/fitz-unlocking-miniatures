@@ -21,7 +21,7 @@ class MiniatureItem extends React.Component<MiniatureItemProps> {
             `${config?.siteMetadata?.api.url}/assets/${item.image_normal_light}?fit=cover&width=300&height=400&quality=80` : '';
         const objectPageUrl = `/object/${item.slug}`;
         // @ts-ignore
-        const viewerUrl = `/view/?manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`
+        const viewerUrl = `${config.siteMetadata.viewer.url}?manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`
         return (
             <React.Fragment>
                 <div className="miniature-item">

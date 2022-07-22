@@ -30,8 +30,11 @@ const config: GatsbyConfig = {
         miniatures: 'items/miniatures' //No back slash at end
       }
     },
-    iiif:{
+    iiif: {
       url: 'https://github.fitzmuseum.cam.ac.uk/fitz-unlocking-miniatures-iiif-generator/'
+    },
+    viewer: {
+      url: "https://github.fitzmuseum.cam.ac.uk/fitz-unlocking-miniatures-mirador/"
     }
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
