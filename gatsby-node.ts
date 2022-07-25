@@ -80,20 +80,24 @@ export const createPages: GatsbyNode["createPages"] = async ({
           exhibitions_id {
             id
             name
-          }
-          miniatures_id {
-            id
-            accession_number
+            start_date
+            end_date            
+            url
           }
         }
         references {
           id
           references_id {
-            id
-            book_title
+            authors {
+              authors_and_editors_id {
+                display_name
+                id
+              }
+            }
             display_title
-            article_title
-            journal_title
+            id
+            publication_year
+            url
           }
         }
         image_normal_light {

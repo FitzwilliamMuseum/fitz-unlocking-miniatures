@@ -52,27 +52,31 @@ type MiniatureGraphQLItem = {
     pigments_jewellery: string
     materials_supports: string
     analytical_techniques_used: Array<string>
-    exhibitions: {
+    exhibitions: Array<{
         id: string
         exhibitions_id: {
             id: string
             name: string
+            start_date: string
+            end_date: string
+            url
         }
-        miniatures_id: {
-            id: string
-            accession_number: string
-        }
-    }
-    references: {
+    }>
+    references: Array<{
         id: string
         references_id: {
-            id: string
-            book_title: string
+            authors: Array<{
+                authors_and_editors_id: {
+                    display_name: string
+                    id: string
+                }
+            }>
             display_title: string
-            article_title: string
-            journal_title: string
+            id: string
+            publication_year: string
+            url?: string
         }
-    }
+    }>
     image_normal_light: MiniatureObjectImage
     image_raking_light?: MiniatureObjectImage
     image_infrared?: MiniatureObjectImage

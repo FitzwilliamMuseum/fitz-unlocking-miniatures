@@ -457,6 +457,18 @@ ul.main-menu {
 
 /* Object Miniature */
 
+.object {
+    h2 {
+        margin: 1.2rem 0;
+    }
+
+    h3 {
+        margin: 1rem 0;
+    }
+
+    margin-bottom: 1.5rem;
+}
+
 .object--hero-wrapper {
     background-color: var(--c-background-black);
 
@@ -494,10 +506,6 @@ ul.main-menu {
 .object--actions {
     margin: 1.5rem 0px 0px 13%;
     align-items: center;
-    
-    h2 {
-        margin: 0px;
-    }
 }
 
 .object--description-wrapper {
@@ -511,23 +519,22 @@ ul.main-menu {
         border-left: 1px solid var(--c-border);
         border-right: 1px solid var(--c-border);
         padding: 0px 1rem;
-        margin: 1.5rem 0px;
+        margin-top: 1rem;
 
-        p {
-            span {
-                padding: 0px 8px 8px 0px;
-            }
+        h2#description {
+            margin-top: 0;
         }
 
-        .object--description-dimensions {
-            margin-top: 1.5rem;
-        }
-
+        .object--description-references,
         .object--description-pigments {
-            margin-top: 1.5rem;
+
+            table {
+                width: 100%;
+            }
 
             td {
                 padding: 4px;
+                max-width: 20vw;
             }
 
             tr:nth-child(even) {
@@ -535,8 +542,8 @@ ul.main-menu {
             }
         }
 
+        .object--description-dimensions,
         .object--description-materials-and-techniques {
-            margin: 1.5rem 0px;
 
             p {
                 display: grid;
@@ -560,5 +567,4 @@ ul.main-menu {
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
-    margin-bottom: 1.5rem;
 }
