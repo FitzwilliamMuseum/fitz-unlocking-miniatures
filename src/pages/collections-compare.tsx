@@ -141,7 +141,7 @@ export default function CollectionsComparePage() {
     // @ts-ignore
     const viewerUrl = `${config.siteMetadata.viewer.url}?manifestId[]=${manifestUrl}`;
     return <span>
-      <Link to={`/object/${miniature.id}`} >Information</Link>
+      <Link to={`/object/${miniature.slug}`} >Information</Link>
       <a href={viewerUrl}>Viewer</a>
     </span>
   }
