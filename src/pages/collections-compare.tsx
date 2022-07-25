@@ -43,12 +43,12 @@ export default function CollectionsComparePage() {
     },
     {
       field: "dimensions_unframed_height",
-      lable: "Dimensions height cm",
+      lable: "Dimensions height mm",
       type: "string"
     },
     {
       field: "dimensions_unframed_width",
-      lable: "Dimensions width cm",
+      lable: "Dimensions width mm",
       type: "string"
     },
     {

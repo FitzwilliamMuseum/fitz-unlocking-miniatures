@@ -55,7 +55,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 					<div>{miniature.description_physical}</div>
 					<p className="object--description-dimensions">
 						<span><strong>Dimensions</strong></span>
-						<span>{miniature.dimensions_unframed_width} x {miniature.dimensions_unframed_height} cm</span>
+						<span>{miniature.dimensions_unframed_width} x {miniature.dimensions_unframed_height} mm</span>
 					</p>
 					<div className="object--description-pigments">
 						<a href="#pigments"><h3 id="pigments">Pigments</h3></a>
