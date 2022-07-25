@@ -54,10 +54,10 @@ sections:
         link:
           url: https://www.fitzwilliam.ms
           title: Fitzwilliam Museum          
-      - title:  David Thomson and Ken Thomson
+      - title:  The Thomson Collection at the Art Gallery of Ontario
         link:
           url: https://www.fitzwilliam.ms
-          title: David Thomson and Ken Thomson
+          title: The Thomson Collection at the Art Gallery of Ontario
       - image_src: ../../content/assets/British-Academy-logo.svg
         link:
           url: https://www.thebritishacademy.ac.uk/
