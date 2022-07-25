@@ -12,6 +12,13 @@ type MiniatureItemInterface = {
     production_date_text: string
 }
 
+type MiniatureObjectImage = {
+    id: string
+    title: string
+    filename_disk: string
+    filename_download: string
+}
+
 type MiniatureGraphQLItem = {
     id: string
     title: string
@@ -66,12 +73,12 @@ type MiniatureGraphQLItem = {
             journal_title: string
         }
     }
-    image_normal_light: {
-        id: string
-        title: string
-        filename_disk: string
-        filename_download: string
-    }
+    image_normal_light: MiniatureObjectImage
+    image_raking_light?: MiniatureObjectImage
+    image_infrared?: MiniatureObjectImage
+    image_uv?: MiniatureObjectImage
+    image_xray?: MiniatureObjectImage
+    image_verso?: MiniatureObjectImage
     images_micrographs: Array<{
         id: string
         file_name: string

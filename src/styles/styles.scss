@@ -493,6 +493,11 @@ ul.main-menu {
 
 .object--actions {
     margin: 1.5rem 0px 0px 13%;
+    align-items: center;
+    
+    h2 {
+        margin: 0px;
+    }
 }
 
 .object--description-wrapper {
@@ -549,4 +554,11 @@ ul.main-menu {
     img {
         width: 100%;
     }
+}
+
+.object--images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 1.5rem;
 }

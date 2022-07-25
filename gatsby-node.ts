@@ -102,6 +102,36 @@ export const createPages: GatsbyNode["createPages"] = async ({
           filename_disk
           filename_download
         }
+        image_raking_light {
+          id
+          title
+          filename_disk
+          filename_download
+        }
+        image_infrared {
+            id
+            title
+            filename_disk
+            filename_download
+        }
+        image_uv {
+            id
+            title
+            filename_disk
+            filename_download
+        }
+        image_xray {
+            id
+            title
+            filename_disk
+            filename_download
+        }
+        image_verso {
+            id
+            title
+            filename_disk
+            filename_download
+        }
         images_micrographs {
           id
           file_name

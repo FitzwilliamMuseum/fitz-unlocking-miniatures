@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout";
 import config from "../../gatsby-config";
 import ViewerIcon from "../assets/svg/viewer-icon.svg"
+import MiniatureObjectImages from "../components/MiniatureObjectImages";
 
 type ObjectPageContext = {
 	pageResources: {
@@ -43,10 +44,13 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 					href={`${config.siteMetadata.viewer.url}?manifestId[]=${config.siteMetadata.iiif.url + miniature.accession_number}/manifest.json`}>
 					<span className="icon"><ViewerIcon /></span><span>Viewer</span>
 				</a>
+				<a href="#description"><h2 id="description">Description</h2></a>
+				<a href="#images"><h2 >Images</h2></a>
+				<a href="#micrographs"><h2 >Micrographs</h2></a>
 			</div>
 			<div className="object--description-wrapper">
 				<div className="object--description-content">
-					<h2>Description</h2>
+					<a href="#description"><h2 id="description">Description</h2></a>
 					<div>{miniature.description_content}</div>
 					<div>{miniature.description_physical}</div>
 					<p className="object--description-dimensions">
@@ -70,6 +74,8 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 							<span>{miniature.analytical_techniques_used?.join(', ') || ''}</span>
 						</p>
 					</div>
+					<a href="#images"><h2 id="images">Images</h2></a>
+					<MiniatureObjectImages miniature={miniature} />
 					<a href="#micrographs"><h2 id="micrographs">Micrographs</h2></a>
 					<div className="object--micrographs">
 						{miniature.images_micrographs && miniature.images_micrographs?.map(micrograph => {
