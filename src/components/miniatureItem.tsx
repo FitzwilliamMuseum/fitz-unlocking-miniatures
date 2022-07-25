@@ -34,6 +34,8 @@ class MiniatureItem extends React.Component<MiniatureItemProps> {
                         <Link to={objectPageUrl}>
                             <h2>{item.title}</h2>
                         </Link>
+                        <div className="production_date_text">{item.production_date_text}</div>
+                        <div className="accession_number">{item.accession_number}</div>
                         <div className="artist">{item.artist_text}</div>
                         <div className="sitter">{item.sitter_text}</div>
                     </div>

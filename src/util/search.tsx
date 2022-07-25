@@ -19,6 +19,7 @@ export const collectionsFields = () : Array<any> => {
         {label: "Jewellery pigments", fieldname: 'pigments_jewellery'},
         {label: "Accession number", fieldname: "accession_number"},
         {label: "Slug", fieldname: "slug"},
+        {label: "Production date", fieldname: "production_date_text"}
     ]
     return fields;
 }
@@ -27,6 +28,7 @@ export const buildDirectusRequestUrl = (): string => {
     const fields = collectionsFields().map((item) => {
         return 'fields[]=' + item.fieldname
     })
+    // @ts-ignore
     const url = config?.siteMetadata?.api.url + config?.siteMetadata?.api.collections.miniatures
     return url + '?' + fields.join('&')
 }

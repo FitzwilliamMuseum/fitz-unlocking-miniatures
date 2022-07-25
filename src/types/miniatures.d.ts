@@ -9,6 +9,7 @@ type MiniatureItemInterface = {
     iiif_manifest_new: string | null;
     accession_number: string
     slug: string
+    production_date_text: string
 }
 
 type MiniatureGraphQLItem = {
