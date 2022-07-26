@@ -14,7 +14,7 @@ const config: GatsbyConfig = {
       {link: '/collections', title: 'Collections'}
     ],
     contact: [
-      {line: "The Fizwilliam Museum"},
+      {line: "The Fitzwilliam Museum"},
       {line: "University of Cambridge"}
     ],
     footerLogos: [
