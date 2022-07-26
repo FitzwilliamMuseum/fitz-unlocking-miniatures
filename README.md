@@ -1,6 +1,6 @@
 # Unlocking Miniatures
 
-http://miniatures-iiif.fitzmuseum.cam.ac.uk/
+https://unlocking-miniatures.fitzmuseum.cam.ac.uk/
 
 Static site built with Gatsby with a Directus backend.
 
