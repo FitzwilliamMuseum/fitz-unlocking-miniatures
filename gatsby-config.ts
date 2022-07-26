@@ -3,8 +3,8 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   pathPrefix: "/fitz-unlocking-miniatures",
   siteMetadata: {
-    title: `Fitzwilliam Miniatures`,
-    siteUrl: `https://miniatures.fitzwilliam.ms`,
+    title: 'Fitzwilliam Miniatures',
+    siteUrl: 'https://unlocking-miniatures.fitzmuseum.cam.ac.uk/',
     mainMenu: [
       {link: '/', title: 'Home'},
       {link: '/collections', title: 'Collections'}
@@ -31,10 +31,10 @@ const config: GatsbyConfig = {
       }
     },
     iiif: {
-      url: 'https://github.fitzmuseum.cam.ac.uk/fitz-unlocking-miniatures-iiif-generator/'
+      url: 'https://miniatures-iiif.fitzmuseum.cam.ac.uk/'
     },
     viewer: {
-      url: "https://github.fitzmuseum.cam.ac.uk/fitz-unlocking-miniatures-mirador/"
+      url: "https://miniatures-mirador.fitzmuseum.cam.ac.uk/"
     }
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
