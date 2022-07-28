@@ -2,6 +2,9 @@
 title: "Home"
 date: "2022-06-01"
 slug: "home"
+displayLogo: false
+displayTitle: false
+dark: false
 sections:
   - type: banner
     image_src: ../../content/assets/main-banner-image.jpeg
@@ -14,7 +17,6 @@ sections:
     content: |
       <p>Portrait miniatures were important signs of wealth and status in Elizabethan and Stuart England and often carried highly personal, symbolic meaning to their owners. Made to fit within the palm of a hand, and often set within lockets adorned with precious stones and enamel detailing, English portrait miniatures need protection from the damaging effects of handling, light and moisture. Today, they are typically displayed within dimly lit display cases in museums, and the extraordinary detail and exquisite artistry of miniatures is therefore hard to appreciate.</p>
       <p>This resource offers the opportunity to study a large number of miniature portraits of men and women of a previous age in greater detail than has ever before been possible. Unlock for yourself centuries old secrets surrounding the sitters, the artists, the materials used and more.</p>
-
   - type: feature_box
     fb_type: double
     items:
@@ -30,7 +32,7 @@ sections:
         image_alt: 'Minitiature'
         content: Find out about the analytical protocol we have employed to investigate miniatures, in the lab and on the road.       
         link:
-          url: /pages/research-explained
+          url: /about
           title: Explore
   - type: feature_box
     fb_type: single
@@ -41,7 +43,7 @@ sections:
         content: >-
           Want to know more about this research project? Click here for further information on the researchers, the work undertaken to date, collaborating institutions and plans for future expansion of this resource.
         link:
-          url: /pages/catalog
+          url: /about
           title: More on the heritage science     
   - type: supporters
     items:

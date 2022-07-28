@@ -19,6 +19,9 @@ export const createPages: GatsbyNode["createPages"] = async ({
             frontmatter {
               slug
               title
+              displayLogo
+              displayTitle
+              dark
             }
           }
         }

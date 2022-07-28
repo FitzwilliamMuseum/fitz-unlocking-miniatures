@@ -71,7 +71,7 @@ export default function CollectionsPage() {
   }
 
   return (
-    <Layout displayLogo={true} additionalClasses={['standard-page']}>
+    <Layout displayLogo={true} additionalClasses={['standard-page']} dark={false}>
       {/* <Head title={post.frontmatter.title} description={post.excerpt} /> */}
       <section>
         <div className={`miniature-items-search`}>

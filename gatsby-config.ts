@@ -7,11 +7,13 @@ const config: GatsbyConfig = {
     siteUrl: 'https://unlocking-miniatures.fitzmuseum.cam.ac.uk/',
     mainMenu: [
       {link: '/', title: 'Home'},
-      {link: '/collections', title: 'Collections'}
+      {link: '/collections', title: 'Collections'},
+      {link: '/about', title: 'About'},
     ],
     quickLinks: [
       {link: '/', title: 'Home'},
-      {link: '/collections', title: 'Collections'}
+      {link: '/collections', title: 'Collections'},
+      {link: '/about', title: 'About'},
     ],
     contact: [
       {line: "The Fitzwilliam Museum"},

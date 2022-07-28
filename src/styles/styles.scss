@@ -8,7 +8,7 @@
 $base-font-family: 'Lora', 'Helvetica', sans-serif;
 $base-font: 18px;
 
-$font-size-header-1: 1.4rem;
+$font-size-header-1: 2rem;
 $font-size-header-2: 1.2rem;
 $font-size-header-3: 1rem;
 
@@ -95,12 +95,22 @@ h3 {
     flex-wrap: nowrap;
     justify-content: space-between;
     padding: $space-one-half $outer-padding $space-one-half $outer-padding;
+
     svg {
         width: 250px;
     }
-    ul.main-menu { 
+
+    ul.main-menu {
         padding-right: 0;
         padding-top: 0;
+    }
+
+    &.dark {
+        a {
+            color: clr(text-inverse);
+        }
+
+        background-color: clr(background-black);
     }
 }
 
@@ -123,13 +133,29 @@ ul.main-menu {
 }
 
 
+.page-title {
+    padding: 25px $outer-padding 0 $outer-padding;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    h1 {
+        width: 75%;
+    }
+}
+
 .section--main {
     padding: $space $outer-padding;
+
     .logo {
         width: 100%;
         display: flex;
         justify-content: start;
         margin-bottom: 1.5rem;
+    }
+
+    p {
+        line-height: 1.8rem;
     }
 }
 .background--black {
@@ -179,10 +205,11 @@ ul.main-menu {
                 }
             }
         }
-        a.section--fb-item:hover {
-            text-decoration: underline;
-            text-decoration-color: clr(text-inverse);
-        }
+    }
+    
+    a.section--fb-item:hover {
+        text-decoration: underline;
+        text-decoration-color: clr(text-inverse);
     }
 
     .section--fb-item--left, .section--fb-item--right {
@@ -245,6 +272,18 @@ ul.main-menu {
             align-content: center;
             text-align: center;
         }
+    }
+}
+
+.section--paragraph {
+    padding: 0 $outer-padding 0 $outer-padding;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    p {
+        width: 75%;
+        margin-bottom: 1.5rem;
     }
 }
 

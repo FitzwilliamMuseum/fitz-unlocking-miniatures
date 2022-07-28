@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, PageProps } from 'gatsby'
 import { GatsbyImage } from "gatsby-plugin-image"
+import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Logo from '../assets/svg/logo.svg'
 import FeatureBox, { FeatureBoxItem } from "../components/featureBox"
@@ -9,9 +10,14 @@ import Supporter from "../components/supporter"
 const StandardTemplate = ({ data }: PageProps<Queries.StandardTemplateQuery>) => {
 
   return (
-    <Layout displayLogo={false} >
+    <Layout
+      displayLogo={data.markdownRemark?.frontmatter?.displayLogo !== false}
+      dark={data.markdownRemark?.frontmatter?.dark !== false}>
       <article>
         <div className={`page-content`}>
+          {data.markdownRemark?.frontmatter?.displayTitle !== false && (
+            <div className="page-title"><h1>{data.markdownRemark?.frontmatter?.title}</h1></div>
+          )}
           {data.markdownRemark?.frontmatter?.sections && data.markdownRemark?.frontmatter?.sections.map(section => {
             if (section?.type == 'banner') {
               const image = section.image_src?.childImageSharp?.gatsbyImageData
@@ -48,19 +54,20 @@ const StandardTemplate = ({ data }: PageProps<Queries.StandardTemplateQuery>) =>
                     {
                       section?.items && section?.items.map(item => {
                         const image = item?.image_src?.childImageSharp?.gatsbyImageData
-                        return (<div className="section--fb-item">
-                          <div className="section--fb-item--left">
-                            <div className="fb--content">
-                              <h2>{item?.title}</h2>
-                              <div className="text" dangerouslySetInnerHTML={{ __html: item?.content || '' }}></div>
+                        return (
+                          <Link className="section--fb-item" to={item?.link?.url || ''}>
+                            <div className="section--fb-item--left">
+                              <div className="fb--content">
+                                <h2>{item?.title}</h2>
+                                <div className="text" dangerouslySetInnerHTML={{ __html: item?.content || '' }}></div>
+                              </div>
                             </div>
-                          </div>
-                          <div className="section--fb-item--right">
-                            <div className="fb--image">
-                              {image && <GatsbyImage image={image} alt={item.image_alt ? item.image_alt : 'Placeholder'} />}
+                            <div className="section--fb-item--right">
+                              <div className="fb--image">
+                                {image && <GatsbyImage image={image} alt={item.image_alt ? item.image_alt : 'Placeholder'} />}
+                              </div>
                             </div>
-                          </div>
-                        </div>)
+                          </Link>)
                       })
                     }
                   </div>)
@@ -76,6 +83,14 @@ const StandardTemplate = ({ data }: PageProps<Queries.StandardTemplateQuery>) =>
                   <div className="items">
                     {supporters}
                   </div>
+                </div>
+              )
+            }
+            else if (section?.type == 'paragraph') {
+              return (
+                <div className="section--paragraph">
+                  {section?.title && <h3>{section?.title}</h3>}
+                  <p>{section.content}</p>
                 </div>
               )
             }
@@ -125,6 +140,10 @@ query StandardTemplate($slug: String) {
 					}
 				}
 			}
+      displayLogo
+      displayTitle
+      title
+      dark
 		}
 	}
 }
