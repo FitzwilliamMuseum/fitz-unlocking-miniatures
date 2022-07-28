@@ -533,16 +533,15 @@ ul.main-menu {
             margin-top: 0;
         }
 
-        .object--description-references,
-        .object--description-pigments {
-
-            table {
-                width: 100%;
-            }
+        table {
+            width: 100%;
 
             td {
                 padding: 4px;
-                max-width: 20vw;
+            }
+
+            td:nth-child(1) {
+                width: 20vw;
             }
 
             tr:nth-child(even) {
@@ -550,12 +549,9 @@ ul.main-menu {
             }
         }
 
-        .object--description-dimensions,
-        .object--description-materials-and-techniques {
-
-            p {
-                display: grid;
-                grid-template-columns: 1fr 5fr;
+        .object--description-references {
+            td:nth-child(1) {
+                width: 33vw;
             }
         }
     }

@@ -146,6 +146,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
           }
         }
         slug
+        object_record_in_collection
       }
     }
   }`,

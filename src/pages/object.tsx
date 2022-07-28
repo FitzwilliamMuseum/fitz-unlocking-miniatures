@@ -51,25 +51,27 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 					<a href="#description"><h2 id="description">Description</h2></a>
 					<a href="#images"><h2 >Images</h2></a>
 					<a href="#micrographs"><h2 >Micrographs</h2></a>
+					<a href={miniature.object_record_in_collection} target="__blank">Object record</a>
 				</div>
 				<div className="object--description-wrapper">
 					<div className="object--description-content">
 						<a href="#description"><h2 id="description">Description</h2></a>
 						<div>{miniature.description_content}</div>
 						<div>{miniature.description_physical}</div>
-						<div className="object--description-dimensions">
-							<p>
-								<span><strong>Dimensions</strong></span>
-								<span>{miniature.dimensions_unframed_width} x {miniature.dimensions_unframed_height} mm</span>
-							</p>
-						</div>
-						<div className="object--description-materials-and-techniques">
-							<p><span><strong>Materials</strong></span><span>{miniature.materials_supports}</span></p>
-							<p>
-								<span><strong>Analytical techniques</strong></span>
-								<span>{miniature.analytical_techniques_used?.join(', ') || ''}</span>
-							</p>
-						</div>
+						<table>
+							<tr>
+								<td>Dimensions</td>
+								<td>{miniature.dimensions_unframed_width} x {miniature.dimensions_unframed_height} mm</td>
+							</tr>
+							<tr>
+								<td>Materials</td>
+								<td>{miniature.materials_supports}</td>
+							</tr>
+							<tr>
+								<td>Analytical techniques</td>
+								<td>{miniature.analytical_techniques_used?.join(', ') || ''}</td>
+							</tr>
+						</table>
 						<div className="object--description-pigments">
 							<a href="#pigments"><h3 id="pigments">Pigments</h3></a>
 							<table>

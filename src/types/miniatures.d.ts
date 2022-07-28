@@ -92,6 +92,8 @@ type MiniatureGraphQLItem = {
             id: string
         }
     }>
+    slug: string
+    object_record_in_collection: string
 }
 
 type MiniatureItemProps = {
