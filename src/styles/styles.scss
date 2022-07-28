@@ -217,25 +217,36 @@ ul.main-menu {
 
 .section--supporters {
     padding: $space $outer-padding;
+
     h3 {
         text-transform: none;
     }
+
     .items {
         display: flex;
         flex-wrap: wrap;
     }
+
     .supporter {
         height: 150px;
         width: 20%;
         margin-right: $space-double;
         display: flex;
-        > .supporter--wrapper {
+
+        >.supporter--wrapper {
             flex-grow: 1;
             display: flex;
         }
+
         .gatsby-image-wrapper {
             width: 100%;
             flex-grow: 1;
+        }
+
+        a {
+            display: grid;
+            align-content: center;
+            text-align: center;
         }
     }
 }

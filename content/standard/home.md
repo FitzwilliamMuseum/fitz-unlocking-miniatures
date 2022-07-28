@@ -44,22 +44,21 @@ sections:
           url: /pages/catalog
           title: More on the heritage science     
   - type: supporters
-    title: 'Supporters'
     items:
-      - image_src: ../../content/assets/Reversed colour RGB_DM.png
+      - image_src: ../../content/assets/cambridge_university.jpg
         link:
           url: https://www.cam.ac.uk
           title: University of Cambridge
-      - image_src: ../../content/assets/FitzLogo.svg
+      - image_src: ../../content/assets/FitzwilliamMuseumLogoOnBlack.png
         link:
-          url: https://www.fitzwilliam.ms
+          url: https://fitzmuseum.cam.ac.uk/
           title: Fitzwilliam Museum          
       - title:  The Thomson Collection at the Art Gallery of Ontario
         link:
-          url: https://www.fitzwilliam.ms
+          url: https://ago.ca/collection/thomson/
           title: The Thomson Collection at the Art Gallery of Ontario
       - image_src: ../../content/assets/British-Academy-logo.svg
         link:
           url: https://www.thebritishacademy.ac.uk/
-          title: British Academy/Leverhulme Small Research Grant
+          title: British Academy / Leverhulme Small Research Grant
 ---

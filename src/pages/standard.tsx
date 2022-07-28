@@ -121,6 +121,7 @@ query StandardTemplate($slug: String) {
 						childImageSharp {
 							gatsbyImageData(layout: FULL_WIDTH)
 						}
+            publicURL
 					}
 				}
 			}
@@ -130,4 +131,3 @@ query StandardTemplate($slug: String) {
 `
 
 export default StandardTemplate
-

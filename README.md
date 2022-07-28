@@ -1,6 +1,7 @@
 # Unlocking Miniatures
 
-https://unlocking-miniatures.fitzmuseum.cam.ac.uk/
+- https://unlocking-miniatures.fitzmuseum.cam.ac.uk/
+- https://github.com/FitzwilliamMuseum/fitz-unlocking-miniatures
 
 Static site built with Gatsby with a Directus backend.
 
