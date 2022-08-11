@@ -176,18 +176,14 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
       dateEnd: dateOptionsSorted[dateOptionsSorted.length - 1]
     }
     setFilterState(updatedFilter);
-    updateFilteredResults(updatedFilter);
 
     setLoading(false)
 
   }, [])
 
-  /*
-   passing _filterState as prop because setFilterState and we dont know when filterState will be set
-  */
-  function updateFilteredResults(_filterState: FilterState) {
+  useEffect(() => {
     setLoading(true)
-    const results = searchIndex.search(_filterState.text)
+    const results = searchIndex.search(filterState.text)
     const filtered: MiniatureItemWithSearchResultInterface[] = []
     results?.forEach((result) => {
       const foundItem = miniatures[parseInt(result.ref)]
@@ -196,18 +192,18 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
         let foundItemFilterMatch = true;
         if (typeof foundItem.production_date == "string") {
           //filter production start date
-          if ( foundItem.production_date < _filterState.dateStart) {
+          if (foundItem.production_date < filterState.dateStart) {
             foundItemFilterMatch = false;
           }
           //filter production end date
-          if (foundItem.production_date > _filterState.dateEnd) {
+          if (foundItem.production_date > filterState.dateEnd) {
             foundItemFilterMatch = false;
           }
         }
-        if (_filterState.monogram == "yes" && !foundItem.monogram) {
+        if (filterState.monogram == "yes" && !foundItem.monogram) {
           foundItemFilterMatch = false;
         }
-        if (_filterState.monogram == "no" && !!foundItem.monogram) {
+        if (filterState.monogram == "no" && !!foundItem.monogram) {
           foundItemFilterMatch = false;
         }
         if (foundItemFilterMatch) {
@@ -217,7 +213,7 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
     })
     setFilteredMiniatures(filtered)
     setLoading(false)
-  }
+  }, [filterState])
 
   function onChangeSearchText(value: string) {
     const updatedFilter = {
@@ -225,7 +221,6 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
       text: value
     }
     setFilterState(updatedFilter);
-    updateFilteredResults(updatedFilter);
   }
 
   function onChangeDateStart(start: string) {
@@ -234,7 +229,6 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
       dateStart: start
     }
     setFilterState(updatedFilter);
-    updateFilteredResults(updatedFilter);
   }
 
   function onChangeDateEnd(end: string) {
@@ -243,7 +237,6 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
       dateEnd: end
     }
     setFilterState(updatedFilter);
-    updateFilteredResults(updatedFilter);
   }
 
   function onChangeMonogram(value: string) {
@@ -252,7 +245,6 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
       monogram: value
     }
     setFilterState(updatedFilter);
-    updateFilteredResults(updatedFilter);
   }
 
   function addCompareItem(item: MiniatureItemInterface) {
