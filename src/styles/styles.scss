@@ -295,16 +295,21 @@ ul.main-menu {
     padding: $space;
     background-color: clr(background-light);
     align-items: center;
-    .search-label {
+
+    label {
+        height: $space-double;
         font-size: 1.2rem;
-        font-weight: bold;
-        padding-right: $space;
+        margin-left: $space;
     }
-    input {
+
+    input,
+    select {
         flex: 1;
         height: $space-double;
-        font-size: 2rem;
-
+        font-size: 1.2rem;
+        margin: 0 $space-one-half;
+        background-color: white;
+        border: 1px solid clr(border);
     }
 }
 .miniature-items {
@@ -470,6 +475,10 @@ ul.main-menu {
     border: 1px solid var(--c-text);
     z-index: 10;
     min-width: 40%;
+
+    h3 {
+        margin: 0;
+    }
 
     .miniature-item__button {
         padding: 8px 10px;

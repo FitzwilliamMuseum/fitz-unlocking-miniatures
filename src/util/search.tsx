@@ -2,24 +2,26 @@ import lunr, { Index } from 'lunr'
 import config from '../../gatsby-config';
 
 // TODO: should we move this to config?
-export const collectionsFields = () : Array<any> => {
+export const collectionsFields = (): Array<any> => {
     const fields = [
-        {label: "Title", fieldname: 'title'},
-        {label: "Artist", fieldname: 'artist_text'},
-        {label: "Sitter", fieldname: 'sitter_text'},
-        {label: "Image", fieldname: 'image_normal_light', exclude: true},
-        {label: "ID", fieldname: 'id', ref: true, exclude: true},
-        {label: "Background pigments", fieldname: 'pigments_background'},
-        {label: "Flesh tones pigments", fieldname: 'pigments_flesh_tones'},
-        {label: "Lips pigments", fieldname: 'pigments_lips'},
-        {label: "Hair pigments", fieldname: 'pigments_hair'},
-        {label: "Lace pigments", fieldname: 'pigments_lace'},
-        {label: "Ruff/Collar pigments", fieldname: 'pigments_ruff_or_collar'},
-        {label: "Costume pigments", fieldname: 'pigments_costume'},
-        {label: "Jewellery pigments", fieldname: 'pigments_jewellery'},
-        {label: "Accession number", fieldname: "accession_number"},
-        {label: "Slug", fieldname: "slug"},
-        {label: "Production date", fieldname: "production_date_text"}
+        { label: "Title", fieldname: 'title' },
+        { label: "Artist", fieldname: 'artist_text' },
+        { label: "Sitter", fieldname: 'sitter_text' },
+        { label: "Image", fieldname: 'image_normal_light', exclude: true },
+        { label: "ID", fieldname: 'id', ref: true, exclude: true },
+        { label: "Background pigments", fieldname: 'pigments_background' },
+        { label: "Flesh tones pigments", fieldname: 'pigments_flesh_tones' },
+        { label: "Lips pigments", fieldname: 'pigments_lips' },
+        { label: "Hair pigments", fieldname: 'pigments_hair' },
+        { label: "Lace pigments", fieldname: 'pigments_lace' },
+        { label: "Ruff/Collar pigments", fieldname: 'pigments_ruff_or_collar' },
+        { label: "Costume pigments", fieldname: 'pigments_costume' },
+        { label: "Jewellery pigments", fieldname: 'pigments_jewellery' },
+        { label: "Accession number", fieldname: "accession_number" },
+        { label: "Slug", fieldname: "slug" },
+        { label: "Production date text", fieldname: "production_date_text" },
+        { label: "Production date", fieldname: "production_date" },
+        { label: "Monogram", fieldname: "monogram" }
     ]
     return fields;
 }
@@ -33,8 +35,8 @@ export const buildDirectusRequestUrl = (): string => {
     return url + '?' + fields.join('&')
 }
 
-export const createSearchIndex = (documents: Array<any>) : Index => {
-    return lunr(function() {
+export const createSearchIndex = (documents: Array<any>): Index => {
+    return lunr(function () {
         this.ref('id')
         collectionsFields().forEach((item) => {
             if (!item.exclude) {

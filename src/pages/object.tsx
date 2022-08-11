@@ -32,7 +32,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						<div className="object--hero-info">
 							<h1>{miniature.title}</h1>
 							<div className="object--hero-info-table">
-								<div>Collection</div><div>{miniature.collection.name}</div>
+								<div>Collection</div><div>{miniature.collection?.name}</div>
 								<div>Accession number</div><div>{miniature.accession_number}</div>
 								<div>Production date</div><div>{miniature.production_date_text}</div>
 								<div>Artist</div><div>{miniature.artist_text}</div>

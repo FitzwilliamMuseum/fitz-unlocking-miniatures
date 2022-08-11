@@ -1,129 +1,299 @@
 import React, { useState, useEffect } from "react"
 import Layout from '../components/layout'
 import MiniatureItem from "../components/miniatureItem"
-import { buildDirectusRequestUrl, createSearchIndex } from "../util/search"
-import { Index } from "lunr"
 import Loading from '../images/loading-spin.svg'
 import { Link } from 'gatsby'
 import ViewerIcon from "../assets/svg/viewer-icon.svg"
 import config from "../../gatsby-config";
 import CompareRemoveIcon from "../assets/svg/remove-icon.svg"
+import lunr from "lunr"
 
 type Compare = {
   [id: string]: MiniatureItemInterface;
 }
 
-export default function CollectionsPage() {
+type NoResultsComponentProps = {
+  searchText: string
+  resultsCount: number
+}
 
-  const [loading, setLoading] = useState(1)
-  const [searchText, setSearchText] = useState('')
-  const [miniatures, setMiniatures] = useState<Map<string, MiniatureItemInterface>>()
-  const [searchIndex, setSearchIndex] = useState<Index>()
-  const [filteredMiniatures, setFilteredMiniatures] = useState<Array<MiniatureItemWithSearchResultInterface>>([])
-  const [compare, setCompare] = useState<Compare>()
+function NoResultsComponent({ searchText, resultsCount }: NoResultsComponentProps) {
+  const noResultsText = '.    No results yet.   Please keep typing or search another term.';
+  return <>{(searchText && resultsCount == 0) && (<div className={`no-search-results`}>
+    <span className="no-search-results--text">Searching for <span className="search-text">{searchText}</span>{noResultsText}</span>
+  </div>)}</>
+}
+
+type CompareComponentProps = {
+  compareValues: MiniatureItemInterface[]
+  removeCompareItem: (item: MiniatureItemInterface) => void
+}
+
+function CompareComponent({ compareValues, removeCompareItem }: CompareComponentProps) {
+  return <>{(compareValues.length > 0) && <div className="miniature-collection--compare">
+    <h3>Compare objects</h3>
+    <p>Select up to 3 objects using the 'plus compare' button on other objects</p>
+    {compareValues.map(compareItem => (
+      <div className="miniature-items">
+        <div className="miniature-item__button" onClick={() => removeCompareItem(compareItem)}>
+          <span className="icon">
+            <CompareRemoveIcon />
+          </span>
+          <span>{compareItem.title}</span>
+        </div>
+      </div>
+    ))}
+    <div className="miniature-items">
+      <Link
+        className="miniature-item__button"
+        to={`/collections-compare/?items=${compareValues.map(item => item.accession_number).join(",")}`}>
+        Object information comparison
+      </Link>
+      <a
+        className="miniature-item__button"
+        // @ts-ignore
+        href={`${config.siteMetadata.viewer.url}?${compareValues.map(
+          // @ts-ignore
+          item => `manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`).join("&")}`}>
+        <span className="icon"><ViewerIcon /></span><span>Image viewer comparison</span>
+      </a>
+    </div>
+  </div>}</>
+}
+
+type FilterComponentProps = {
+  filterValue: FilterState
+  productionDateOptions: string[]
+  monogramOptions: string[]
+  onChangeSearchText: (searchText: string) => void
+  onChangeDateStart: (start: string) => void
+  onChangeDateEnd: (end: string) => void
+  onChangeMonogram: (value: string) => void
+}
+
+function FilterComponent(props: FilterComponentProps) {
+  const {
+    filterValue,
+    productionDateOptions,
+    monogramOptions,
+    onChangeSearchText,
+    onChangeDateStart,
+    onChangeDateEnd,
+    onChangeMonogram
+  } = props;
+  const productionDateOptionsHTML = productionDateOptions.map(item => <option value={item}>{item.slice(0, 4)}</option>)
+  return <div className="miniature-items-search">
+    <input name="searchKeywords" onChange={(event) => onChangeSearchText(event.target.value)} placeholder="Search for artist, sitter or pigment" />
+    <label>Production date
+      <select
+        value={filterValue.dateStart}
+        onChange={(event) => onChangeDateStart(event.target.value)}>{productionDateOptionsHTML}</select>-
+      <select
+        value={filterValue.dateEnd}
+        onChange={(event) => onChangeDateEnd(event.target.value)}
+      >{productionDateOptionsHTML}</select>
+    </label>
+    <label>Monogram
+      <select
+        value={filterValue.monogram}
+        onChange={(event) => onChangeMonogram(event.target.value)}
+      >
+        {monogramOptions.map(item => <option value={item}>{item}</option>)}
+      </select>
+    </label>
+  </div>
+}
+
+type ResultsComponentProps = {
+  miniatures: MiniatureItemWithSearchResultInterface[]
+  addCompareItem: (item: MiniatureItemInterface) => void
+  removeCompareItem: (item: MiniatureItemInterface) => void
+  compareActive: Compare
+}
+
+function ResultsComponent({ miniatures, addCompareItem, removeCompareItem, compareActive }: ResultsComponentProps) {
+  return <div className={`miniature-items`}>
+    {Array.isArray(miniatures) && miniatures.map(item => {
+      const itemCompareActive = !!compareActive[item.item.id!!];
+      return <MiniatureItem
+        item={item.item}
+        result={item.result}
+        onClickCompare={() => itemCompareActive ? removeCompareItem(item.item) : addCompareItem(item.item)}
+        compareActive={itemCompareActive}
+      />
+    })}
+  </div>
+}
+
+type FilterState = {
+  text: string
+  dateStart: string
+  dateEnd: string
+  monogram: string
+};
+
+type CollectionPageProps = {
+  pageContext: {
+    miniatures: { [id: number]: MiniatureItemInterface }
+    serialisedSearchIndex: lunr.Index
+  }
+}
+
+export default function CollectionsPage({ pageContext: { miniatures, serialisedSearchIndex } }: CollectionPageProps) {
+
+  const [loading, setLoading] = useState(true)
+  const [filteredMiniatures, setFilteredMiniatures] = useState<MiniatureItemWithSearchResultInterface[]>([])
+  const [compare, setCompare] = useState<Compare>({})
+  const [productionDateOptions, setProductionDateOptions] = useState<string[]>([]);
+
+  const monogramOptions = ["any", "yes", "no"];
+
+  let searchIndex = lunr.Index.load(serialisedSearchIndex);
+
+  const [filterState, setFilterState] = useState<FilterState>({
+    text: "",
+    dateStart: "",
+    dateEnd: "",
+    monogram: "any"
+  })
 
   useEffect(() => {
-    // get data from GitHub api
-    fetch(buildDirectusRequestUrl())
-      .then(response => response.json()) // parse JSON from request
-      .then(resultData => {
-        const m = new Map<string, MiniatureItemInterface>()
-        const filtered: Array<MiniatureItemWithSearchResultInterface> = []
-        resultData.data.forEach((item: any) => {
-          m.set(String(item.id), item)
-          filtered.push({ item, result: null })
-        })
-        setMiniatures(m)
-        setFilteredMiniatures(filtered)
-        const idx = createSearchIndex(resultData.data)
-        setSearchIndex(idx)
-        setLoading(0)
-      })
+
+    const dateOptions: { [id: string]: boolean } = {};
+
+    Object.values(miniatures).forEach((item: MiniatureItemInterface) => {
+      if (typeof item.production_date == "string") {
+        dateOptions[item.production_date] = true;
+      }
+    })
+
+    const dateOptionsSorted = Object.keys(dateOptions).sort((a, b) => a > b ? 1 : -1)
+    setProductionDateOptions(dateOptionsSorted);
+
+    const updatedFilter = {
+      ...filterState,
+      dateStart: dateOptionsSorted[0],
+      dateEnd: dateOptionsSorted[dateOptionsSorted.length - 1]
+    }
+    setFilterState(updatedFilter);
+    updateFilteredResults(updatedFilter);
+
+    setLoading(false)
+
   }, [])
 
-  function handleSearchKeywords(event: React.ChangeEvent<HTMLInputElement>) {
-    setLoading(1)
-    const searchText = event.target.value
-    setSearchText(searchText)
-    const results = searchIndex?.search(searchText)
-    const filtered: Array<MiniatureItemWithSearchResultInterface> = []
+  /*
+   passing _filterState as prop because setFilterState and we dont know when filterState will be set
+  */
+  function updateFilteredResults(_filterState: FilterState) {
+    setLoading(true)
+    const results = searchIndex.search(_filterState.text)
+    const filtered: MiniatureItemWithSearchResultInterface[] = []
     results?.forEach((result) => {
-      const i = miniatures?.get(result.ref)
-      if (i) {
-        filtered.push({ item: i, result })
+      const foundItem = miniatures[parseInt(result.ref)]
+      if (foundItem) {
+
+        let foundItemFilterMatch = true;
+        if (typeof foundItem.production_date == "string") {
+          //filter production start date
+          if ( foundItem.production_date < _filterState.dateStart) {
+            foundItemFilterMatch = false;
+          }
+          //filter production end date
+          if (foundItem.production_date > _filterState.dateEnd) {
+            foundItemFilterMatch = false;
+          }
+        }
+        if (_filterState.monogram == "yes" && !foundItem.monogram) {
+          foundItemFilterMatch = false;
+        }
+        if (_filterState.monogram == "no" && !!foundItem.monogram) {
+          foundItemFilterMatch = false;
+        }
+        if (foundItemFilterMatch) {
+          filtered.push({ item: foundItem, result })
+        }
       }
     })
     setFilteredMiniatures(filtered)
-    setLoading(0)
+    setLoading(false)
   }
 
-  function onClickCompareItem(item: MiniatureItemInterface) {
+  function onChangeSearchText(value: string) {
+    const updatedFilter = {
+      ...filterState,
+      text: value
+    }
+    setFilterState(updatedFilter);
+    updateFilteredResults(updatedFilter);
+  }
+
+  function onChangeDateStart(start: string) {
+    const updatedFilter = {
+      ...filterState,
+      dateStart: start
+    }
+    setFilterState(updatedFilter);
+    updateFilteredResults(updatedFilter);
+  }
+
+  function onChangeDateEnd(end: string) {
+    const updatedFilter = {
+      ...filterState,
+      dateEnd: end
+    }
+    setFilterState(updatedFilter);
+    updateFilteredResults(updatedFilter);
+  }
+
+  function onChangeMonogram(value: string) {
+    const updatedFilter = {
+      ...filterState,
+      monogram: value
+    }
+    setFilterState(updatedFilter);
+    updateFilteredResults(updatedFilter);
+  }
+
+  function addCompareItem(item: MiniatureItemInterface) {
+    if (Object.keys(compare || {}).length >= 3) return;
+    const updatedCompare = {
+      ...compare,
+      [item.id!!]: item
+    }
+    setCompare(updatedCompare);
+  }
+
+  function removeCompareItem(item: MiniatureItemInterface) {
     const updatedCompare = {
       ...compare,
     }
-    if (updatedCompare[item.id!!]) {
-      delete updatedCompare[item.id!!];
-    }
-    else {
-      updatedCompare[item.id!!] = item;
-    }
-    setCompare(updatedCompare)
+    delete updatedCompare[item.id!!];
+    setCompare(updatedCompare);
   }
 
   return (
     <Layout displayLogo={true} additionalClasses={['standard-page']} dark={false}>
-      {/* <Head title={post.frontmatter.title} description={post.excerpt} /> */}
       <section>
-        <div className={`miniature-items-search`}>
-          <div className="search-label">Search for artist, sitter or pigment</div>
-          <input name="searchKeywords" onChange={handleSearchKeywords} placeholder="Search" />
-        </div>
-        {(searchText && filteredMiniatures.length == 0) && (<div className={`no-search-results`}>
-          <span className="no-search-results--text">Searching for <span className="search-text">{searchText}</span>.    No results yet.   Please keep typing or search another term.</span>
-        </div>)}
-        <div className="loading">
-          {loading != 0 && <Loading />}
-        </div>
-        <div className={`miniature-items`}>
-          {Array.isArray(filteredMiniatures) && filteredMiniatures.map(item => (
-            <MiniatureItem
-              item={item.item}
-              result={item.result}
-              onClickCompare={() => onClickCompareItem(item.item)}
-              compareActive={!!compare?.[item.item.id!!]}
-            />
-          ))}
-        </div>
+        <FilterComponent
+          filterValue={filterState}
+          productionDateOptions={productionDateOptions}
+          monogramOptions={monogramOptions}
+          onChangeSearchText={onChangeSearchText}
+          onChangeDateStart={onChangeDateStart}
+          onChangeDateEnd={onChangeDateEnd}
+          onChangeMonogram={onChangeMonogram}
+        />
+        <NoResultsComponent searchText={filterState.text} resultsCount={filteredMiniatures.length} />
+        <div className="loading">{loading == true && <Loading />}</div>
+        <ResultsComponent
+          miniatures={filteredMiniatures}
+          addCompareItem={addCompareItem}
+          removeCompareItem={removeCompareItem}
+          compareActive={compare || {}}
+        />
       </section>
-      {(Object.keys(compare || {}).length > 0) && <div className="miniature-collection--compare">
-        <h3>Compare objects</h3>
-        {Object.values(compare || {}).map(compareItem => (
-          <div className="miniature-items">
-            <div className="miniature-item__button" onClick={() => onClickCompareItem(compareItem)}>
-              <span className="icon">
-                <CompareRemoveIcon />
-              </span>
-              <span>{compareItem.title}</span>
-            </div>
-          </div>
-        ))}
-        {(Object.keys(compare || {}).length < 2) && <p>Add another item to compare</p>}
-        <div className="miniature-items">
-          <Link
-            className="miniature-item__button"
-            to={`/collections-compare?items=${Object.values(compare || {}).map(item => item.accession_number).join(",")}`}>
-            Open comparison
-          </Link>
-          <a
-            className="miniature-item__button"
-            // @ts-ignore
-            href={`${config.siteMetadata.viewer.url}?${Object.values(compare || {}).map(
-              // @ts-ignore
-              item => `manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`).join("&")}`}>
-            <span className="icon"><ViewerIcon /></span><span>View all</span>
-          </a>
-        </div>
-      </div>}
+      <CompareComponent compareValues={Object.values(compare || {})} removeCompareItem={removeCompareItem} />
     </Layout>
   )
 }

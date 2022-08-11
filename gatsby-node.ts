@@ -2,6 +2,8 @@
 //https://dev.to/skil3e/how-to-use-gatsby-with-typescript-2d79
 import type { GatsbyNode } from "gatsby"
 import * as path from "path"
+import { buildDirectusRequestUrl, createSearchIndex } from "./src/util/search"
+import fetch from "node-fetch"
 
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
@@ -153,7 +155,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       }
     }
   }`,
-  {});
+    {});
   // @ts-ignore
   objectTemplateResult.data.directusgraphql.miniatures.forEach(miniatureObject => {
     createPage({
@@ -161,5 +163,35 @@ export const createPages: GatsbyNode["createPages"] = async ({
       component: objectTemplate,
       context: { ...miniatureObject },
     })
+  });
+}
+
+export const onCreatePage: GatsbyNode["onCreatePage"] = async ({
+  page,
+  actions
+}) => {
+  const { createPage } = actions;
+  let context = {
+    ...page.context
+  }
+  if (page.path == "/collections/") {
+
+    const response = await fetch(buildDirectusRequestUrl())
+    const miniatures = await response.json()
+    const searchIndex = createSearchIndex(miniatures.data)
+    const miniaturesMap: { [id: number]: MiniatureItemInterface } = {};
+    miniatures.data.forEach((item: MiniatureItemInterface) => {
+      miniaturesMap[parseInt(item.id!!)] = item;
+    })
+
+    context = {
+      ...page.context,
+      miniatures: miniaturesMap,
+      serialisedSearchIndex: searchIndex
+    }
+  }
+  createPage({
+    ...page,
+    context
   });
 }

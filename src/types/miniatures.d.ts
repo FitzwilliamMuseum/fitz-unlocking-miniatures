@@ -10,6 +10,8 @@ type MiniatureItemInterface = {
     accession_number: string
     slug: string
     production_date_text: string
+    production_date: string | null
+    monogram: boolean
 }
 
 type MiniatureObjectImage = {
