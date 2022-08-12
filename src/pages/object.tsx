@@ -28,31 +28,33 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 			<div className="object">
 				<div className="object--hero-wrapper">
 					<div className="object--hero-content">
-						<img src={imageUrl} alt={imageAlt} />
+						<h1>{miniature.title}</h1>
 						<div className="object--hero-info">
-							<h1>{miniature.title}</h1>
+							<img src={imageUrl} alt={imageAlt} />
 							<div className="object--hero-info-table">
-								<div>Collection</div><div>{miniature.collection?.name}</div>
-								<div>Accession number</div><div>{miniature.accession_number}</div>
-								<div>Production date</div><div>{miniature.production_date_text}</div>
-								<div>Artist</div><div>{miniature.artist_text}</div>
-								<div>Sitter</div><div>{miniature.sitter_text}</div>
-								{miniature.Credit && <><div>Credit</div><div>{miniature.Credit}</div></>}
+								<div><strong>Accession number</strong></div><div>{miniature.accession_number}</div>
+								<div><strong>Production date</strong></div><div>{miniature.production_date_text}</div>
+								<div><strong>Artist</strong></div><div>{miniature.artist_text}</div>
+								<div><strong>Sitter</strong></div><div>{miniature.sitter_text}</div>
+								{miniature.collection && <><div><strong>Collection</strong></div><div>{miniature.collection?.name}</div></>}
+								{miniature.Credit && <><div><strong>Credit</strong></div><div>{miniature.Credit}</div></>}
 							</div>
 						</div>
 					</div>
 				</div>
-				<div className="miniature-items object--actions">
-					<a
-						className="miniature-item__button"
-						// @ts-ignore
-						href={`${config.siteMetadata.viewer.url}?manifestId[]=${config.siteMetadata.iiif.url + miniature.accession_number}/manifest.json`}>
-						<span className="icon"><ViewerIcon /></span><span>Viewer</span>
-					</a>
-					<a href="#description"><h2 id="description">Description</h2></a>
-					<a href="#images"><h2 >Images</h2></a>
-					<a href="#micrographs"><h2 >Micrographs</h2></a>
-					<a href={miniature.object_record_in_collection} target="__blank">Object record</a>
+				<div className="object--actions-wrapper">
+					<div className="miniature-items object--actions">
+						<a
+							className="miniature-item__button"
+							// @ts-ignore
+							href={`${config.siteMetadata.viewer.url}?manifestId[]=${config.siteMetadata.iiif.url + miniature.accession_number}/manifest.json`}>
+							<span className="icon"><ViewerIcon /></span><span>Viewer</span>
+						</a>
+						<a href="#description"><h2 id="description">Description</h2></a>
+						<a href="#images"><h2 >Images</h2></a>
+						{miniature.images_micrographs.length > 0 && <a href="#micrographs"><h2 >Micrographs</h2></a>}
+						<a href={miniature.object_record_in_collection} target="__blank">Object record</a>
+					</div>
 				</div>
 				<div className="object--description-wrapper">
 					<div className="object--description-content">
@@ -98,7 +100,8 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 							<table>
 								{miniature?.references?.map(item => (
 									<tr>
-										<td><a href={item.references_id.url || ''} target="__blank">{item.references_id.display_title}</a></td>
+										{!!item.references_id.url && <td><a href={item.references_id.url} target="__blank">{item.references_id.display_title}</a></td>}
+										{!item.references_id.url && <td>{item.references_id.display_title}</td>}
 										<td>{item.references_id.publication_year || ''}</td>
 										<td>{item.references_id.authors
 											.map(author => author.authors_and_editors_id.display_name).join('; ')}</td>
@@ -108,7 +111,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						</div>
 						<a href="#images"><h2 id="images">Images</h2></a>
 						<MiniatureObjectImages miniature={miniature} />
-						<a href="#micrographs"><h2 id="micrographs">Micrographs</h2></a>
+						{miniature.images_micrographs.length > 0 && <a href="#micrographs"><h2 id="micrographs">Micrographs</h2></a>}
 						<div className="object--micrographs">
 							{miniature.images_micrographs && miniature.images_micrographs?.map(micrograph => {
 								// @ts-ignore
@@ -118,7 +121,9 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 								const micrographImageAlt = micrograph.file_name;
 								return (
 									<div id={micrograph.file_name}>
-										<img loading="lazy" src={micrographImageAnchorUrl} alt={micrographImageAlt} />
+										<a href={micrographImageDownloadUrl} target="__blank">
+											<img loading="lazy" src={micrographImageAnchorUrl} alt={micrographImageAlt} />
+										</a>
 										<p>
 											<a href={`#${micrograph.file_name}`}><strong>{micrograph.file_name}</strong></a>
 											{!!micrograph.hotspot && <span> Hotspot</span>}

@@ -537,17 +537,26 @@ ul.main-menu {
     align-items: center;
 
     .object--hero-content {
-        display: flex;
-        flex-wrap: wrap;
         width: 75%;
         padding: 16px 0px;
 
         .object--hero-info {
-            padding: 0px 16px;
+            display: flex;
+            flex-wrap: wrap;
+
+            img {
+                margin-right: 25px;
+            }
 
             .object--hero-info-table {
-                display: grid;
-                grid-template-columns: 1fr 2fr;
+                height: fit-content;
+                align-self: center;
+
+                @include for-size(tablet-portrait-up) {
+                    display: grid;
+                    grid-template-columns: 1fr 2fr;
+                    max-width: 75%;
+                }
             }
         }
 
@@ -559,9 +568,32 @@ ul.main-menu {
     }
 }
 
-.object--actions {
-    margin: 1.5rem 0px 0px 13%;
+.object--actions-wrapper {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+}
+
+.object--actions {
+    width: 75%;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    @include for-size(tablet-portrait-up) {
+        flex-direction: row;
+    }
+
+    a{
+        display: flex;
+        align-items: center;
+    }
+
+    h2 {
+        margin: 0;
+    }
 }
 
 .object--description-wrapper {
@@ -570,10 +602,13 @@ ul.main-menu {
     align-items: center;
 
     .object--description-content {
-        width: 75%;
 
-        border-left: 1px solid var(--c-border);
-        border-right: 1px solid var(--c-border);
+        @include for-size(tablet-portrait-up) {        
+            width: 75%;
+            border-left: 1px solid var(--c-border);
+            border-right: 1px solid var(--c-border);
+        }
+
         padding: 0px 1rem;
         margin-top: 1rem;
 
@@ -606,12 +641,27 @@ ul.main-menu {
 }
 
 .object--micrographs {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
+    display: flex;
+    flex-wrap: wrap;
     gap: 32px;
 
+    align-content: center;
+    flex-direction: column;
+    @include for-size(tablet-portrait-up) {
+        align-content: center;
+        flex-direction: row;
+    }
+
+    &>div {
+        width: 15rem;
+        max-width: 100%;
+    }
+
     img {
-        width: 100%;
+        width: 15rem;
+        height: 15rem;
+        max-width: 100%;
+        object-fit: cover;
     }
 }
 
@@ -619,4 +669,22 @@ ul.main-menu {
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
+
+    align-content: center;
+    flex-direction: column;
+    @include for-size(tablet-portrait-up) {
+        align-content: center;
+        flex-direction: row;
+    }
+
+    &>div {
+        width: 15rem;
+        max-width: 100%;
+    }
+
+    img {
+        width: 15rem;
+        max-width: 100%;
+        object-fit: cover;
+    }
 }

@@ -54,7 +54,9 @@ class MiniatureObjectImages extends React.Component<MiniatureObjectImagesProps> 
                         const downloadUrl = `${config.siteMetadata.api.url}assets/${sourceImage.id}?format=jpg`;
                         return (
                             <div id={sourceImage.id}>
-                                <img loading="lazy" src={imageUrl} alt={imageAlt} />
+                                <a href={downloadUrl} target="__blank">
+                                    <img loading="lazy" src={imageUrl} alt={imageAlt} />
+                                </a>
                                 <p>
                                     <a href={`#${sourceImage.id}`}><strong>{item.label}</strong></a>
                                     <div>{sourceImage.title}</div>
