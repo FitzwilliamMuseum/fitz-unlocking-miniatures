@@ -81,7 +81,7 @@ function FilterComponent(props: FilterComponentProps) {
     onChangeDateEnd,
     onChangeMonogram
   } = props;
-  const productionDateOptionsHTML = productionDateOptions.map(item => <option value={item}>{item.slice(0, 4)}</option>)
+  const productionDateOptionsHTML = productionDateOptions.map(item => <option value={item}>{item}</option>)
   return <div className="miniature-items-search">
     <input name="searchKeywords" onChange={(event) => onChangeSearchText(event.target.value)} placeholder="Search for artist, sitter or pigment" />
     <label>Production date
@@ -139,47 +139,31 @@ type CollectionPageProps = {
   }
 }
 
+const MONOGRAM_OPT_ANY = "Any";
+const MONOGRAM_OPT_YES = "Yes";
+const MONOGRAM_OPT_NO = "No";
+
 export default function CollectionsPage({ pageContext: { miniatures, serialisedSearchIndex } }: CollectionPageProps) {
 
   const [loading, setLoading] = useState(true)
   const [filteredMiniatures, setFilteredMiniatures] = useState<MiniatureItemWithSearchResultInterface[]>([])
   const [compare, setCompare] = useState<Compare>({})
-  const [productionDateOptions, setProductionDateOptions] = useState<string[]>([]);
 
-  const monogramOptions = ["any", "yes", "no"];
+  const dateOptions = [
+    "1500", "1510", "1520", "1530", "1540", "1550", "1560", "1570", "1580", "1590",
+    "1600", "1610", "1620", "1630", "1640", "1650", "1660", "1670", "1680", "1690",
+    "1700"
+  ];
+  const monogramOptions = [MONOGRAM_OPT_ANY, MONOGRAM_OPT_YES, MONOGRAM_OPT_NO];
 
   let searchIndex = lunr.Index.load(serialisedSearchIndex);
 
   const [filterState, setFilterState] = useState<FilterState>({
     text: "",
-    dateStart: "",
-    dateEnd: "",
-    monogram: "any"
-  })
-
-  useEffect(() => {
-
-    const dateOptions: { [id: string]: boolean } = {};
-
-    Object.values(miniatures).forEach((item: MiniatureItemInterface) => {
-      if (typeof item.production_date == "string") {
-        dateOptions[item.production_date] = true;
-      }
-    })
-
-    const dateOptionsSorted = Object.keys(dateOptions).sort((a, b) => a > b ? 1 : -1)
-    setProductionDateOptions(dateOptionsSorted);
-
-    const updatedFilter = {
-      ...filterState,
-      dateStart: dateOptionsSorted[0],
-      dateEnd: dateOptionsSorted[dateOptionsSorted.length - 1]
-    }
-    setFilterState(updatedFilter);
-
-    setLoading(false)
-
-  }, [])
+    dateStart: dateOptions[0],
+    dateEnd: dateOptions[dateOptions.length - 1],
+    monogram: MONOGRAM_OPT_ANY
+  });
 
   useEffect(() => {
     setLoading(true)
@@ -191,19 +175,20 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
 
         let foundItemFilterMatch = true;
         if (typeof foundItem.production_date == "string") {
+          const itemDate = foundItem.production_date.slice(0, 4);
           //filter production start date
-          if (foundItem.production_date < filterState.dateStart) {
+          if (itemDate < filterState.dateStart) {
             foundItemFilterMatch = false;
           }
           //filter production end date
-          if (foundItem.production_date > filterState.dateEnd) {
+          if (itemDate > filterState.dateEnd) {
             foundItemFilterMatch = false;
           }
         }
-        if (filterState.monogram == "yes" && !foundItem.monogram) {
+        if (filterState.monogram == MONOGRAM_OPT_YES && !foundItem.monogram) {
           foundItemFilterMatch = false;
         }
-        if (filterState.monogram == "no" && !!foundItem.monogram) {
+        if (filterState.monogram == MONOGRAM_OPT_NO && !!foundItem.monogram) {
           foundItemFilterMatch = false;
         }
         if (foundItemFilterMatch) {
@@ -269,7 +254,7 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
       <section>
         <FilterComponent
           filterValue={filterState}
-          productionDateOptions={productionDateOptions}
+          productionDateOptions={dateOptions}
           monogramOptions={monogramOptions}
           onChangeSearchText={onChangeSearchText}
           onChangeDateStart={onChangeDateStart}
