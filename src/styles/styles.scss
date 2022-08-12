@@ -97,7 +97,8 @@ h3 {
     padding: $space-one-half $outer-padding $space-one-half $outer-padding;
 
     svg {
-        width: 250px;
+        min-width: 200px;
+        max-width: 150px;
     }
 
     ul.main-menu {
@@ -295,23 +296,36 @@ ul.main-menu {
     padding: $space;
     background-color: clr(background-light);
     align-items: center;
+    gap: 16px;
 
-    label {
+    input,
+    select,
+    label,
+    span {
         height: $space-double;
-        font-size: 1.2rem;
-        margin-left: $space;
+        font-size: 1rem;
+    }
+
+    input {
+        flex: 1
     }
 
     input,
     select {
-        flex: 1;
-        height: $space-double;
-        font-size: 1.2rem;
-        margin: 0 $space-one-half;
         background-color: white;
         border: 1px solid clr(border);
     }
+
+    label {
+        margin-right: $space-one-half;
+        display: none;
+
+        @include for-size(tablet-portrait-up) {
+            display: inline;
+        }
+    }
 }
+
 .miniature-items {
     display: flex;
     flex-wrap: wrap;

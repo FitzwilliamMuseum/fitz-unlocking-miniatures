@@ -84,23 +84,22 @@ function FilterComponent(props: FilterComponentProps) {
   const productionDateOptionsHTML = productionDateOptions.map(item => <option value={item}>{item}</option>)
   return <div className="miniature-items-search">
     <input name="searchKeywords" onChange={(event) => onChangeSearchText(event.target.value)} placeholder="Search for artist, sitter or pigment" />
-    <label>Production date
+    <div>
+      <label>Production date</label>
       <select
         value={filterValue.dateStart}
-        onChange={(event) => onChangeDateStart(event.target.value)}>{productionDateOptionsHTML}</select>-
+        onChange={(event) => onChangeDateStart(event.target.value)}>{productionDateOptionsHTML}</select><span> - </span>
       <select
         value={filterValue.dateEnd}
         onChange={(event) => onChangeDateEnd(event.target.value)}
       >{productionDateOptionsHTML}</select>
-    </label>
-    <label>Monogram
-      <select
-        value={filterValue.monogram}
-        onChange={(event) => onChangeMonogram(event.target.value)}
-      >
-        {monogramOptions.map(item => <option value={item}>{item}</option>)}
-      </select>
-    </label>
+    </div>
+    <select
+      value={filterValue.monogram}
+      onChange={(event) => onChangeMonogram(event.target.value)}
+    >
+      {monogramOptions.map(item => <option value={item}>{item}</option>)}
+    </select>
   </div>
 }
 
@@ -139,7 +138,7 @@ type CollectionPageProps = {
   }
 }
 
-const MONOGRAM_OPT_ANY = "Any";
+const MONOGRAM_OPT_ANY = "Monogram";
 const MONOGRAM_OPT_YES = "Yes";
 const MONOGRAM_OPT_NO = "No";
 
