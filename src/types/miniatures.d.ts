@@ -99,6 +99,7 @@ type MiniatureGraphQLItem = {
     }>
     slug: string
     object_record_in_collection: string
+    Credit: string
 }
 
 type MiniatureItemProps = {

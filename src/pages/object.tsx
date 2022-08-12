@@ -37,6 +37,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 								<div>Production date</div><div>{miniature.production_date_text}</div>
 								<div>Artist</div><div>{miniature.artist_text}</div>
 								<div>Sitter</div><div>{miniature.sitter_text}</div>
+								{miniature.Credit && <><div>Credit</div><div>{miniature.Credit}</div></>}
 							</div>
 						</div>
 					</div>
