@@ -58,12 +58,12 @@ export default function CollectionsComparePage() {
     },
     {
       field: "pigments_costume",
-      lable: "Pigments background",
+      lable: "Pigments costume",
       type: "string"
     },
     {
       field: "pigments_jewellery",
-      lable: "Pigments background",
+      lable: "Pigments jewellery",
       type: "string"
     },
     {
