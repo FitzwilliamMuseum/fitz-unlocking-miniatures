@@ -52,7 +52,9 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						</a>
 						<a href="#description"><h2 id="description">Description</h2></a>
 						<a href="#images"><h2 >Images</h2></a>
-						{miniature.images_micrographs.length > 0 && <a href="#micrographs"><h2 >Micrographs</h2></a>}
+						{miniature.images_micrographs &&
+							miniature.images_micrographs.length > 0 &&
+							<a href="#micrographs"><h2 >Micrographs</h2></a>}
 						<a href={miniature.object_record_in_collection} target="__blank">Object record</a>
 					</div>
 				</div>
@@ -111,7 +113,9 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						</div>
 						<a href="#images"><h2 id="images">Images</h2></a>
 						<MiniatureObjectImages miniature={miniature} />
-						{miniature.images_micrographs.length > 0 && <a href="#micrographs"><h2 id="micrographs">Micrographs</h2></a>}
+						{miniature.images_micrographs &&
+							miniature.images_micrographs.length > 0 &&
+							<a href="#micrographs"><h2 id="micrographs">Micrographs</h2></a>}
 						<div className="object--micrographs">
 							{miniature.images_micrographs && miniature.images_micrographs?.map(micrograph => {
 								// @ts-ignore
