@@ -12,6 +12,9 @@ type MiniatureItemInterface = {
     production_date_text: string
     production_date: string | null
     monogram: boolean
+    description_content: string
+    description_physical: string
+    materials_supports: string
 }
 
 type MiniatureObjectImage = {

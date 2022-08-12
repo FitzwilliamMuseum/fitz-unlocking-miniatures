@@ -19,9 +19,12 @@ export const collectionsFields = (): Array<any> => {
         { label: "Jewellery pigments", fieldname: 'pigments_jewellery' },
         { label: "Accession number", fieldname: "accession_number" },
         { label: "Slug", fieldname: "slug" },
-        { label: "Production date text", fieldname: "production_date_text" },
-        { label: "Production date", fieldname: "production_date" },
-        { label: "Monogram", fieldname: "monogram" }
+        { label: "Production date text", fieldname: "production_date_text", exclude: true },
+        { label: "Production date", fieldname: "production_date", exclude: true },
+        { label: "Monogram", fieldname: "monogram", exclude: true },
+        { label: "Description", fieldname: "description_content" },
+        { label: "Description", fieldname: "description_physical" },
+        { label: "Support material", fieldname: "materials_supports" }
     ]
     return fields;
 }
@@ -43,10 +46,8 @@ export const createSearchIndex = (documents: Array<any>): Index => {
                 this.field(item.fieldname) //We don't do any weighting but could here
             }
         })
-
         documents.forEach((doc) => {
             this.add(doc)
         })
-
     })
 };
