@@ -84,7 +84,7 @@ export default function CollectionsComparePage() {
     {
       field: "analytical_techniques_used",
       lable: "Analytical techniques used",
-      type: "string"
+      type: "list"
     },
     {
       field: "image_normal_light",
@@ -180,6 +180,10 @@ export default function CollectionsComparePage() {
                     {
                       // @ts-ignore
                       fieldItem.type == "string" && item[fieldItem.field]
+                    }
+                    {
+                      // @ts-ignore
+                      fieldItem.type == "list" && item[fieldItem.field].join(', ')
                     }
                   </td>
                 ))}
