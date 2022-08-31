@@ -41,9 +41,6 @@ class MiniatureItem extends React.Component<MiniatureItemProps> {
                     </div>
                     <MiniatureItemSearchCard item={item} result={result} />
                     <div className="miniature-item__actions">
-                        <Link className="miniature-item__button" to={objectPageUrl}>
-                            <span className="icon"><InfoIcon /></span><span>More information</span>
-                        </Link>
                         <a
                             className="miniature-item__button"
                             href={viewerUrl}>
