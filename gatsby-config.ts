@@ -16,15 +16,12 @@ const config: GatsbyConfig = {
       {link: '/about', title: 'About'},
     ],
     contact: [
+      {line: "portraitminiatures [at] fitzmuseum.cam.ac.uk"},
       {line: "The Fitzwilliam Museum"},
       {line: "University of Cambridge"}
     ],
     footerLogos: [
       {image_src: '../../content/assets/main-banner-image.jpeg', image_alt: 'Logo'}
-    ],
-    socialMedia: [
-      {type: 'twitter', url: 'https://www.twitter.com/FitzMuseum_UK', 'title': '@FitzMuseum_UK'},
-      {type: 'youtube', url: 'https://www.youtube.com/c/FitzMuseum', 'title': 'on YouTube'},
     ],
     api: {
       url: 'https://unlocking-miniatures.fitz.ms/', //Always / at end

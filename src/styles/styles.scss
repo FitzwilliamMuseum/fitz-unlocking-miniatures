@@ -461,6 +461,15 @@ ul.main-menu {
             list-style-type: none;
         }
     }
+    .footer--contact {
+        margin: 0;
+        ul {
+            list-style-type: none;
+        }
+    }
+    .contact--line {
+        white-space: nowrap;
+    }
     .footer--copyright {
         display: flex;
         margin:0;

@@ -21,19 +21,13 @@ export default function Footer() {
                     image_src
                     image_alt
                 }
-                socialMedia {
-                    type
-                    url
-                    title
-                }
             }
         }
     }    
   `)
 
-    const { quickLinks, contact, footerLogos, socialMedia } = data.site.siteMetadata;
+    const { quickLinks, contact, footerLogos } = data.site.siteMetadata;
 
-    const socialMediaItems: Array<any> = []
     const quickLinksItems: Array<any> = []
     const contactItems: Array<any> = []
     const footerLogoItems: Array<any> = []
@@ -42,14 +36,6 @@ export default function Footer() {
         quickLinks.forEach((link: any) => {
             const linkItem = isExternalUrl(link.link) ? (<a href={link?.link}>{link.title}</a>) : (<Link to={link.link}>{link.title}</Link>)
             quickLinksItems.push(<li>{linkItem}</li>)
-        })
-    }
-    if (socialMedia) {
-        socialMedia.forEach((item: any) => {
-            socialMediaItems.push(
-                <div className="sm--item">
-                    <a className={item.type} href={item?.url} target="__black" rel="noopener">{item.title}</a>
-                </div>)
         })
     }
     if (contact) {
@@ -68,9 +54,6 @@ export default function Footer() {
     return (
         <React.Fragment>
             <div className="footer row">
-                <div className="col-12 col--sm-12 footer--social-media">
-                    {socialMediaItems}
-                </div>
                 <div className="col-12 col--sm-12 footer--main">
                     <div className="row">
                         <div className="col-3 col--sm-12 footer--main--links">
@@ -87,8 +70,12 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="col-12 col--sm-12 footer--copyright">
-                    <span className="footer--copyright-item">Copyright University of Cambridge</span>
-                    <span className="footer--copyright-item">Privacy policy</span>
+                    <span className="footer--copyright-item">© 2022 The University of Cambridge</span>
+                    <a
+                        className="footer--copyright-item"
+                        target="__blank"
+                        rel="noopener"
+                        href="https://www.information-compliance.admin.cam.ac.uk/data-protection/general-data">Privacy policy</a>
                 </div>
             </div>
         </React.Fragment>
