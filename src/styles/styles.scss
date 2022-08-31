@@ -343,6 +343,7 @@ ul.main-menu {
         flex-shrink: 0;
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
         > div {
             width: 100%;
         }
@@ -579,6 +580,7 @@ ul.main-menu {
                     display: grid;
                     grid-template-columns: 1fr 2fr;
                     max-width: 75%;
+                    column-gap: 16px;
                 }
             }
         }

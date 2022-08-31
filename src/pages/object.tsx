@@ -33,6 +33,9 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 							<img src={imageUrl} alt={imageAlt} />
 							<div className="object--hero-info-table">
 								<div><strong>Accession number</strong></div><div>{miniature.accession_number}</div>
+								{miniature.object_record_in_collection && <><div>
+									<a href={miniature.object_record_in_collection} target="__blank">Object record</a>
+								</div><div></div></>}
 								<div><strong>Production date</strong></div><div>{miniature.production_date_text}</div>
 								<div><strong>Artist</strong></div><div>{miniature.artist_text}</div>
 								<div><strong>Sitter</strong></div><div>{miniature.sitter_text}</div>
@@ -55,7 +58,6 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						{miniature.images_micrographs &&
 							miniature.images_micrographs.length > 0 &&
 							<a href="#micrographs"><h2 >Micrographs</h2></a>}
-						<a href={miniature.object_record_in_collection} target="__blank">Object record</a>
 					</div>
 				</div>
 				<div className="object--description-wrapper">
