@@ -522,7 +522,7 @@ ul.main-menu {
 
         td {
             padding: 4px 16px;
-            min-width: 10%;
+            width: 10%;
         }
 
         tr:nth-child(even) {
@@ -716,7 +716,7 @@ ul.main-menu {
 
 /* Blog list */
 .blog-list {
-    padding: 25px 20%;
+    padding: 25px 5%;
 
     h1 {
         margin: 2rem 0;
@@ -735,11 +735,15 @@ ul.main-menu {
         padding-bottom: 10px;
         margin-bottom: 50px;
     }
+
+    @include for-size(tablet-portrait-up) {
+        padding: 25px 20%;
+    }
 }
 
 /* Blog page */
 .blog {
-    padding: 0 20%;
+    padding: 0 5%;
 
     h1 {
         margin: 3rem 0;
@@ -754,5 +758,9 @@ ul.main-menu {
         img {
             width: 100%
         }
+    }
+
+    @include for-size(tablet-portrait-up) {
+        padding: 0 20%;
     }
 }
