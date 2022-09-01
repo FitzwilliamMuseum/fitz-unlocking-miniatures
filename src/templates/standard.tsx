@@ -1,9 +1,8 @@
 import * as React from "react"
 import { graphql, PageProps } from 'gatsby'
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import { Link } from 'gatsby'
 import Layout from '../components/layout'
-import Logo from '../assets/svg/logo.svg'
 import FeatureBox, { FeatureBoxItem } from "../components/featureBox"
 import Supporter from "../components/supporter"
 
@@ -27,7 +26,7 @@ const StandardTemplate = ({ data }: PageProps<Queries.StandardTemplateQuery>) =>
                     {image && <GatsbyImage image={image} alt={section.image_alt ? section.image_alt : 'Placeholder'} />}
                   </div>
                   <div className="col-6 col--sm-12">
-                    {section.logo && (<div className="logo"><Logo /></div>)}
+                    {section.logo && (<StaticImage className="logo" src="../assets/svg/logo.png" alt="logo" />)}
                     {section.title && (<h2>{section.title}</h2>)}
                     {section.content && (<div className="section--content"><div dangerouslySetInnerHTML={{ __html: section.content }} /></div>)}
                   </div>
