@@ -713,3 +713,46 @@ ul.main-menu {
         object-fit: cover;
     }
 }
+
+/* Blog list */
+.blog-list {
+    padding: 25px 20%;
+
+    h1 {
+        margin: 2rem 0;
+    }
+
+    h2 {
+        margin: 0;
+    }
+    
+    ul {
+        list-style: none;
+    }
+
+    li {
+        border-bottom: 1px solid var(--c-border);
+        padding-bottom: 10px;
+        margin-bottom: 50px;
+    }
+}
+
+/* Blog page */
+.blog {
+    padding: 0 20%;
+
+    h1 {
+        margin: 3rem 0;
+    }
+
+    p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 0 2rem 0;
+
+        img {
+            width: 100%
+        }
+    }
+}

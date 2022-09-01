@@ -24,7 +24,9 @@ export const collectionsFields = (): Array<any> => {
         { label: "Monogram", fieldname: "monogram", exclude: true },
         { label: "Description", fieldname: "description_content" },
         { label: "Description", fieldname: "description_physical" },
-        { label: "Support material", fieldname: "materials_supports" }
+        { label: "Support material", fieldname: "materials_supports" },
+        { label: "Collection", fieldname: "collection"},
+        { label: "Credit", fieldname: "Credit"}
     ]
     return fields;
 }

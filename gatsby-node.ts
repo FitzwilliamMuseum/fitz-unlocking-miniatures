@@ -10,40 +10,69 @@ export const createPages: GatsbyNode["createPages"] = async ({
   actions
 }) => {
   const { createPage } = actions
-  /* Standard template */
-  const standardTemplate = path.resolve(`src/pages/standard.tsx`)
-  const standardTemplateResult = await graphql(`
+
+  /* Standard pages */
+  const standardTemplate = path.resolve(`src/templates/standard.tsx`);
+  const standardPageResult = await graphql(`
     query {
-      allMarkdownRemark {
-        edges {
-          node {
-            id
+      allFile(filter: {sourceInstanceName: {eq: "standard"}}) {
+        nodes {
+          childMarkdownRemark {
             frontmatter {
               slug
               title
-              displayLogo
-              displayTitle
-              dark
             }
           }
         }
       }
     }
   `)
-  // @ts-ignore
-  standardTemplateResult.data.allMarkdownRemark.edges.forEach((edge: any) => {
+  //@ts-ignore
+  standardPageResult.data.allFile.nodes.forEach((node: any) => {
+    const { childMarkdownRemark: { frontmatter } } = node;
     const page = {
-      path: edge.node.frontmatter.slug == 'home' ? '/' : `${edge.node.frontmatter.slug}`,
+      path: frontmatter.slug == 'home' ? '/' : frontmatter.slug,
       component: standardTemplate,
       context: {
-        title: edge.node.frontmatter.title,
-        slug: `${edge.node.frontmatter.slug}`
+        title: frontmatter.title,
+        slug: frontmatter.slug
       },
     }
     createPage(page)
   })
-  /* Object page */
-  const objectTemplate = path.resolve(`src/pages/object.tsx`)
+
+  /* Blog pages */
+  const blogTemplate = path.resolve(`src/templates/blog.js`);
+  const blogPageResult = await graphql(`
+    query {
+      allFile(filter: {sourceInstanceName: {eq: "blog"}}) {
+        nodes {
+          childMarkdownRemark {
+            frontmatter {
+              slug
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
+  //@ts-ignore
+  blogPageResult.data.allFile.nodes.forEach((node: any) => {
+    const { childMarkdownRemark: { frontmatter } } = node;
+    const page = {
+      path: frontmatter.slug,
+      component: blogTemplate,
+      context: {
+        title: frontmatter.title,
+        slug: frontmatter.slug
+      },
+    }
+    createPage(page)
+  })
+
+  /* Object pages */
+  const objectTemplate = path.resolve(`src/templates/object.tsx`)
   const objectTemplateResult = await graphql(`
   query {
     directusgraphql {

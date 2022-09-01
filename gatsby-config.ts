@@ -6,22 +6,23 @@ const config: GatsbyConfig = {
     title: 'Fitzwilliam Miniatures',
     siteUrl: 'https://unlocking-miniatures.fitzmuseum.cam.ac.uk/',
     mainMenu: [
-      {link: '/', title: 'Home'},
-      {link: '/collections', title: 'Collections'},
-      {link: '/about', title: 'About'},
+      { link: '/', title: 'Home' },
+      { link: '/collections', title: 'Collections' },
+      { link: '/about', title: 'About' },
+      { link: '/blog', title: 'Blog' },
     ],
     quickLinks: [
-      {link: '/', title: 'Home'},
-      {link: '/collections', title: 'Collections'},
-      {link: '/about', title: 'About'},
+      { link: '/', title: 'Home' },
+      { link: '/collections', title: 'Collections' },
+      { link: '/about', title: 'About' },
     ],
     contact: [
-      {line: "portraitminiatures [at] fitzmuseum.cam.ac.uk"},
-      {line: "The Fitzwilliam Museum"},
-      {line: "University of Cambridge"}
+      { line: "portraitminiatures [at] fitzmuseum.cam.ac.uk" },
+      { line: "The Fitzwilliam Museum" },
+      { line: "University of Cambridge" }
     ],
     footerLogos: [
-      {image_src: '../../content/assets/main-banner-image.jpeg', image_alt: 'Logo'}
+      { image_src: '../../content/assets/main-banner-image.jpeg', image_alt: 'Logo' }
     ],
     api: {
       url: 'https://unlocking-miniatures.fitz.ms/', //Always / at end
@@ -45,63 +46,65 @@ const config: GatsbyConfig = {
     // options: {
     //   implementation: require("node-sass"),
     // },
-  } , {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": `${__dirname}/content/assets`
-    },
-    __key: "images"
-  }, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "systemPages",
-      "path": "./src/pages/"
-    },
-    __key: "SystemPages"
-  }, {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      name: `standard-pages`,
-      path: `${__dirname}/content/standard`,
-    },
-    __key: "Standard"
-  }, {
-    resolve: `gatsby-transformer-remark`,
-    options: {
-      plugins: [
-        {
-          resolve: `gatsby-remark-images`,
-          options: {
-            maxWidth: 1280,
-          },
-        },
-        {
-          resolve: `gatsby-remark-responsive-iframe`,
-          options: {
-            wrapperStyle: `margin-bottom: 1.0725rem`,
-          },
-        },
-        `gatsby-remark-autolink-headers`,
-        `gatsby-remark-copy-linked-files`,
-      ],
-    },
-  }, {
-    resolve: 'gatsby-plugin-react-svg',
-    options: {
-      rules: {
-        include: "src/assets/svg"
-      }
-    }
   },
-  {
-    resolve: "gatsby-source-graphql",
-    options: {
-      typeName: "DirectusGraphQL",
-      fieldName: "directusgraphql",
-      url: "https://unlocking-miniatures.fitz.ms/graphql",
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "assets",
+        "path": `${__dirname}/content/assets`
+      }
     },
-  }]
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `standard`,
+        path: `${__dirname}/content/standard`,
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/content/blog`,
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1280,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-copy-linked-files`,
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rules: {
+          include: "src/assets/svg"
+        }
+      }
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "DirectusGraphQL",
+        fieldName: "directusgraphql",
+        url: "https://unlocking-miniatures.fitz.ms/graphql",
+      },
+    }]
 };
 
 export default config;
