@@ -33,9 +33,9 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 							<img src={imageUrl} alt={imageAlt} />
 							<div className="object--hero-info-table">
 								<div><strong>Accession number</strong></div><div>{miniature.accession_number}</div>
-								{miniature.object_record_in_collection && <><div>
-									<a href={miniature.object_record_in_collection} target="__blank">Object record</a>
-								</div><div></div></>}
+								{miniature.object_record_in_collection && <><div><strong>Object record</strong></div><div>
+									<a href={miniature.object_record_in_collection} target="__blank">Available here</a>
+								</div></>}
 								<div><strong>Production date</strong></div><div>{miniature.production_date_text}</div>
 								<div><strong>Artist</strong></div><div>{miniature.artist_text}</div>
 								<div><strong>Sitter</strong></div><div>{miniature.sitter_text}</div>
