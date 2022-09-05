@@ -28,7 +28,7 @@ export default BlogListTemplate;
 
 export const query = graphql`
 query BlogListTemplate {
-    allFile(filter: {sourceInstanceName: {eq: "blog"}}) {
+    allFile(  filter: {sourceInstanceName: {eq: "blog"}, relativeDirectory: {eq: "blog"}}) {
       nodes {
         childMarkdownRemark {
           frontmatter {

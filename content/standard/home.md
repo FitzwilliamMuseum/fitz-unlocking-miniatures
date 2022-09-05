@@ -32,7 +32,7 @@ sections:
         image_alt: 'Minitiature'
         content: Find out about the analytical protocol we have employed to investigate miniatures, in the lab and on the road.       
         link:
-          url: /about
+          url: /research
           title: Explore
   - type: feature_box
     fb_type: single

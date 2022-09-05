@@ -65,7 +65,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/content/markdown`,
       }
     },
     {
