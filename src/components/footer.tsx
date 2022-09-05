@@ -26,11 +26,10 @@ export default function Footer() {
     }    
   `)
 
-    const { quickLinks, contact, footerLogos } = data.site.siteMetadata;
+    const { quickLinks, contact } = data.site.siteMetadata;
 
     const quickLinksItems: Array<any> = []
     const contactItems: Array<any> = []
-    const footerLogoItems: Array<any> = []
 
     if (quickLinks) {
         quickLinks.forEach((link: any) => {
@@ -43,14 +42,6 @@ export default function Footer() {
             contactItems.push(<div className="contact--line">{item.line}</div>)
         })
     }
-    if (footerLogos) {
-        footerLogos.forEach((logo: any) => {
-            if (logo?.image_src?.childImageSharp?.gatsbyImageData) {
-                const img = (<GatsbyImage objectFit="contain" alt={logo.image_alt} image={logo.image_src.childImageSharp.gatsbyImageData} />);
-                footerLogoItems.push(img)
-            }
-        })
-    }
     return (
         <React.Fragment>
             <div className="footer row">
@@ -60,12 +51,27 @@ export default function Footer() {
                             <h4>Quick links</h4>
                             <ul>{quickLinksItems}</ul>
                         </div>
-                        <div className="col-3 col--sm-12 footer--contact">
+                        <div className="col-4 col--sm-12 footer--contact">
                             <h4>Contact</h4>
                             {contactItems}
                         </div>
-                        <div className="col-6 col--sm-12 footer--logos">
-                            {footerLogoItems}
+                        <div className="col-3 col--sm-12 footer--copyright-codes">
+                            <div>Content: <a
+                                href="https://creativecommons.org/licenses/by-nc/4.0/"
+                                target="__blank"
+                                rel="noopener">CC-BY-NC</a></div>
+                            <div>Metadata: <a
+                                href="https://creativecommons.org/licenses/by-nc/4.0/"
+                                target="__blank"
+                                rel="noopener">CC-BY-NC</a></div>
+                            <div>Images: <a
+                                href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+                                target="__blank"
+                                rel="noopener">CC-BY-NC-ND</a></div>
+                            <div>Code: <a
+                                href="https://www.gnu.org/licenses/gpl-3.0.en.html"
+                                target="__blank"
+                                rel="noopener">GPL-V3</a></div>
                         </div>
                     </div>
                 </div>
@@ -76,6 +82,11 @@ export default function Footer() {
                         target="__blank"
                         rel="noopener"
                         href="https://www.information-compliance.admin.cam.ac.uk/data-protection/general-data">Privacy policy</a>
+                    <span className="footer--copyright-item">Website by <a
+                        href="https://www.olamalu.com/"
+                        target="__blank"
+                        rel="noopener"
+                    >www.olamalu.com</a></span>
                 </div>
             </div>
         </React.Fragment>

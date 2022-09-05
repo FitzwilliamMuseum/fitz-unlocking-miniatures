@@ -468,6 +468,11 @@ ul.main-menu {
             list-style-type: none;
         }
     }
+
+    .footer--copyright-codes {
+        margin: 3rem 0 0 0;
+    }
+
     .contact--line {
         white-space: nowrap;
     }
@@ -477,12 +482,23 @@ ul.main-menu {
         border-top: 1px solid clr(border);
         padding-top: $space-one-half;
         font-size: 0.8rem;
+        flex: 0;
         .footer--copyright-item {
             display: inline-block;
             margin-right: $space;
             &::after {
                 content: '|';
                 margin-left: $space;
+            }
+        }
+
+        .footer--copyright-item:last-child {
+            flex: 1;
+            text-align: end;
+            margin-right: 0;
+            &::after {
+                content: '';
+                margin-left: 0;
             }
         }
     }
@@ -641,7 +657,7 @@ ul.main-menu {
             div {
                 margin-bottom: 1rem;
             }
-            
+
             margin-bottom: 1rem;
         }
 
