@@ -63,8 +63,10 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 				<div className="object--description-wrapper">
 					<div className="object--description-content">
 						<a href="#description"><h2 id="description">Description</h2></a>
-						<div>{miniature.description_content}</div>
-						<div>{miniature.description_physical}</div>
+						<div className="object--description-content--content">
+							<div>{miniature.description_content}</div>
+							<div>{miniature.description_physical}</div>
+						</div>
 						<table>
 							<tr>
 								<td>Dimensions</td>
