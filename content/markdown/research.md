@@ -20,3 +20,4 @@ Most of our work takes place in the analytical lab at the Fitzwilliam Museum and
 
 ![Figure 2](../assets/RESEARCH_EXPLAINED_-_Figure_2_1441_1920.JPG)
 *Figure 2: XRF scanning of miniatures at the Hamilton Kerr Institute.*
+
