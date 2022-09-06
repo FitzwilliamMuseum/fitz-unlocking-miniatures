@@ -5,29 +5,31 @@ title: "ABOUT THE PROJECT"
 ---
 The ‘Unlocking the English Portrait Miniature’ web resource is a key outcome of four years of technical research work on 16th and 17th century miniatures from a number of collections in the UK and abroad. Our aim with this resource is to provide an unprecedented level of access to the artworks showcased here, by sharing high-quality images and recently discovered information about their materials.
 
-Project team:\
-Christine Slottved Kimbriel: Senior Painting Conservator (Co-principal investigator, 2019-ongoing)
-Paola Ricciardi: Senior Research Scientist (Co-principal investigator, 2019-2022)
-Flavia Fiorillo: Research Scientist (2020-ongoing)
+Project team:
 
-With support from:\
-Amanda Bluck: Projects Coordinator, Research (2020-2022)
-Megan Bushnell: Digital Content Producer (2021-2022)
-Lindsey Cox: Research Assistant (2019)
-Nathan Daly: Research Scientist (2022)
-George Doji: Computer Associate (2019-2021)
-Steven Flack: Administrator (2022-ongoing)
-Alex Gushurst-Moore: Research & Impact Coordinator (2022-ongoing)
-Dan Pett: Head of Digital and IT (2019-2022)
-Jo Vine: Head of Research and Impact (2019-ongoing)
-Olivia Warren: Digital and IT Coordinator (2021-2022)
+- Christine Slottved Kimbriel: Senior Painting Conservator (Co-principal investigator, 2019-ongoing)
+- Paola Ricciardi: Senior Research Scientist (Co-principal investigator, 2019-2022)
+- Flavia Fiorillo: Research Scientist (2020-ongoing)
+
+With support from:
+
+- Amanda Bluck: Projects Coordinator, Research (2020-2022)
+- Megan Bushnell: Digital Content Producer (2021-2022)
+- Lindsey Cox: Research Assistant (2019)
+- Nathan Daly: Research Scientist (2022)
+- George Doji: Computer Associate (2019-2021)
+- Steven Flack: Administrator (2022-ongoing)
+- Alex Gushurst-Moore: Research & Impact Coordinator (2022-ongoing)
+- Dan Pett: Head of Digital and IT (2019-2022)
+- Jo Vine: Head of Research and Impact (2019-ongoing)
+- Olivia Warren: Digital and IT Coordinator (2021-2022)
 
 The project team owes sincere thanks to numerous other colleagues at the Fitzwilliam Museum and the Hamilton Kerr Institute for their support on many fronts throughout the duration of the project.
 
 ![Figure 1](../assets//ABOUT_figure_1_1920_1280.JPG)
 *Figure 1: Microphotography of a miniature is undertaken in the analytical lab of the Fitzwilliam Museum. You can browse micrographs of all the miniatures featured on this site.*
 
-## Background:
+### Background:
 
 The project was conceived in 2017, during a collaboration between Christine Kimbriel and Paola Ricciardi on the National Trust cabinet miniature of Lord Herbert of Cherbury, attributed to Isaac Oliver. This iconic cabinet miniatures was investigated using an extensive analytical protocol, initially developed for the examination of illuminated manuscripts, in order to learn more about its condition and material composition. While the project resulted in extensive new knowledge about the miniature, it was disappointing to find a very limited body of comparable published research with which to contextualise our findings. We found that Isaac Oliver’s oeuvre (c.1565-1617) has received significantly less attention than that of his contemporary, Nicholas Hilliard (1547-1619).
 

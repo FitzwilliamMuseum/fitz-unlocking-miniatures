@@ -769,15 +769,23 @@ ul.main-menu {
         margin: 3rem 0;
     }
 
+    h2,h3,h4 {
+        margin: 2rem 0;
+    }
+
     p {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 0 0 2rem 0;
+        margin: 2rem 0 0 0;
 
         img {
             width: 100%
         }
+    }
+
+    p:last-child {
+        margin: 2rem 0;
     }
 
     @include for-size(tablet-portrait-up) {
