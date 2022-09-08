@@ -47,15 +47,15 @@ export default function Footer() {
             <div className="footer row">
                 <div className="col-12 col--sm-12 footer--main">
                     <div className="row">
-                        <div className="col-3 col--sm-12 footer--main--links">
+                        <div className="col footer--main--links">
                             <h4>Quick links</h4>
                             <ul>{quickLinksItems}</ul>
                         </div>
-                        <div className="col-4 col--sm-12 footer--contact">
+                        <div className="col footer--contact">
                             <h4>Contact</h4>
                             {contactItems}
                         </div>
-                        <div className="col-3 col--sm-12 footer--copyright-codes">
+                        <div className="col footer--copyright-codes">
                             <div>Content: <a
                                 href="https://creativecommons.org/licenses/by-nc/4.0/"
                                 target="__blank"

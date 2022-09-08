@@ -15,6 +15,7 @@ const config: GatsbyConfig = {
       { link: '/', title: 'Home' },
       { link: '/collections', title: 'Collections' },
       { link: '/about', title: 'About' },
+      { link: '/blog', title: 'Blog' },
     ],
     contact: [
       { line: "portraitminiatures [at] fitzmuseum.cam.ac.uk" },
