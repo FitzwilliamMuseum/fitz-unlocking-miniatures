@@ -81,7 +81,7 @@ function FilterComponent(props: FilterComponentProps) {
     onChangeDateEnd,
     onChangeMonogram
   } = props;
-  const productionDateOptionsHTML = productionDateOptions.map(item => <option value={item}>{item}</option>)
+  const productionDateOptionsHTML = productionDateOptions.map((item, index) => <option key={item + index} value={item}>{item}</option>)
   return <div className="miniature-items-search">
     <input name="searchKeywords" onChange={(event) => onChangeSearchText(event.target.value)} placeholder="Search for artist, sitter or pigment" />
     <div>
@@ -98,7 +98,7 @@ function FilterComponent(props: FilterComponentProps) {
       value={filterValue.monogram}
       onChange={(event) => onChangeMonogram(event.target.value)}
     >
-      {monogramOptions.map(item => <option value={item}>{item}</option>)}
+      {monogramOptions.map((item, index) => <option key={item + index} value={item}>{item}</option>)}
     </select>
   </div>
 }
@@ -115,6 +115,7 @@ function ResultsComponent({ miniatures, addCompareItem, removeCompareItem, compa
     {Array.isArray(miniatures) && miniatures.map(item => {
       const itemCompareActive = !!compareActive[item.item.id!!];
       return <MiniatureItem
+        key={item.item.id}
         item={item.item}
         result={item.result}
         onClickCompare={() => itemCompareActive ? removeCompareItem(item.item) : addCompareItem(item.item)}

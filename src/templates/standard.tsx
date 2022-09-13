@@ -17,11 +17,11 @@ const StandardTemplate = ({ data }: PageProps<Queries.StandardTemplateQuery>) =>
           {data.markdownRemark?.frontmatter?.displayTitle !== false && (
             <div className="page-title"><h1>{data.markdownRemark?.frontmatter?.title}</h1></div>
           )}
-          {data.markdownRemark?.frontmatter?.sections && data.markdownRemark?.frontmatter?.sections.map(section => {
+          {data.markdownRemark?.frontmatter?.sections && data.markdownRemark?.frontmatter?.sections.map((section, index) => {
             if (section?.type == 'banner') {
               const image = section.image_src?.childImageSharp?.gatsbyImageData
               return (
-                <div className="section--main background--black row">
+                <div key={section.link?.url || '' + index} className="section--main background--black row">
                   <div className="col-6 col--sm-12">
                     {image && <GatsbyImage image={image} alt={section.image_alt ? section.image_alt : 'Placeholder'} />}
                   </div>
@@ -35,26 +35,26 @@ const StandardTemplate = ({ data }: PageProps<Queries.StandardTemplateQuery>) =>
             } else if (section?.type == 'feature_box') {
               if (section?.fb_type == 'double') {
                 let count = -1;
-                return (<div className="section--fb double">
-                  {section?.items && section?.items.map(item => {
+                return (<div key={section.link?.url || '' + index} className="section--fb double">
+                  {section?.items && section?.items.map((item, index) => {
                     count++
                     const fbItem = item as FeatureBoxItem
                     if (count % 2 == 0) {
-                      return (<FeatureBox item={fbItem} direction="left" />)
+                      return (<FeatureBox key={fbItem.title || '' + index} item={fbItem} direction="left" />)
                     } else {
-                      return (<FeatureBox item={fbItem} direction="right" />)
+                      return (<FeatureBox key={fbItem.title || '' + index} item={fbItem} direction="right" />)
                     }
                   })
                   }
                 </div>)
               } else {
                 return (
-                  <div className="section--fb single">
+                  <div key={section.link?.url || '' + index} className="section--fb single">
                     {
-                      section?.items && section?.items.map(item => {
+                      section?.items && section?.items.map((item, index) => {
                         const image = item?.image_src?.childImageSharp?.gatsbyImageData
                         return (
-                          <Link className="section--fb-item" to={item?.link?.url || ''}>
+                          <Link key={item?.title || '' + index} className="section--fb-item" to={item?.link?.url || ''}>
                             <div className="section--fb-item--left">
                               <div className="fb--content">
                                 <h2>{item?.title}</h2>
@@ -73,11 +73,11 @@ const StandardTemplate = ({ data }: PageProps<Queries.StandardTemplateQuery>) =>
               }
             } else if (section?.type == 'supporters') {
               const supporters: Array<any> = [];
-              section?.items && section?.items.map((item: any) => {
-                supporters.push(<Supporter link={item?.link} image_src={item?.image_src} />)
+              section?.items && section?.items.map((item: any, index: number) => {
+                supporters.push(<Supporter key={index} link={item?.link} image_src={item?.image_src} />)
               })
               return (
-                <div className="section--supporters row">
+                <div key={section.link?.url || '' + index} className="section--supporters row">
                   {section?.title && <h3>{section?.title}</h3>}
                   <div className="items">
                     {supporters}

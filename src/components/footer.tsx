@@ -32,14 +32,14 @@ export default function Footer() {
     const contactItems: Array<any> = []
 
     if (quickLinks) {
-        quickLinks.forEach((link: any) => {
+        quickLinks.forEach((link: any, index: number) => {
             const linkItem = isExternalUrl(link.link) ? (<a href={link?.link}>{link.title}</a>) : (<Link to={link.link}>{link.title}</Link>)
-            quickLinksItems.push(<li>{linkItem}</li>)
+            quickLinksItems.push(<li key={link.link + index}>{linkItem}</li>)
         })
     }
     if (contact) {
-        contact.forEach((item: any) => {
-            contactItems.push(<div className="contact--line">{item.line}</div>)
+        contact.forEach((item: any, index: number) => {
+            contactItems.push(<div key={item.line + index} className="contact--line">{item.line}</div>)
         })
     }
     return (
