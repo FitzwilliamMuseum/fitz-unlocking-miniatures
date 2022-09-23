@@ -12,7 +12,7 @@ There are three content types in this application. `markdown`, `standard` and `o
 
 ### Markdown
 
-Markdown is a language that uses simple syntax to apply formatting. I is written in plain text and is used in the build process to generate pages with simple layouts. This document is written in markdown, if you are reading it on GitHub it has been rendered in to HTML.
+Markdown is a language that uses simple syntax to apply formatting. It is written in plain text and is used in the build process to generate pages with simple layouts. This document is written in markdown, if you are reading it on GitHub it has been rendered in to HTML.
 
 Useful reading
 
@@ -20,7 +20,7 @@ Useful reading
 - [https://www.markdownguide.org/](https://www.markdownguide.org/)
 - [https://stackedit.io/app](https://stackedit.io/app)
 
-To create a page, create a file inside `content/markdown`. The folder structure and filename does not impact the final website, it is purly organisational. The file must have the extension `.md`.
+To create a page, create a file inside `content/markdown`. The folder structure and filename does not impact the final website, it is purely organisational. The file must have the extension `.md`.
 
 Markdown can be written in any text editor, some will provide a preview of the rendered HTML. There are many popular markdown editors that you can search for online. [stackedit](https://stackedit.io/app) will work in the browser and provides useful shortcuts.
 
@@ -61,7 +61,7 @@ Links
 [The Fitzwilliam Museum](https://fitzmuseum.cam.ac.uk/)
 ```
 
-Images included in the project. Notice that the link url is relative to the location of the markdown file and the image file. Where you save the image does not matter eg. inside `content/assets/blog` as long as you give the correct path. The left had side is used as alt text.
+Images included in the project. Notice that the link url is relative to the location of the markdown file and the image file. Where you save the image does not matter eg. inside `content/assets/blog` as long as you give the correct path. The left hand side is used as alt text.
 
 ```markdown
 ![Figure 1](../assets/ABOUT_figure_1_1920_1280.JPG)

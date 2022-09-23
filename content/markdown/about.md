@@ -26,7 +26,7 @@ With support from:
 
 The project team owes sincere thanks to numerous other colleagues at the Fitzwilliam Museum and the Hamilton Kerr Institute for their support on many fronts throughout the duration of the project.
 
-![Figure 1](../assets//ABOUT_figure_1_1920_1280.JPG)
+![Figure 1](../assets/ABOUT_figure_1_1920_1280.JPG)
 *Figure 1: Microphotography of a miniature is undertaken in the analytical lab of the Fitzwilliam Museum. You can browse micrographs of all the miniatures featured on this site.*
 
 ### Background:
