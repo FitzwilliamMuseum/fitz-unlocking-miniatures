@@ -64,10 +64,6 @@ export default function Footer() {
                                 href="https://creativecommons.org/licenses/by-nc/4.0/"
                                 target="__blank"
                                 rel="noopener">CC-BY-NC</a></div>
-                            <div>Images: <a
-                                href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
-                                target="__blank"
-                                rel="noopener">CC-BY-NC-ND</a></div>
                             <div>Code: <a
                                 href="https://www.gnu.org/licenses/gpl-3.0.en.html"
                                 target="__blank"
