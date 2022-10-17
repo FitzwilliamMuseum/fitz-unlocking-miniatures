@@ -48,10 +48,10 @@ class MiniatureObjectImages extends React.Component<MiniatureObjectImagesProps> 
                         // @ts-ignore
                         const sourceImage = miniature[item.field] as MiniatureObjectImage;
                         // @ts-ignore
-                        const imageUrl = `${config.siteMetadata.api.url}assets/${sourceImage.id}?format=jpg&width=300&quality=80`;
+                        const imageUrl = `${config.siteMetadata.api.url}assets/${sourceImage.id}?format=jpg&width=300&withoutEnlargement&quality=80`;
                         const imageAlt = sourceImage.title;
                         // @ts-ignore
-                        const downloadUrl = `${config.siteMetadata.api.url}assets/${sourceImage.id}?format=jpg`;
+                        const downloadUrl = `${config.siteMetadata.api.url}assets/${sourceImage.id}?format=jpg&width=1920&withoutEnlargement&quality=80`;
                         return (
                             <div id={sourceImage.id}>
                                 <a href={downloadUrl} target="__blank">

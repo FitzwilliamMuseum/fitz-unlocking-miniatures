@@ -21,7 +21,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 		}
 		const miniature: MiniatureGraphQLItem = this.props?.pageResources?.json?.pageContext || mockMiniature;
 		// @ts-ignore
-		const imageUrl = `${config.siteMetadata.api.url}assets/${miniature.image_normal_light.id}?format=jpg&height=200&quality=80`;
+		const imageUrl = `${config.siteMetadata.api.url}assets/${miniature.image_normal_light.id}?format=jpg&height=200&withoutEnlargement&quality=80`;
 		const imageAlt = miniature.image_normal_light.title;
 
 		return <Layout displayLogo={false} >
@@ -123,9 +123,9 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						<div className="object--micrographs">
 							{miniature.images_micrographs && miniature.images_micrographs?.map(micrograph => {
 								// @ts-ignore
-								const micrographImageDownloadUrl = `${config.siteMetadata.api.url}assets/${micrograph.micrograph.id}?format=jpg`;
+								const micrographImageDownloadUrl = `${config.siteMetadata.api.url}assets/${micrograph.micrograph.id}?format=jpg&width=1920&withoutEnlargement&quality=80`;
 								// @ts-ignore
-								const micrographImageAnchorUrl = `${config.siteMetadata.api.url}assets/${micrograph.micrograph.id}?format=jpg&height=200&quality=80`;
+								const micrographImageAnchorUrl = `${config.siteMetadata.api.url}assets/${micrograph.micrograph.id}?format=jpg&width=300&withoutEnlargement&quality=80`;
 								const micrographImageAlt = micrograph.file_name;
 								return (
 									<div id={micrograph.file_name}>
