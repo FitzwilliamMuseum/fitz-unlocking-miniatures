@@ -153,6 +153,11 @@ ul.main-menu {
         display: flex;
         justify-content: start;
         margin-bottom: 1.5rem;
+
+        img {
+            object-fit: contain;
+            width: auto;
+        }
     }
 
     p {
