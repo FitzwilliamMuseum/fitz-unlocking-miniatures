@@ -182,6 +182,18 @@ export const createPages: GatsbyNode["createPages"] = async ({
         slug
         object_record_in_collection
         Credit
+        images_ma_xrf_scans {
+          element_abbreviation
+          element_investigated
+          id
+          ma_xrf_scan {
+            id
+            title
+            filename_disk
+            filename_download
+            description
+          }
+        }
       }
     }
   }`,

@@ -296,7 +296,6 @@ ul.main-menu {
 .miniature-items-search {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: $space;
     padding: $space;
     background-color: clr(background-light);
     align-items: center;
@@ -380,6 +379,8 @@ ul.main-menu {
         text-decoration: none;
         position: relative;
         overflow: hidden;
+        margin-right: 6px;
+
         cursor: pointer;
         span {
             display: inline-block;
@@ -410,6 +411,11 @@ ul.main-menu {
         }
         &:hover::after {
             right:0;
+        }
+
+        &.miniature-item__button_micrograph {
+            margin: 0;
+            padding: 10px;
         }
     }
 }
@@ -639,6 +645,16 @@ ul.main-menu {
     h2 {
         margin: 0;
     }
+
+    &.object--actions--micrograph {
+        gap: 8px;
+        width: 100%;
+    }
+}
+
+.micrograph-iiif {
+    display: block;
+    padding: 8px 8px 8px 0;
 }
 
 .object--description-wrapper {
@@ -693,51 +709,40 @@ ul.main-menu {
     }
 }
 
-.object--micrographs {
+.object--images,
+.object--micrographs,
+.object--images--xrf-scan {
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 30px;
+    margin-right: 0px;
 
     align-content: center;
     flex-direction: column;
+
+    &>div {
+        width: 100%;
+    }
+
     @include for-size(tablet-portrait-up) {
         align-content: center;
         flex-direction: row;
-    }
+        margin-right: -30px;
 
-    &>div {
-        width: 15rem;
-        max-width: 100%;
-    }
+        &>div {
+            width: calc(33.3% - 30px);
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
 
-    img {
-        width: 15rem;
-        height: 15rem;
-        max-width: 100%;
-        object-fit: cover;
-    }
-}
-
-.object--images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-
-    align-content: center;
-    flex-direction: column;
-    @include for-size(tablet-portrait-up) {
-        align-content: center;
-        flex-direction: row;
-    }
-
-    &>div {
-        width: 15rem;
-        max-width: 100%;
+            &>a:first-child {
+                flex-grow: 1;
+            }
+        }
     }
 
     img {
-        width: 15rem;
-        max-width: 100%;
+        width: 100%;
         object-fit: cover;
     }
 }

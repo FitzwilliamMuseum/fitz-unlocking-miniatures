@@ -3,10 +3,10 @@ import { Link } from 'gatsby'
 import '../styles/styles.scss'
 import MiniatureItemSearchCard from "./miniatureSearchCard";
 import config from "../../gatsby-config";
-import InfoIcon from "../assets/svg/info-icon.svg"
 import ViewerIcon from "../assets/svg/viewer-icon.svg"
 import CompareAddIcon from "../assets/svg/add-icon.svg"
 import CompareRemoveIcon from "../assets/svg/remove-icon.svg"
+import { urlSafeString } from "../util";
 
 class MiniatureItem extends React.Component<MiniatureItemProps> {
 
@@ -21,7 +21,7 @@ class MiniatureItem extends React.Component<MiniatureItemProps> {
             `${config?.siteMetadata?.api.url}/assets/${item.image_normal_light}?fit=cover&width=300&height=400&quality=80` : '';
         const objectPageUrl = `/object/${item.slug}`;
         // @ts-ignore
-        const viewerUrl = `${config.siteMetadata.viewer.url}?manifestId[]=${config.siteMetadata.iiif.url + item.accession_number}/manifest.json`
+        const viewerUrl = `${config.siteMetadata.viewer.url}?manifestId[]=${config.siteMetadata.iiif.url + urlSafeString(item.accession_number)}/manifest.json`
         return (
             <React.Fragment>
                 <div className="miniature-item">

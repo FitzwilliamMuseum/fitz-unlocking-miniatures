@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react"
 import Layout from '../components/layout';
 import config from "../../gatsby-config";
-import { Link } from 'gatsby'
+import { Link } from 'gatsby';
+import { urlSafeString } from '../util';
 
 const isBrowser = typeof window !== "undefined"
 
@@ -137,7 +138,7 @@ export default function CollectionsComparePage() {
 
   function objectLinkElement(miniature: MiniatureItemInterface) {
     // @ts-ignore
-    const manifestUrl = config.siteMetadata.iiif.url + miniature.accession_number + '/manifest.json';
+    const manifestUrl = config.siteMetadata.iiif.url + urlSafeString(miniature.accession_number) + '/manifest.json';
     // @ts-ignore
     const viewerUrl = `${config.siteMetadata.viewer.url}?manifestId[]=${manifestUrl}`;
     return <span>

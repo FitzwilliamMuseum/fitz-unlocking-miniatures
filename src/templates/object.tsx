@@ -2,7 +2,10 @@ import React from "react"
 import Layout from "../components/layout";
 import config from "../../gatsby-config";
 import ViewerIcon from "../assets/svg/viewer-icon.svg"
+import DownloadIcon from "../assets/svg/download_black_24dp.svg"
 import MiniatureObjectImages from "../components/MiniatureObjectImages";
+import MiniatureObjectImagesXRF from "../components/MiniatureObjectImagesXRF";
+import { urlSafeString } from '../util';
 
 type ObjectPageContext = {
 	pageResources: {
@@ -23,6 +26,11 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 		// @ts-ignore
 		const imageUrl = `${config.siteMetadata.api.url}assets/${miniature.image_normal_light.id}?format=jpg&height=200&withoutEnlargement&quality=80`;
 		const imageAlt = miniature.image_normal_light.title;
+
+		//@ts-ignore
+		const iiifManifestUrl = `${config.siteMetadata.iiif.url + urlSafeString(miniature.accession_number)}/manifest.json`;
+		//@ts-ignore
+		const miradorUrl = `${config.siteMetadata.viewer.url}?manifestId[]=${iiifManifestUrl}`;
 
 		return <Layout displayLogo={false} >
 			<div className="object">
@@ -50,7 +58,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						<a
 							className="miniature-item__button"
 							// @ts-ignore
-							href={`${config.siteMetadata.viewer.url}?manifestId[]=${config.siteMetadata.iiif.url + miniature.accession_number}/manifest.json`}>
+							href={miradorUrl}>
 							<span className="icon"><ViewerIcon /></span><span>Viewer</span>
 						</a>
 						<a href="#description"><h2 id="description">Description</h2></a>
@@ -58,6 +66,9 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						{miniature.images_micrographs &&
 							miniature.images_micrographs.length > 0 &&
 							<a href="#micrographs"><h2 >Micrographs</h2></a>}
+						{miniature.images_ma_xrf_scans &&
+							miniature.images_ma_xrf_scans.length > 0 &&
+							<a href="#MA-XRF"><h2 >MA-XRF</h2></a>}
 					</div>
 				</div>
 				<div className="object--description-wrapper">
@@ -123,9 +134,9 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						<div className="object--micrographs">
 							{miniature.images_micrographs && miniature.images_micrographs?.map(micrograph => {
 								// @ts-ignore
-								const micrographImageDownloadUrl = `${config.siteMetadata.api.url}assets/${micrograph.micrograph.id}?format=jpg&width=1920&withoutEnlargement&quality=80`;
+								const micrographImageDownloadUrl = `${config.siteMetadata.api.url}assets/${micrograph?.micrograph?.id}?format=jpg&width=1920&withoutEnlargement&quality=80`;
 								// @ts-ignore
-								const micrographImageAnchorUrl = `${config.siteMetadata.api.url}assets/${micrograph.micrograph.id}?format=jpg&width=300&withoutEnlargement&quality=80`;
+								const micrographImageAnchorUrl = `${config.siteMetadata.api.url}assets/${micrograph?.micrograph?.id}?format=jpg&width=300&withoutEnlargement&quality=80`;
 								const micrographImageAlt = micrograph.file_name;
 								return (
 									<div id={micrograph.file_name}>
@@ -137,11 +148,23 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 											{!!micrograph.hotspot && <span> Hotspot</span>}
 											<div>{micrograph.description}</div>
 										</p>
-										<a href={micrographImageDownloadUrl} target="__blank">Open full size</a>
+										<div className="miniature-items object--actions miniature-items object--actions--micrograph">
+											<a
+												className="miniature-item__button miniature-item__button_micrograph" href={miradorUrl} target="__blank">
+												<span className="icon"><ViewerIcon /></span><span>Viewer</span>
+											</a>
+											<a
+												className="miniature-item__button miniature-item__button_micrograph" href={micrographImageDownloadUrl} target="__blank">
+												<span className="icon"><DownloadIcon /></span><span>Download</span>
+											</a>
+										</div>
+										<a className="micrograph-iiif" href={iiifManifestUrl} target="__blank">Copy iiif manifest URL</a>
 									</div>
 								)
 							})}
 						</div>
+						<a href="#MA-XRF"><h2 id="MA-XRF">MA-XRF</h2></a>
+						<MiniatureObjectImagesXRF miniature={miniature} />
 					</div>
 				</div>
 			</div>

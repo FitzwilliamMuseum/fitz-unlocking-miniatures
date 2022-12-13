@@ -100,6 +100,7 @@ type MiniatureGraphQLItem = {
     slug: string
     object_record_in_collection: string
     Credit: string
+    images_ma_xrf_scans: MiniatureImageXRFScan[]
 }
 
 type MiniatureItemProps = {
@@ -112,4 +113,17 @@ type MiniatureItemProps = {
 type MiniatureItemWithSearchResultInterface = {
     item: MiniatureItemInterface
     result: Index.Result | null
+}
+
+type MiniatureImageXRFScan = {
+    element_abbreviation: string
+    element_investigated: string
+    id: string
+    ma_xrf_scan: {
+        id: string
+        title: string
+        filename_disk: string
+        filename_download: string
+        description: string
+    }
 }
