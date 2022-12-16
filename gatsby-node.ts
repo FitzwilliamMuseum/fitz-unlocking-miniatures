@@ -4,9 +4,7 @@ import type { GatsbyNode } from "gatsby"
 import * as path from "path"
 import { createSearchIndexFromGraphQl } from "./src/util/search"
 
-import { Index } from 'lunr'
-let searchIndex: Index
-let miniatureObjectList: MiniatureGraphQLItem[]
+let miniatureObjectList: MiniatureGraphQLItem[];
 
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
@@ -216,8 +214,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
       },
     })
   });
-
-  searchIndex = createSearchIndexFromGraphQl(miniatureObjectList)
 }
 
 export const onCreatePage: GatsbyNode["onCreatePage"] = async ({
@@ -238,6 +234,8 @@ export const onCreatePage: GatsbyNode["onCreatePage"] = async ({
         collection: item.collection.name
       };
     })
+
+    const searchIndex = JSON.stringify(createSearchIndexFromGraphQl(miniatureObjectList));
 
     context = {
       ...page.context,

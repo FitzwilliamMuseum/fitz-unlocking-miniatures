@@ -1,7 +1,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import '../styles/styles.scss'
-import { GatsbyImage } from "gatsby-plugin-image";
+import '../styles/styles.scss';
 import { isExternalUrl } from "../util";
 
 export default function Footer() {
@@ -28,20 +27,14 @@ export default function Footer() {
 
     const { quickLinks, contact } = data.site.siteMetadata;
 
-    const quickLinksItems: Array<any> = []
-    const contactItems: Array<any> = []
+    const quickLinksItems = quickLinks.map((link: any, index: number) => {
+        const linkItem = isExternalUrl(link.link) ? (<a href={link?.link}>{link.title}</a>) : (<Link to={link.link}>{link.title}</Link>)
+        return <li key={link.link + index}>{linkItem}</li>
+    })
+    const contactItems = contact.map((item: any, index: number) => {
+        return <div key={item.line + index} className="contact--line">{item.line}</div>
+    })
 
-    if (quickLinks) {
-        quickLinks.forEach((link: any, index: number) => {
-            const linkItem = isExternalUrl(link.link) ? (<a href={link?.link}>{link.title}</a>) : (<Link to={link.link}>{link.title}</Link>)
-            quickLinksItems.push(<li key={link.link + index}>{linkItem}</li>)
-        })
-    }
-    if (contact) {
-        contact.forEach((item: any, index: number) => {
-            contactItems.push(<div key={item.line + index} className="contact--line">{item.line}</div>)
-        })
-    }
     return (
         <React.Fragment>
             <div className="footer row">

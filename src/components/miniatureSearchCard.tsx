@@ -13,40 +13,63 @@ export interface MiniatureItemSearchCardProps {
     result: Index.Result | null;
 }
 
+type StyledSearchMatchingTextItemProps = {
+    textLeft: string
+    textCenter: string
+    textRight: string
+}
+
+function StyledSearchMatchingTextItem({ textLeft, textCenter, textRight }: StyledSearchMatchingTextItemProps) {
+    return (
+        <>
+            {textLeft && <span>{textLeft}</span>}
+            <span className="iniature-items-search--result--match">
+                &nbsp;{textCenter}&nbsp;
+            </span>
+            {textRight && <span>{textRight}</span>}
+        </>
+    )
+}
+
 type StyledSearchMatchingTextProps = {
     body: string
     position: any
 }
 
 function StyledSearchMatchingText({ body, position }: StyledSearchMatchingTextProps) {
-    const positionOffsetMax = 80;
 
-    return position.map((positionItem: number[], index: number) => {
-        const positionLeftStart = position[index - 1] ? (position[index - 1][0] + position[index - 1][1]) : 0;
-        const positionLeftEnd = positionItem[0];
-        const positionLeftOffset = positionItem[0] - positionOffsetMax;
-        const textLeft = positionLeftStart < positionLeftOffset ?
-            ' ... ' + body.slice(positionLeftOffset, positionLeftEnd) :
-            body.slice(positionLeftStart, positionLeftEnd);
+    return (
+        <>
+            {position.map((positionItem: number[], index: number) => {
+                const positionOffsetMax = 80;
 
-        const positionRightStart = positionItem[0] + positionItem[1];
-        const positionRightEnd = positionItem[0] + positionItem[1] + positionOffsetMax;
-        const textRight = body.slice(positionRightStart, positionRightEnd) + (positionRightEnd < body.length ? ' ... ' : '');
-        return (
-            <>
-                {textLeft && <span>{textLeft}</span>}
-                <span className="iniature-items-search--result--match">
-                    &nbsp;
-                    {body.slice(
-                        positionItem[0],
-                        positionItem[0] + positionItem[1]
-                    )}
-                    &nbsp;
-                </span>
-                {textRight && index >= (position.length - 1) && <span>{textRight}</span>}
-            </>
-        )
-    });
+                const positionLeftStart = position[index - 1] ? (position[index - 1][0] + position[index - 1][1]) : 0;
+                const positionLeftEnd = positionItem[0];
+                const positionLeftOffset = positionItem[0] - positionOffsetMax;
+                const textLeft = positionLeftStart < positionLeftOffset ?
+                    ' ... ' + body.slice(positionLeftOffset, positionLeftEnd) :
+                    body.slice(positionLeftStart, positionLeftEnd);
+
+                const positionRightStart = positionItem[0] + positionItem[1];
+                const positionRightEnd = positionItem[0] + positionItem[1] + positionOffsetMax;
+                const textRight = 
+                index >= (position.length - 1) ?
+                (body.slice(positionRightStart, positionRightEnd) + (positionRightEnd < body.length ? ' ... ' : '')) :
+                '';
+
+                const textCenter = body.slice(
+                    positionItem[0],
+                    positionItem[0] + positionItem[1]
+                );
+
+                return <StyledSearchMatchingTextItem
+                    key={index + body}
+                    textLeft={textLeft}
+                    textRight={textRight}
+                    textCenter={textCenter} />
+            })}
+        </>
+    )
 }
 
 const MiniatureItemSearchCard: React.FC<MiniatureItemSearchCardProps> = ({ item, result }) => {
@@ -88,14 +111,14 @@ const MiniatureItemSearchCard: React.FC<MiniatureItemSearchCardProps> = ({ item,
         })
     });
 
-    const searchResults = Object.values(metadataByField).map(({ title, field, position }) => {
+    const searchResults = Object.values(metadataByField).map(({ title, field, position }, index) => {
         return (
-            <div className="search-card__item">
+            <div className="search-card__item" key={index}>
                 <div className="search-card__item-title">{title}</div>
                 <div className="search-card__item-value" >
                     <StyledSearchMatchingText body={
-                        //@ts-ignore
-                        item[field]} position={position} />
+                            //@ts-ignore
+                            item[field]} position={position} />
                 </div>
             </div>)
     })

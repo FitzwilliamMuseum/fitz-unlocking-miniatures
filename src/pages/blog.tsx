@@ -2,6 +2,12 @@ import React from "react";
 import { graphql, Link, PageProps } from 'gatsby'
 import Layout from "../components/layout";
 
+type BlogFromtmatter = {
+  slug: string
+  title: string
+  intro: string
+  date: string
+}
 const BlogListTemplate = ({ data }: PageProps<Queries.BlogListTemplateQuery>) => {
 
   return (
@@ -11,7 +17,7 @@ const BlogListTemplate = ({ data }: PageProps<Queries.BlogListTemplateQuery>) =>
         <ul>
           {data.allFile.nodes.map(item => {
             //@ts-ignore
-            const blog: { slug: string, title: string } = item.childMarkdownRemark!.frontmatter
+            const blog: BlogFromtmatter = item.childMarkdownRemark!.frontmatter
             return <li className="blog-list--item">
               <Link to={blog.slug}><h2>{blog.title}</h2></Link>
               <p>{blog.intro}</p>

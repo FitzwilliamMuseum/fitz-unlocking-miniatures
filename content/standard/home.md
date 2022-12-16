@@ -59,7 +59,7 @@ sections:
         link:
           url: https://ago.ca/collection/thomson/
           title: The Thomson Collection at the Art Gallery of Ontario
-      - image_src: ../../content/assets/British-Academy-logo.svg
+      - image_src: ../../content/assets/British-Academy-logo.png
         link:
           url: https://www.thebritishacademy.ac.uk/
           title: British Academy / Leverhulme Small Research Grant

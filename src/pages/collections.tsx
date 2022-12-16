@@ -37,7 +37,7 @@ function CompareComponent({ compareValues, removeCompareItem }: CompareComponent
     <h3>Compare objects</h3>
     <p>Select up to 3 objects using the 'plus compare' button on other objects</p>
     {compareValues.map(compareItem => (
-      <div className="miniature-items">
+      <div className="miniature-items" key={compareItem.id}>
         <div className="miniature-item__button" onClick={() => removeCompareItem(compareItem)}>
           <span className="icon">
             <CompareRemoveIcon />
@@ -97,6 +97,7 @@ function FilterComponent(props: FilterComponentProps) {
         {searchSuggestion.length > 0 && <div className="miniature-items-search--suggest">
           {searchSuggestion.map((item) => <button
             className="miniature-items-search--suggest--item"
+            key={item}
             onClick={() => onChangeSearchText(item)}>{item}</button>)}
         </div>}
       </div>
@@ -152,7 +153,7 @@ type FilterState = {
 type CollectionPageProps = {
   pageContext: {
     miniatures: { [id: number]: MiniatureGraphQLItem }
-    serialisedSearchIndex: lunr.Index
+    serialisedSearchIndex: string
   }
 }
 
@@ -174,7 +175,7 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
   ];
   const monogramOptions = [MONOGRAM_OPT_ANY, MONOGRAM_OPT_YES, MONOGRAM_OPT_NO];
 
-  let searchIndex = lunr.Index.load(serialisedSearchIndex);
+  let searchIndex = serialisedSearchIndex ? lunr.Index.load(JSON.parse(serialisedSearchIndex)) : null;
 
   const [filterState, setFilterState] = useState<FilterState>({
     text: "",
@@ -186,7 +187,7 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
   useEffect(() => {
     setLoading(true);
     const searchTerm = filterState.text.toLowerCase().trim();
-    const results = searchIndex.search(searchTerm);
+    const results = searchIndex ? searchIndex.search(searchTerm) : [];
 
     const filtered: MiniatureItemWithSearchResultInterface[] = [];
     for (let i = 0; i < results.length; i++) {
@@ -215,7 +216,7 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
     }
     setFilteredMiniatures(filtered);
 
-    const suggestResult = searchSuggest(searchIndex, searchTerm);
+    const suggestResult = searchIndex ? searchSuggest(searchIndex, searchTerm) : [];
     const suggest: { [key: string]: boolean } = {};
     suggestResult.forEach((result) => {
       const foundItem = miniatures[parseInt(result.ref)];

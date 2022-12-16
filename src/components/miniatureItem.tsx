@@ -16,9 +16,9 @@ class MiniatureItem extends React.Component<MiniatureItemProps> {
 
     render() {
         const { item, result, onClickCompare, compareActive } = this.props;
-        const image_src: string = item.image_normal_light.filename_disk ?
+        const image_src: string = item.image_normal_light?.filename_disk ?
             // @ts-ignore
-            `${config?.siteMetadata?.api.url}/assets/${item.image_normal_light.filename_disk}?fit=cover&width=300&height=400&quality=80` : '';
+            `${config?.siteMetadata?.api.url}/assets/${item.image_normal_light?.filename_disk}?fit=cover&width=300&height=400&quality=80` : '';
         const objectPageUrl = `/object/${item.slug}`;
         // @ts-ignore
         const viewerUrl = `${config.siteMetadata.viewer.url}?manifestId[]=${config.siteMetadata.iiif.url + urlSafeString(item.accession_number)}/manifest.json`

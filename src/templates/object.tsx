@@ -20,12 +20,12 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 	render() {
 		//required for production gatsby build
 		const mockMiniature = {
-			image_normal_light: { id: "", title: "" }, collection: { name: "" },
+			image_normal_light: { id: "", title: "" }, collection: "",
 		}
 		const miniature: MiniatureGraphQLItem = this.props?.pageResources?.json?.pageContext || mockMiniature;
 		// @ts-ignore
-		const imageUrl = `${config.siteMetadata.api.url}assets/${miniature.image_normal_light.id}?format=jpg&height=200&withoutEnlargement&quality=80`;
-		const imageAlt = miniature.image_normal_light.title;
+		const imageUrl = `${config.siteMetadata.api.url}assets/${miniature.image_normal_light?.id}?format=jpg&height=200&withoutEnlargement&quality=80`;
+		const imageAlt = miniature.image_normal_light?.title;
 
 		//@ts-ignore
 		const iiifManifestUrl = `${config.siteMetadata.iiif.url + urlSafeString(miniature.accession_number)}/manifest.json`;
@@ -64,10 +64,10 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						<a href="#description"><h2 id="description">Description</h2></a>
 						<a href="#images"><h2 >Images</h2></a>
 						{miniature.images_micrographs &&
-							miniature.images_micrographs.length > 0 &&
+							miniature.images_micrographs?.length > 0 &&
 							<a href="#micrographs"><h2 >Micrographs</h2></a>}
 						{miniature.images_ma_xrf_scans &&
-							miniature.images_ma_xrf_scans.length > 0 &&
+							miniature.images_ma_xrf_scans?.length > 0 &&
 							<a href="#MA-XRF"><h2 >MA-XRF</h2></a>}
 					</div>
 				</div>
@@ -164,7 +164,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 							})}
 						</div>
 						<a href="#MA-XRF"><h2 id="MA-XRF">MA-XRF</h2></a>
-						<MiniatureObjectImagesXRF miniature={miniature} />
+						{miniature.images_ma_xrf_scans && <MiniatureObjectImagesXRF miniature={miniature} />}
 					</div>
 				</div>
 			</div>

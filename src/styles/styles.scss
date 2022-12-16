@@ -113,6 +113,10 @@ h3 {
 
         background-color: clr(background-black);
     }
+
+    .logo-header--logo {
+        max-width: 200px;
+    }
 }
 
 .logo-header {
@@ -500,6 +504,11 @@ ul.main-menu {
         font-size: 1.4rem;
         font-weight: bold;
     }
+}
+
+.no-search-results--text {
+    height: 200px;
+    display: block;
 }
 
 .footer {

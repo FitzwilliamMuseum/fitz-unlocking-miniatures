@@ -2,8 +2,6 @@ import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import '../styles/styles.scss'
 import MainMenu from "./mainMenu";
-import Logo from "../assets/svg/logo.svg"
-import LogoDark from "../assets/svg/logo-dark.svg"
 
 interface HeaderProps {
     displayLogo: boolean;
@@ -31,8 +29,8 @@ const Header: React.FC<HeaderProps> = ({ displayLogo, dark }) => {
         return (
             <section className={'logo-header' + (dark === true ? ' dark' : '')}>
                 <Link to="/">
-                    {!!dark && <Logo />}
-                    {!dark && <LogoDark />}
+                    {!!dark && <img className="logo-header--logo" src="/logo.png" />}
+                    {!dark && <img className="logo-header--logo" src="/logo-dark.png" />}
                 </Link>
                 <MainMenu menu={menu} />
             </section>
