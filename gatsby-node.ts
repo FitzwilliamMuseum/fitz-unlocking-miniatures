@@ -3,6 +3,7 @@
 import type { GatsbyNode } from "gatsby"
 import * as path from "path"
 import { createSearchIndexFromGraphQl } from "./src/util/search"
+import * as fs from 'node:fs/promises';
 
 let miniatureObjectList: MiniatureGraphQLItem[];
 
@@ -237,10 +238,11 @@ export const onCreatePage: GatsbyNode["onCreatePage"] = async ({
 
     const searchIndex = JSON.stringify(createSearchIndexFromGraphQl(miniatureObjectList));
 
+    await fs.writeFile('static/search-index.json', searchIndex);
+
     context = {
       ...page.context,
-      miniatures: miniaturesMap,
-      serialisedSearchIndex: searchIndex
+      miniatures: miniaturesMap
     }
   }
   createPage({

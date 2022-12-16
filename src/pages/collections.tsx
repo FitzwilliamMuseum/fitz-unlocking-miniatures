@@ -153,7 +153,6 @@ type FilterState = {
 type CollectionPageProps = {
   pageContext: {
     miniatures: { [id: number]: MiniatureGraphQLItem }
-    serialisedSearchIndex: string
   }
 }
 
@@ -161,12 +160,13 @@ const MONOGRAM_OPT_ANY = "Monogram";
 const MONOGRAM_OPT_YES = "Yes";
 const MONOGRAM_OPT_NO = "No";
 
-export default function CollectionsPage({ pageContext: { miniatures, serialisedSearchIndex } }: CollectionPageProps) {
+export default function CollectionsPage({ pageContext: { miniatures } }: CollectionPageProps) {
 
   const [loading, setLoading] = useState(true)
   const [filteredMiniatures, setFilteredMiniatures] = useState<MiniatureItemWithSearchResultInterface[]>([])
   const [searchSuggestion, setSearchSuggestion] = useState<string[]>([])
   const [compare, setCompare] = useState<Compare>({})
+  const [searchIndex, setSearchIndex] = useState<lunr.Index>()
 
   const dateOptions = [
     "1500", "1510", "1520", "1530", "1540", "1550", "1560", "1570", "1580", "1590",
@@ -175,14 +175,24 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
   ];
   const monogramOptions = [MONOGRAM_OPT_ANY, MONOGRAM_OPT_YES, MONOGRAM_OPT_NO];
 
-  let searchIndex = serialisedSearchIndex ? lunr.Index.load(JSON.parse(serialisedSearchIndex)) : null;
-
   const [filterState, setFilterState] = useState<FilterState>({
     text: "",
     dateStart: dateOptions[0],
     dateEnd: dateOptions[dateOptions.length - 1],
     monogram: MONOGRAM_OPT_ANY
   });
+
+  useEffect(() => {
+    fetch('/search-index.json').then((response) => {
+      if (response.status != 200) return Promise.reject(response.statusText);
+      return response.json();
+    }).then((serialisedSearchIndex) => {
+      let _searchIndex = lunr.Index.load(serialisedSearchIndex);
+      setSearchIndex(_searchIndex);
+    }).catch((error) => {
+      console.log('search-index', error)
+    });
+  }, [])
 
   useEffect(() => {
     setLoading(true);
@@ -193,8 +203,9 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
     for (let i = 0; i < results.length; i++) {
       const foundItem = miniatures[parseInt(results[i].ref)];
       if (foundItem) {
+        console.log(foundItem.production_date_text)
         if (typeof foundItem.production_date_text == "string") {
-          const itemDate = foundItem.production_date_text.slice(0, 4);
+          const itemDate = foundItem.production_date_text.replace('c. ', '').slice(0, 4);
           //filter production start date
           if (itemDate < filterState.dateStart) {
             continue;
@@ -238,7 +249,7 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
     setSearchSuggestion(Object.keys(suggest));
 
     setLoading(false)
-  }, [filterState])
+  }, [filterState, searchIndex])
 
   function onChangeSearchText(value: string) {
     const updatedFilter = {
