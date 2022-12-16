@@ -2,8 +2,11 @@
 //https://dev.to/skil3e/how-to-use-gatsby-with-typescript-2d79
 import type { GatsbyNode } from "gatsby"
 import * as path from "path"
-import { buildDirectusRequestUrl, createSearchIndex } from "./src/util/search"
-import fetch from "node-fetch"
+import { createSearchIndexFromGraphQl } from "./src/util/search"
+
+import { Index } from 'lunr'
+let searchIndex: Index
+let miniatureObjectList: MiniatureGraphQLItem[]
 
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
@@ -198,14 +201,23 @@ export const createPages: GatsbyNode["createPages"] = async ({
     }
   }`,
     {});
-  // @ts-ignore
-  objectTemplateResult.data.directusgraphql.miniatures.forEach(miniatureObject => {
+
+  //@ts-ignore
+  miniatureObjectList = objectTemplateResult.data.directusgraphql.miniatures;
+
+  miniatureObjectList.forEach(miniatureObject => {
     createPage({
       path: 'object/' + miniatureObject.slug,
       component: objectTemplate,
-      context: { ...miniatureObject },
+      context: {
+        ...miniatureObject,
+        //@ts-ignore
+        collection: miniatureObject.collection.name
+      },
     })
   });
+
+  searchIndex = createSearchIndexFromGraphQl(miniatureObjectList)
 }
 
 export const onCreatePage: GatsbyNode["onCreatePage"] = async ({
@@ -218,12 +230,13 @@ export const onCreatePage: GatsbyNode["onCreatePage"] = async ({
   }
   if (page.path == "/collections/") {
 
-    const response = await fetch(buildDirectusRequestUrl())
-    const miniatures = await response.json()
-    const searchIndex = createSearchIndex(miniatures.data)
-    const miniaturesMap: { [id: number]: MiniatureItemInterface } = {};
-    miniatures.data.forEach((item: MiniatureItemInterface) => {
-      miniaturesMap[parseInt(item.id!!)] = item;
+    const miniaturesMap: { [id: number]: MiniatureGraphQLItem } = {};
+    miniatureObjectList.forEach(item => {
+      miniaturesMap[parseInt(item.id)] = {
+        ...item,
+        //@ts-ignore
+        collection: item.collection.name
+      };
     })
 
     context = {

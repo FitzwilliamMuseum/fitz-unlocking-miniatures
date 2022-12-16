@@ -6,10 +6,13 @@ import { Link } from 'gatsby'
 import ViewerIcon from "../assets/svg/viewer-icon.svg"
 import config from "../../gatsby-config";
 import CompareRemoveIcon from "../assets/svg/remove-icon.svg"
-import lunr from "lunr"
+import lunr from "lunr";
+import { searchSuggest } from "../util/search"
+
+const suggestTextRegex = /[^a-zA-z0-9\- ]/g;
 
 type Compare = {
-  [id: string]: MiniatureItemInterface;
+  [id: string]: MiniatureGraphQLItem;
 }
 
 type NoResultsComponentProps = {
@@ -25,8 +28,8 @@ function NoResultsComponent({ searchText, resultsCount }: NoResultsComponentProp
 }
 
 type CompareComponentProps = {
-  compareValues: MiniatureItemInterface[]
-  removeCompareItem: (item: MiniatureItemInterface) => void
+  compareValues: MiniatureGraphQLItem[]
+  removeCompareItem: (item: MiniatureGraphQLItem) => void
 }
 
 function CompareComponent({ compareValues, removeCompareItem }: CompareComponentProps) {
@@ -69,6 +72,7 @@ type FilterComponentProps = {
   onChangeDateStart: (start: string) => void
   onChangeDateEnd: (end: string) => void
   onChangeMonogram: (value: string) => void
+  searchSuggestion: string[]
 }
 
 function FilterComponent(props: FilterComponentProps) {
@@ -79,34 +83,47 @@ function FilterComponent(props: FilterComponentProps) {
     onChangeSearchText,
     onChangeDateStart,
     onChangeDateEnd,
-    onChangeMonogram
+    onChangeMonogram,
+    searchSuggestion
   } = props;
   const productionDateOptionsHTML = productionDateOptions.map((item, index) => <option key={item + index} value={item}>{item}</option>)
-  return <div className="miniature-items-search">
-    <input name="searchKeywords" onChange={(event) => onChangeSearchText(event.target.value)} placeholder="Search for artist, sitter or pigment" />
-    <div>
-      <label>Production date</label>
+  return <div className="miniature-items-search--container">
+    <div className="miniature-items-search">
+      <div className="miniature-items-search--input">
+        <input name="searchKeywords"
+          value={filterValue.text}
+          onChange={(event) => onChangeSearchText(event.target.value)}
+          placeholder="Search" />
+        {searchSuggestion.length > 0 && <div className="miniature-items-search--suggest">
+          {searchSuggestion.map((item) => <button
+            className="miniature-items-search--suggest--item"
+            onClick={() => onChangeSearchText(item)}>{item}</button>)}
+        </div>}
+      </div>
+      <div>
+        <label>Production date</label>
+        <select
+          value={filterValue.dateStart}
+          onChange={(event) => onChangeDateStart(event.target.value)}>{productionDateOptionsHTML}</select><span> - </span>
+        <select
+          value={filterValue.dateEnd}
+          onChange={(event) => onChangeDateEnd(event.target.value)}
+        >{productionDateOptionsHTML}</select>
+      </div>
       <select
-        value={filterValue.dateStart}
-        onChange={(event) => onChangeDateStart(event.target.value)}>{productionDateOptionsHTML}</select><span> - </span>
-      <select
-        value={filterValue.dateEnd}
-        onChange={(event) => onChangeDateEnd(event.target.value)}
-      >{productionDateOptionsHTML}</select>
+        value={filterValue.monogram}
+        onChange={(event) => onChangeMonogram(event.target.value)}
+      >
+        {monogramOptions.map((item, index) => <option key={item + index} value={item}>{item}</option>)}
+      </select>
     </div>
-    <select
-      value={filterValue.monogram}
-      onChange={(event) => onChangeMonogram(event.target.value)}
-    >
-      {monogramOptions.map((item, index) => <option key={item + index} value={item}>{item}</option>)}
-    </select>
   </div>
 }
 
 type ResultsComponentProps = {
   miniatures: MiniatureItemWithSearchResultInterface[]
-  addCompareItem: (item: MiniatureItemInterface) => void
-  removeCompareItem: (item: MiniatureItemInterface) => void
+  addCompareItem: (item: MiniatureGraphQLItem) => void
+  removeCompareItem: (item: MiniatureGraphQLItem) => void
   compareActive: Compare
 }
 
@@ -134,7 +151,7 @@ type FilterState = {
 
 type CollectionPageProps = {
   pageContext: {
-    miniatures: { [id: number]: MiniatureItemInterface }
+    miniatures: { [id: number]: MiniatureGraphQLItem }
     serialisedSearchIndex: lunr.Index
   }
 }
@@ -147,6 +164,7 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
 
   const [loading, setLoading] = useState(true)
   const [filteredMiniatures, setFilteredMiniatures] = useState<MiniatureItemWithSearchResultInterface[]>([])
+  const [searchSuggestion, setSearchSuggestion] = useState<string[]>([])
   const [compare, setCompare] = useState<Compare>({})
 
   const dateOptions = [
@@ -166,37 +184,58 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
   });
 
   useEffect(() => {
-    setLoading(true)
-    const results = searchIndex.search(filterState.text)
-    const filtered: MiniatureItemWithSearchResultInterface[] = []
-    results?.forEach((result) => {
-      const foundItem = miniatures[parseInt(result.ref)]
-      if (foundItem) {
+    setLoading(true);
+    const searchTerm = filterState.text.toLowerCase().trim();
+    const results = searchIndex.search(searchTerm);
 
-        let foundItemFilterMatch = true;
-        if (typeof foundItem.production_date == "string") {
-          const itemDate = foundItem.production_date.slice(0, 4);
+    const filtered: MiniatureItemWithSearchResultInterface[] = [];
+    for (let i = 0; i < results.length; i++) {
+      const foundItem = miniatures[parseInt(results[i].ref)];
+      if (foundItem) {
+        if (typeof foundItem.production_date_text == "string") {
+          const itemDate = foundItem.production_date_text.slice(0, 4);
           //filter production start date
           if (itemDate < filterState.dateStart) {
-            foundItemFilterMatch = false;
+            continue;
           }
           //filter production end date
           if (itemDate > filterState.dateEnd) {
-            foundItemFilterMatch = false;
+            continue;
           }
         }
         if (filterState.monogram == MONOGRAM_OPT_YES && !foundItem.monogram) {
-          foundItemFilterMatch = false;
+          continue;
         }
         if (filterState.monogram == MONOGRAM_OPT_NO && !!foundItem.monogram) {
-          foundItemFilterMatch = false;
+          continue;
         }
-        if (foundItemFilterMatch) {
-          filtered.push({ item: foundItem, result })
+
+        filtered.push({ item: foundItem, result: results[i] })
+      }
+    }
+    setFilteredMiniatures(filtered);
+
+    const suggestResult = searchSuggest(searchIndex, searchTerm);
+    const suggest: { [key: string]: boolean } = {};
+    suggestResult.forEach((result) => {
+      const foundItem = miniatures[parseInt(result.ref)];
+      if (foundItem && result.matchData.metadata) {
+        try {
+          Object.values(result.matchData.metadata).forEach(metadataMatch => {
+            Object.keys(metadataMatch).forEach(metadataFieldKey => {
+              //@ts-ignore
+              let fieldValue = foundItem[metadataFieldKey].replace(suggestTextRegex, "").trim();
+              suggest[fieldValue] = true;
+            });
+          });
+        }
+        catch (e: any) {
+
         }
       }
-    })
-    setFilteredMiniatures(filtered)
+    });
+    setSearchSuggestion(Object.keys(suggest));
+
     setLoading(false)
   }, [filterState])
 
@@ -232,7 +271,7 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
     setFilterState(updatedFilter);
   }
 
-  function addCompareItem(item: MiniatureItemInterface) {
+  function addCompareItem(item: MiniatureGraphQLItem) {
     if (Object.keys(compare || {}).length >= 3) return;
     const updatedCompare = {
       ...compare,
@@ -241,7 +280,7 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
     setCompare(updatedCompare);
   }
 
-  function removeCompareItem(item: MiniatureItemInterface) {
+  function removeCompareItem(item: MiniatureGraphQLItem) {
     const updatedCompare = {
       ...compare,
     }
@@ -260,6 +299,7 @@ export default function CollectionsPage({ pageContext: { miniatures, serialisedS
           onChangeDateStart={onChangeDateStart}
           onChangeDateEnd={onChangeDateEnd}
           onChangeMonogram={onChangeMonogram}
+          searchSuggestion={searchSuggestion}
         />
         <NoResultsComponent searchText={filterState.text} resultsCount={filteredMiniatures.length} />
         <div className="loading">{loading == true && <Loading />}</div>

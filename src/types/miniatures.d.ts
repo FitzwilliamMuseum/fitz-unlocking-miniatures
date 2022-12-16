@@ -27,10 +27,7 @@ type MiniatureObjectImage = {
 type MiniatureGraphQLItem = {
     id: string
     title: string
-    collection: {
-        id: string
-        name: string
-    }
+    collection: string
     accession_number: string
     production_date_text: string
     artist_text: string
@@ -104,14 +101,14 @@ type MiniatureGraphQLItem = {
 }
 
 type MiniatureItemProps = {
-    item: MiniatureItemInterface;
+    item: MiniatureGraphQLItem;
     result: Index.Result | null;
     onClickCompare: VoidFunction;
     compareActive: boolean;
 }
 
 type MiniatureItemWithSearchResultInterface = {
-    item: MiniatureItemInterface
+    item: MiniatureGraphQLItem
     result: Index.Result | null
 }
 
