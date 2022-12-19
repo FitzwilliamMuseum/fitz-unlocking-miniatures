@@ -869,4 +869,37 @@ ul.main-menu {
     @include for-size(tablet-portrait-up) {
         padding: 0 20%;
     }
+
+    sup {
+        vertical-align: super;
+        font-size: revert;
+    }
+
+    sub {
+        vertical-align: sub;
+        font-size: revert;
+    }
+}
+
+.blog--image-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 2rem 0 -2rem 0;
+
+    @include for-size(tablet-portrait-up) {
+        flex-wrap: nowrap;
+    }
+
+    .gatsby-resp-image-wrapper {
+        height: 100%;
+        flex: 1;
+        align-self: center;
+        min-width: 100%;
+
+        @include for-size(tablet-portrait-up) {
+            min-width: unset;
+        }
+
+    }
 }

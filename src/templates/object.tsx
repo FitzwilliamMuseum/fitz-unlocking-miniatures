@@ -163,8 +163,11 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 								)
 							})}
 						</div>
-						<a href="#MA-XRF"><h2 id="MA-XRF">MA-XRF</h2></a>
-						{miniature.images_ma_xrf_scans && <MiniatureObjectImagesXRF miniature={miniature} />}
+						{miniature.images_ma_xrf_scans?.length > 0 &&
+							<>
+								<a href="#MA-XRF"><h2 id="MA-XRF">MA-XRF</h2></a>
+								<MiniatureObjectImagesXRF miniature={miniature} />
+							</>}
 					</div>
 				</div>
 			</div>

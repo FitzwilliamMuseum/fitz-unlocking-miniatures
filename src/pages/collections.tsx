@@ -203,7 +203,6 @@ export default function CollectionsPage({ pageContext: { miniatures } }: Collect
     for (let i = 0; i < results.length; i++) {
       const foundItem = miniatures[parseInt(results[i].ref)];
       if (foundItem) {
-        console.log(foundItem.production_date_text)
         if (typeof foundItem.production_date_text == "string") {
           const itemDate = foundItem.production_date_text.replace('c. ', '').slice(0, 4);
           //filter production start date
