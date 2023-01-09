@@ -68,7 +68,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 							<a href="#micrographs"><h2 >Micrographs</h2></a>}
 						{miniature.images_ma_xrf_scans &&
 							miniature.images_ma_xrf_scans?.length > 0 &&
-							<a href="#MA-XRF"><h2 >MA-XRF</h2></a>}
+							<a href="#MA-XRF MAPS"><h2 >MA-XRF MAPS</h2></a>}
 					</div>
 				</div>
 				<div className="object--description-wrapper">
@@ -165,7 +165,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						</div>
 						{miniature.images_ma_xrf_scans?.length > 0 &&
 							<>
-								<a href="#MA-XRF"><h2 id="MA-XRF">MA-XRF</h2></a>
+								<a href="#MA-XRF MAPS"><h2 id="MA-XRF MAPS">MA-XRF MAPS</h2></a>
 								<MiniatureObjectImagesXRF miniature={miniature} />
 							</>}
 					</div>
