@@ -8,12 +8,14 @@ const config: GatsbyConfig = {
     mainMenu: [
       { link: '/', title: 'Home' },
       { link: '/collections', title: 'Collections' },
+      { link: '/terminology', title: 'Terminology' },
       { link: '/about', title: 'About' },
       { link: '/blog', title: 'Blog' },
     ],
     quickLinks: [
       { link: '/', title: 'Home' },
       { link: '/collections', title: 'Collections' },
+      { link: '/terminology', title: 'Terminology' },
       { link: '/about', title: 'About' },
       { link: '/blog', title: 'Blog' },
     ],
