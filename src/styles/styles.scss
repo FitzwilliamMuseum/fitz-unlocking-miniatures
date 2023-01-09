@@ -845,25 +845,22 @@ ul.main-menu {
 /* Blog page */
 .blog {
     padding: 0 5%;
+    margin-bottom: 4rem;
 
     h1 {
-        margin: 3rem 0;
+        margin: 4rem 0 2rem 0;
     }
 
     h2,h3,h4 {
-        margin: 2rem 0;
+        margin: 3rem 0 1rem 0;
     }
 
     p {
-        margin: 2rem 0 0 0;
+        margin: 1rem 0;
 
         img {
             width: 100%
         }
-    }
-
-    p:last-child {
-        margin: 2rem 0;
     }
 
     @include for-size(tablet-portrait-up) {
@@ -885,7 +882,6 @@ ul.main-menu {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
-    margin: 2rem 0 -2rem 0;
 
     @include for-size(tablet-portrait-up) {
         flex-wrap: nowrap;
@@ -901,5 +897,25 @@ ul.main-menu {
             min-width: unset;
         }
 
+        img {
+            object-fit: cover;
+        }
     }
+
+}
+
+.blog--image-row--height-14 {
+    @include for-size(tablet-portrait-up) {
+        height: 14vw;
+    }
+}
+
+.blog--image-row--height-27 {
+    @include for-size(tablet-portrait-up) {
+        height: 27vw;
+    }
+}
+
+.blog--image-row + p {
+    margin: 0 0 1rem 0;
 }

@@ -1,6 +1,6 @@
 ---
 slug: "/terminology"
-date: "2022-12-19"
+date: "2023-01-09"
 title: "TERMINOLOGY"
 ---
 Further info on pigments listed here can be found in the [Pigment Compendium](https://www.taylorfrancis.com/books/mono/10.4324/9780080943596/pigment-compendium-ruth-siddall-nicholas-eastaugh-valentine-walsh-tracey-chaplin) and [Illuminated](https://www.fitzmuseum.cam.ac.uk/illuminated/lab/lab/overview-of-artists-materials).
@@ -13,7 +13,7 @@ Azurite is a mineral sourced from locations in Europe, including Germany, Hungar
 
 It is the typical blue pigment used to paint backgrounds and it is often employed in the blue draperies of miniatures.
 
-<div class="blog--image-row">
+<div class="blog--image-row blog--image-row--height-14">
     <img alt="B/MIN/12 (left)" src="../assets/terminology/B-MIN-12_(left)_1831_1661.jpg">
     <img alt="NPG 6947 (centre)" src="../assets/terminology/NPG_6947_(centre)_493_370.jpg">
     <img alt="RCIN 420022 (right)" src="../assets/terminology/RCIN_420022_(right)_491_369.jpg">
@@ -29,7 +29,7 @@ Calomel is a white mineral that has been known since antiquity. By mixing sodium
 
 It has been identified in an increasing number of miniatures, especially in the paint passages corresponding to ruffs and collars.
 
-<div class="blog--image-row">
+<div class="blog--image-row blog--image-row--height-14">
     <img alt="FM 3868 (left)" src="../assets/terminology/FM_3868_(left)_414_550.jpg">
     <img alt="B/MIN/21 (centre)" src="../assets/terminology/B-MIN-21_(centre)_466_350.jpg">
     <img alt="RCIN 420025 (right)" src="../assets/terminology/RCIN_420025_(right)_561_421.jpg">
@@ -47,7 +47,7 @@ Natural earths and ochres were amongst the first colourants ever to be used by h
 
 Red and yellow earth pigments are typically found in mixtures with other pigments, for instance to paint hair and beard, or used as part of the orange preparatory layer for gold.
 
-<div class="blog--image-row">
+<div class="blog--image-row blog--image-row--height-27">
     <img alt="FM 3869 (left)" src="../assets/terminology/FM_3869_(left)_325_433.jpg">
     <img alt="29372 (centre)" src="../assets/terminology/29372_(centre)_434_579.jpg">
     <img alt="NPG 6947 (right)" src="../assets/terminology/NPG_6947_(right)_433_577.jpg">
@@ -79,7 +79,7 @@ Lead-tin yellow exists in two main forms: the so-called 'type I' – a lead stan
 
 Only lead tin yellow type I has been detected in miniatures so far, both in mixtures and applied in pure form. It can be used to paint draperies and is also often used to paint highlights in hair.
 
-<div class="blog--image-row">
+<div class="blog--image-row blog--image-row--height-14">
     <img alt="106991 (left)" src="../assets/terminology/106991_(left)_433_325.jpg">
     <img alt="NPG 6947 (centre)" src="../assets/terminology/NPG_6947_(centre)_433_325.jpg">
     <img alt="NPG 1572" src="../assets/terminology/NPG_1572_424_565.jpg">
