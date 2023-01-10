@@ -17,15 +17,20 @@ type StyledSearchMatchingTextItemProps = {
     textLeft: string
     textCenter: string
     textRight: string
+    isFirstItem: boolean
+    isLastItem: boolean
 }
 
-function StyledSearchMatchingTextItem({ textLeft, textCenter, textRight }: StyledSearchMatchingTextItemProps) {
+function StyledSearchMatchingTextItem({ textLeft, textCenter, textRight, isFirstItem, isLastItem }: StyledSearchMatchingTextItemProps) {
     return (
         <>
             {textLeft && <span>{textLeft}</span>}
+            {isFirstItem && <>&thinsp;</>}
             <span className="iniature-items-search--result--match">
-                &nbsp;{textCenter}&nbsp;
+                {!isFirstItem && <>&thinsp;</>}
+                {textCenter}
             </span>
+            {isLastItem && <>&thinsp;</>}
             {textRight && <span>{textRight}</span>}
         </>
     )
@@ -52,21 +57,26 @@ function StyledSearchMatchingText({ body, position }: StyledSearchMatchingTextPr
 
                 const positionRightStart = positionItem[0] + positionItem[1];
                 const positionRightEnd = positionItem[0] + positionItem[1] + positionOffsetMax;
-                const textRight = 
-                index >= (position.length - 1) ?
-                (body.slice(positionRightStart, positionRightEnd) + (positionRightEnd < body.length ? ' ... ' : '')) :
-                '';
+                const textRight =
+                    index >= (position.length - 1) ?
+                        (body.slice(positionRightStart, positionRightEnd) + (positionRightEnd < body.length ? ' ... ' : '')) :
+                        '';
 
                 const textCenter = body.slice(
                     positionItem[0],
                     positionItem[0] + positionItem[1]
                 );
 
+                const isFirstItem = positionLeftStart + 1 != positionLeftEnd;
+                const isLastItem = positionRightStart + 1 != position[index + 1]?.[0];
+
                 return <StyledSearchMatchingTextItem
                     key={index + body}
-                    textLeft={textLeft}
-                    textRight={textRight}
-                    textCenter={textCenter} />
+                    textLeft={textLeft.trim()}
+                    textRight={textRight.trim()}
+                    textCenter={textCenter.trim()}
+                    isFirstItem={isFirstItem}
+                    isLastItem={isLastItem} />
             })}
         </>
     )
@@ -117,8 +127,8 @@ const MiniatureItemSearchCard: React.FC<MiniatureItemSearchCardProps> = ({ item,
                 <div className="search-card__item-title">{title}</div>
                 <div className="search-card__item-value" >
                     <StyledSearchMatchingText body={
-                            //@ts-ignore
-                            item[field]} position={position} />
+                        //@ts-ignore
+                        item[field]} position={position} />
                 </div>
             </div>)
     })
