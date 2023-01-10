@@ -138,6 +138,11 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 								// @ts-ignore
 								const micrographImageAnchorUrl = `${config.siteMetadata.api.url}assets/${micrograph?.micrograph?.id}?format=jpg&width=300&withoutEnlargement&quality=80`;
 								const micrographImageAlt = micrograph.file_name;
+								//@ts-ignore
+								const micrographIiifManifestUrl = `${config.siteMetadata.iiif.url + urlSafeString(miniature.accession_number)}/micrograph/${micrograph.id}/manifest.json`;
+								//@ts-ignore
+								const micrographMiradorUrl = `${config.siteMetadata.viewer.url}?manifestId[]=${micrographIiifManifestUrl}`;
+
 								return (
 									<div id={micrograph.file_name}>
 										<a href={micrographImageDownloadUrl} target="__blank">
@@ -148,17 +153,22 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 											{!!micrograph.hotspot && <span> Hotspot</span>}
 											<div>{micrograph.description}</div>
 										</p>
+
+										{micrograph.hotspot && <>
+											<a className="micrograph-iiif" href={micrographIiifManifestUrl} target="__blank">Copy iiif manifest URL</a>
+										</>}
 										<div className="miniature-items object--actions miniature-items object--actions--micrograph">
-											<a
-												className="miniature-item__button miniature-item__button_micrograph" href={miradorUrl} target="__blank">
-												<span className="icon"><ViewerIcon /></span><span>Viewer</span>
-											</a>
+											{micrograph.hotspot && <>
+												<a
+													className="miniature-item__button miniature-item__button_micrograph" href={micrographMiradorUrl} target="__blank">
+													<span className="icon"><ViewerIcon /></span><span>Viewer</span>
+												</a>
+											</>}
 											<a
 												className="miniature-item__button miniature-item__button_micrograph" href={micrographImageDownloadUrl} target="__blank">
 												<span className="icon"><DownloadIcon /></span><span>Download</span>
 											</a>
 										</div>
-										<a className="micrograph-iiif" href={iiifManifestUrl} target="__blank">Copy iiif manifest URL</a>
 									</div>
 								)
 							})}

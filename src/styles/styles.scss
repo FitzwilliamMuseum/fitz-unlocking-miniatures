@@ -806,7 +806,7 @@ ul.main-menu {
             display: flex;
             flex-direction: column;
 
-            &>a:first-child {
+            &>p {
                 flex-grow: 1;
             }
         }
