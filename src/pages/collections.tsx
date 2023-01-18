@@ -93,7 +93,7 @@ function FilterComponent(props: FilterComponentProps) {
         <input name="searchKeywords"
           value={filterValue.text}
           onChange={(event) => onChangeSearchText(event.target.value)}
-          placeholder="Search" />
+          placeholder="Search for sitter, artist, collection, key-terms..." />
         {searchSuggestion.length > 0 && <div className="miniature-items-search--suggest">
           {searchSuggestion.map((item) => <button
             className="miniature-items-search--suggest--item"
