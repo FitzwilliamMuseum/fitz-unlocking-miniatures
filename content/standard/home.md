@@ -8,7 +8,7 @@ dark: false
 sections:
   - type: banner
     image_src: ../../content/assets/main-banner-image.jpeg
-    image_alt: 'Miniature'
+    image_alt: Miniature banner image
     title: ''
     logo: true
     link:
@@ -22,29 +22,48 @@ sections:
     items:
       - title: Explore the Collection
         image_src: ../../content/assets/3868-1.jpg
-        image_alt: 'Minitiature'
+        image_alt: Explore the Collection
         content: Search amongst miniatures from numerous collections investigated during the project. Access technical images and analytical results, compare multiple objects and images and view high-magnification details of miniatures.
         link:
           url: /collections
           title: Explore
       - title: Our Research Explained
         image_src: ../../content/assets/Oliver-2022-microscopy-macro-Christine-compressed.jpg
-        image_alt: 'Minitiature'
+        image_alt: Our Research Explained
         content: Find out about the analytical protocol we have employed to investigate miniatures, in the lab and on the road.       
         link:
           url: /research
           title: Explore
   - type: feature_box
-    fb_type: single
+    fb_type: double
     items:
+      - title: Terminology
+        image_src: ../../content/assets/frontmatter-Terminology image_3024_2613.jpg
+        image_alt: Terminology
+        content: >-
+          Technical terms employed throughout this resource are explained in an alphabetically listed glossary, with visual examples to link the materials to actual passages in the featured miniatures.
+        link:
+          url: /terminology
+          title: Terminology
       - title: About the Project
         image_src: ../../content/assets/20220629_113441_compressed.jpg
-        image_alt: 'Minitiature'
+        image_alt: About the Project
         content: >-
           Want to know more about this research project? Click here for further information on the researchers, the work undertaken to date, collaborating institutions and plans for future expansion of this resource.
         link:
           url: /about
-          title: More on the heritage science     
+          title: More on the heritage science
+  - type: feature_box
+    fb_type: single
+    items:
+      - title: Blog
+        image_src: ../../content/assets/blog/a-roundtable-workshop/Figure_4_1920_1220.JPG
+        image_alt: Blog
+        content: >-
+          Featuring posts on aspects of this project and on miniatures research more generally.
+        link:
+          url: /blog
+          title: Blog
   - type: supporters
     items:
       - image_src: ../../content/assets/cambridge_university.jpg
