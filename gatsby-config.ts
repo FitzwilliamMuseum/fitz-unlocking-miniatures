@@ -8,6 +8,7 @@ const config: GatsbyConfig = {
     mainMenu: [
       { link: '/', title: 'Home' },
       { link: '/collections', title: 'Collections' },
+      { link: '/research', title: 'Methodology' },
       { link: '/terminology', title: 'Terminology' },
       { link: '/about', title: 'About' },
       { link: '/blog', title: 'Blog' },
@@ -15,6 +16,7 @@ const config: GatsbyConfig = {
     quickLinks: [
       { link: '/', title: 'Home' },
       { link: '/collections', title: 'Collections' },
+      { link: '/research', title: 'Methodology' },
       { link: '/terminology', title: 'Terminology' },
       { link: '/about', title: 'About' },
       { link: '/blog', title: 'Blog' },
@@ -34,10 +36,10 @@ const config: GatsbyConfig = {
       }
     },
     iiif: {
-      url: 'https://miniatures-iiif.fitzmuseum.cam.ac.uk/'
+      url: 'https://miniatures.fitz.ms/iiif/'
     },
     viewer: {
-      url: "https://miniatures-mirador.fitzmuseum.cam.ac.uk/"
+      url: "https://miniatures.fitz.ms/view/"
     }
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
