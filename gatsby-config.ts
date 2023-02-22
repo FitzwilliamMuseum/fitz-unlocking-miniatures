@@ -36,10 +36,10 @@ const config: GatsbyConfig = {
       }
     },
     iiif: {
-      url: 'https://miniatures.fitz.ms/iiif/'
+      url: 'https://miniatures-iiif.fitzmuseum.cam.ac.uk/'
     },
     viewer: {
-      url: "https://miniatures.fitz.ms/view/"
+      url: "https://miniatures-mirador.fitzmuseum.cam.ac.uk/"
     }
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
