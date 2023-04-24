@@ -3,7 +3,11 @@ slug: "/terminology"
 date: "2023-01-09"
 title: "TERMINOLOGY"
 ---
-Further info on pigments listed here can be found in the [Pigment Compendium](https://www.taylorfrancis.com/books/mono/10.4324/9780080943596/pigment-compendium-ruth-siddall-nicholas-eastaugh-valentine-walsh-tracey-chaplin) and [Illuminated](https://www.fitzmuseum.cam.ac.uk/illuminated/lab/lab/overview-of-artists-materials).
+The entries on this page provide brief, introductory information about pigments and other materials and features found in the miniatures analysed during this project and in other published studies. 
+
+Further information on pigments listed can be found in the following online resources:
+
+[Pigment Compendium](https://www.taylorfrancis.com/books/mono/10.4324/9780080943596/pigment-compendium-ruth-siddall-nicholas-eastaugh-valentine-walsh-tracey-chaplin),  [Illuminated](https://www.fitzmuseum.cam.ac.uk/illuminated/lab/lab/overview-of-artists-materials).
 
 ## Azurite
 
