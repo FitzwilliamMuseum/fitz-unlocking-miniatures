@@ -251,13 +251,13 @@ Lead-tin yellow exists in two main forms: the so-called 'type I' – a lead stan
 
 Only lead-tin yellow type I has been detected in miniatures so far, both in mixtures and applied unadulterated. It can be used to paint draperies and is also often used to paint highlights in hair.
 
-<div class="blog--image-row blog--image-row--height-14">
+<div class="blog--image-row blog--image-row--height-16">
     <img alt="106991 (left)" src="../assets/terminology/106991_(left)_433_325.jpg">
     <img alt="NPG 6947 (centre)" src="../assets/terminology/NPG_6947_(centre)_433_325.jpg">
     <img alt="NPG 1572" src="../assets/terminology/NPG_1572_424_565.jpg">
 </div>
 
-*106991 (left), NPG 6947 (centre), NPG 1572*
+*106991 (left), NPG 6947 (centre), NPG 1572 (right)*
 
 
 ## Lead white
@@ -267,8 +267,8 @@ Up until the 17<sup>th</sup> century manufactured by placing strips of metallic 
 
 It is the preferred white pigment for mixtures to lighten the hue of other colour,s and it has been used on its own to paint white passages, such as ruffs. Lead white can be applied very thinly or bodied, a feature exploited in the depiction of pearls, lace ruffs and collars to suggest the actual texture of these expensive fabric.
 
-<div class="blog--image-row">
-    <img alt="FM 3869 (left)" src="../assets/terminology/FM_3869_(left)_433_325.jpg">
+<div class="blog--image-row blog--image-row--height-16">
+    <img alt="FM 3869 (left)" src="../assets/terminology/lead white (left).jpg">
     <img alt="B/MIN/13 (centre)" src="../assets/terminology/B-MIN-13_(centre)_433_325.jpg">
     <img alt="RCIN 420057 (right)" src="../assets/terminology/RCIN_420057_(right)_433_325.jpg">
 </div>
@@ -281,11 +281,27 @@ A green basic copper carbonate 	|      Cu<sub>2</sub>CO<sub>3</sub>(OH)<sub>2</s
 Malachite is a common mineral often found in association with azurite; it yields a vivid turquoise green but is reduced to a pale green if ground too finely.
 Malachite has been identified in green passages of landscapes and foliage and often in conjunction with other types of green pigments.
 
+<div class="blog--image-row blog--image-row--height-16">
+    <img alt="MIN 0102 (left)" src="../assets/terminology/malachite (left).jpg">
+    <img alt="NT 1183954 (centre)" src="">
+    <img alt="KMS 6938 (right)" src="../assets/terminology/malachite (right).jpg">
+</div>
+
+<i>MIN 0102 (left), NT 1183954 (centre), KMS 6938 (right)</i>
+
 ## Minium and red lead
 Orange-red lead tetroxide 	|     Pb<sub>3</sub>O<sub>4</sub>
 
 Minium is a naturally occurring orange-red mineral. Its synthetic analogue is called red lead. They cannot be easily distinguished with the analytical methods used for this project; the term red lead is used throughout this website as the most likely form to have been used.
 Red lead is often found in portrait miniatures as one of the main red components in flesh tones and lips, or as a base layer for orange details in clothing.
+
+<div class="blog--image-row blog--image-row--height-16">
+    <img alt="FM 3869 (left)" src="../assets/terminology/red lead (left).jpg">
+    <img alt="NMB 973 (centre)" src="../assets/terminology/red lead (centre).jpg">
+    <img alt="KMS 6938 (right)" src="../assets/terminology/red lead (right).jpg">
+</div>
+
+<i>FM 3869 (left), NMB 973 (centre), KMS 6938 (right)</i>
 
 ## Orpiment
 See [Arsenic sulphides](#arsenic-sulphides)
@@ -318,6 +334,14 @@ Non-invasive scientific analyses can distinguish between plant and insect-based 
 
 Red organic colourants are used extensively for red backgrounds for Isaac Oliver’s miniatures (insect-based); a more brownish red colourant is used routinely for the dark line between lips.
 
+<div class="blog--image-row blog--image-row--height-16">
+    <img alt="B-MIN-12 (left)" src="">
+    <img alt="FM 3865 (centre)" src="../assets/terminology/red lake (centre).jpg">
+    <img alt="NMB 976 (right)" src="">
+</div>
+
+<i>B-MIN-12 (left), FM 3865 (centre), NMB 976 (right)</i>
+
 ## Silver
 A precious, white metal
  
@@ -325,7 +349,7 @@ Silver can be applied as solid sheets of thinly beaten leaf, or finely ground an
  
 In portrait miniatures silver is always applied as ‘shell’ silver. It is used to create jewellery and features on armour and clothing, and to indicate the reflection on pearls.
 
-<div class="blog--image-row">
+<div class="blog--image-row blog--image-row--height-16">
     <img alt="FM 3902 (left)" src="../assets/terminology/FM_3902_(left)_433_325.jpg">
     <img alt="RCIN 420031 (centre)" src="../assets/terminology/RCIN_420031_(centre)_433_325.jpg">
     <img alt="RCIN 420057 (right)" src="../assets/terminology/RCIN_420057_(right)_2_433_325.jpg">
@@ -338,6 +362,16 @@ A blue pigment obtained by grinding a cobalt-containing potash glass
 
 Smalt was not commonly used by artists but because of its low cost, it became popular amongst easel painters from  the late 16<sup>th</sup> century onwards. Its manufacture then became a specialty of the Dutch and Flemish.
 Smalt has been detected in landscapes, especially where buildings are evident. It often appears to have discoloured to a pale grey.
+
+<div class="blog--image-row blog--image-row--height-16">
+    <img alt="KMS 6938 (left)" src="../assets/terminology/smalt (left).jpg">
+    <img alt="NPG 6947 (centre)" src="">
+    <img alt="MIN 0102 (right)" src="../assets/terminology/smalt (right).jpg">
+</div>
+
+<i>KMS 6938 (left), NPG 6947 (centre), MIN 0102 (right)</i>
+
+
 
 ## Synthetic ultramarine
 See [Ultramarine blue](#ultramarine-blue)
@@ -356,6 +390,14 @@ A blue pigment that, until a synthesis method was developed, was obtained by pur
 This precious pigment was derived by a lengthy process which enabled the extraction of the bright blue mineral lazurite, a complex sulphur-containing sodium aluminium silicate (Na<sub>8-10</sub>Al<sub>6</sub>Si<sub>6</sub>O<sub>24</sub>S<sub>2-4</sub>), from lapis lazuli stones mined in Afghanistan. Its exotic provenance earned the pigment its common name, which means 'beyond the sea'. Despite its cost, ultramarine was lavishly used by medieval and Renaissance illuminators and painters. 
 Synthetic ultramarine, manufactured since c.1830, has the same chemical composition as the natural product. The two cannot be easily distinguished using the analytical methods employed for this project. However, unless there were specific reasons to suspect a modern origin for the ultramarine used in one of the miniatures (such as clear damage to the paint layer, which may have prompted a past 'restoration' treatment), it is assumed here that the pigment identified is natural ultramarine.
 Ultramarine blue is sporadically found in the blue backgrounds of portrait miniatures, sometimes used to shade the azurite background, to create an optical blue effect in white collars, or to paint small details in clothing. 
+
+<div class="blog--image-row blog--image-row--height-16">
+    <img alt="RCIN 420933 (left)" src="../assets/terminology/ultramarine (left).jpg">
+    <img alt="NPG 6947 (centre)" src="../assets/terminology/ultramarine (centre).jpg">
+    <img alt="FM 3869 (right)" src="../assets/terminology/ultramarine (right).jpg">
+</div>
+
+<i>RCIN 420933 (left), NPG 6947 (centre), FM 3869 (right)</i>
 
 
 ## Umber
