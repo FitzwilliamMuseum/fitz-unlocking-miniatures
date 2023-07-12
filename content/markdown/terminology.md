@@ -18,6 +18,12 @@ Yellow, red and orange arsenic sulphide forms
 Realgar (α-As<sub>4</sub>S<sub>4</sub>) is a reddish-orange pigment; it can easily transform into pararealgar (β-As<sub>4</sub>S<sub>4</sub>) as a result of a light-induced transition. This means that the change can take place on an object’s surface, and an intermediate phase between the two has frequently been identified on the miniatures analysed, especially in the orange preparatory layer under gilding, and occasionally in small details, such as orange floral decorations in the depicted clothing.  
 Orpiment (As<sub>2</sub>S<sub>3</sub>), a yellow arsenic sulphide also used as a pigment, has not been identified in portrait miniatures so far.
 
+<div class="blog--image-row blog--image-row--height-14">
+    <img alt="NPG 6947 (centre)" src="../assets/terminology/As sulphides (left).jpg"> 
+    <img alt="B/MIN/12 (left)" src="../assets/terminology/As sulphides (centre).jpg">
+   <img alt="RCIN 420022 (right)" src="../assets/terminology/As sulphides (right).jpg">
+</div>
+
 <i>B/MIN/28 (left), FM 3902 (centre), FM 3902 (right)</i>
 
 
