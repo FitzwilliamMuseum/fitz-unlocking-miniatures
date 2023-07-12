@@ -19,9 +19,9 @@ Realgar (α-As<sub>4</sub>S<sub>4</sub>) is a reddish-orange pigment; it can eas
 Orpiment (As<sub>2</sub>S<sub>3</sub>), a yellow arsenic sulphide also used as a pigment, has not been identified in portrait miniatures so far.
 
 <div class="blog--image-row blog--image-row--height-16">
-    <img alt="NPG 6947 (centre)" src="../assets/terminology/As sulphides (left).jpg"> 
-    <img alt="B/MIN/12 (left)" src="../assets/terminology/As sulphides (centre).jpg">
-   <img alt="RCIN 420022 (right)" src="../assets/terminology/As sulphides (right).jpg">
+    <img alt="B/MIN/28 (left)" src="../assets/terminology/As sulphides (left).jpg"> 
+    <img alt="FM 3902 (centre)" src="../assets/terminology/As sulphides (centre).jpg">
+   <img alt="FM 3902 (right)" src="../assets/terminology/As sulphides (right).jpg">
 </div>
 
 <i>B/MIN/28 (left), FM 3902 (centre), FM 3902 (right)</i>
@@ -35,7 +35,7 @@ Azurite is a mineral sourced from locations in Europe, including Germany, Hungar
 
 It is the typical blue pigment used to paint backgrounds and it is often employed in the blue draperies of miniatures.
 
-<div class="blog--image-row blog--image-row--height-14">
+<div class="blog--image-row blog--image-row--height-16">
     <img alt="B/MIN/12 (left)" src="../assets/terminology/B-MIN-12_(left)_1831_1661.jpg">
     <img alt="NPG 6947 (centre)" src="../assets/terminology/NPG_6947_(centre)_493_370.jpg">
     <img alt="RCIN 420022 (right)" src="../assets/terminology/RCIN_420022_(right)_491_369.jpg">
@@ -71,7 +71,7 @@ Calomel is a white mineral that has been known since antiquity. It was produced 
  
 It has been identified in an increasing number of miniatures, especially in the paint passages corresponding to ruffs and collars, and is most likely the ‘quicksilver white’ Nicholas Hilliard mentions in his treatise on <i>The Arte of Limning</i>. 
 
-<div class="blog--image-row blog--image-row--height-14">
+<div class="blog--image-row blog--image-row--height-16">
     <img alt="FM 3868 (left)" src="../assets/terminology/FM_3868_(left)_414_550.jpg">
     <img alt="B/MIN/21 (centre)" src="../assets/terminology/B-MIN-21_(centre)_466_350.jpg">
     <img alt="RCIN 420025 (right)" src="../assets/terminology/RCIN_420025_(right)_561_421.jpg">
@@ -112,6 +112,12 @@ Cinnabar is a naturally occurring mercury sulphide often found in association wi
 The natural and synthetic pigments cannot be easily distinguished with the analytical methods used for this project; as the most likely form to have been used is vermilion, this term is used throughout this website.
 
 Vermilion has been widely identified in portrait miniatures, both unadulterated and in mixtures. It is one of the main red components in flesh tones and lips, sometimes used to outline the face, and it is also identified in red details on clothing. Vermilion is the only red pigment found to have been used to paint the diamonds and hearts of the playing cards functioning as supports for miniatures.
+
+<div class="blog--image-row blog--image-row--height-16">
+    <img alt="AGOID.29736 (left)" src="../assets/terminology/Vermilion (left).jpg">
+    <img alt="NPG 4852 (centre)" src="../assets/terminology/NPG_6947_(centre)_493_370.jpg">
+    <img alt=" NT 1183954 (right)" src="../assets/terminology/Vermilion (right).jpg.jpg">
+</div>
 
 ## Cobalt blue
 Cobalt and aluminium oxide	|     CoO·Al<sub>2</sub>O<sub>3</sub>
