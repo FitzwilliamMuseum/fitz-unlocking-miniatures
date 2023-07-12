@@ -115,9 +115,11 @@ Vermilion has been widely identified in portrait miniatures, both unadulterated 
 
 <div class="blog--image-row blog--image-row--height-16">
     <img alt="AGOID.29736 (left)" src="../assets/terminology/Vermilion (left).jpg">
-    <img alt="NPG 4852 (centre)" src="../assets/terminology/NPG_6947_(centre)_493_370.jpg">
-    <img alt=" NT 1183954 (right)" src="../assets/terminology/Vermilion (right).jpg.jpg">
+    <img alt="NPG 4852 (centre)" src="">
+    <img alt="NT 1183954 (right)" src="../assets/terminology/Vermilion (right).jpg">
 </div>
+
+<i>AGOID.29736 (left), NPG 4852 (centre), NT 1183954 (right)</i>
 
 ## Cobalt blue
 Cobalt and aluminium oxide	|     CoO·Al<sub>2</sub>O<sub>3</sub>
@@ -140,12 +142,21 @@ A number of green copper-based compounds of natural and synthetic origin
 Copper chlorides, including atacamite (Cu<sub>2</sub>(OH)<sub>3</sub>Cl), clinoatacamite, paratacamite and botallackite, are relatively rare minerals found around copper deposits. They can be synthetically manufactured or occur as corrosion products of natural copper minerals, such as azurite and malachite.  
  
 Copper chlorides have not been commonly detected in portrait miniatures, but atacamite is identified in a couple of objects associated with Isaac Oliver and Nicholas Hilliard’s studios and used to paint green details in draperies and landscapes.
+
  
 ## Copper sulphates
 A number of green copper-based compounds of natural origin
 
 This family of minerals, which includes brochantite (Cu<sub>4</sub>SO<sub>4</sub>(OH)<sub>6</sub>), antlerite (Cu<sub>3</sub>SO<sub>4</sub>(OH)<sub>4</sub>) and posnjakite (Cu<sub>4</sub>SO<sub>4</sub>(OH)6•H<sub>2</sub>O), appears to have been used by artists to paint illuminated manuscripts and paintings both North and South of the Alps, particularly in Italy and the Low Countries, in the 15<sup>th</sup> and 16<sup>th</sup> centuries.
 Brochantite has been identified on several portrait miniatures in the mint green passages in landscapes and details on clothing.
+
+<div class="blog--image-row blog--image-row--height-16">
+    <img alt="NPG 6947 (left)" src="../assets/terminology/Cu sulphates (left).jpg">
+    <img alt="NMB 976 (centre)" src="">
+    <img alt="MIN 0102 (right)" src="../assets/terminology/Cu sulphates (right).jpg">
+</div>
+
+<i>NPG 6947 (left), NMB 976 (centre), MIN 0102 (right)</i>
 
 ## Drying oil
 Glycerolipids (polyunsaturated fatty acids)
@@ -199,6 +210,14 @@ Gold could be applied as thinly beaten solid sheets (gold leaf) or as a paint of
 Shell gold application is the typical technique employed in portrait miniatures, in which powdered gold is mixed with a binding medium in a seashell and applied on the surface of the object with a brush.
  
 Gold is used extensively in portrait miniatures to paint jewellery, usually applied over an orange or yellow preparatory layer similar to the ‘bole’ used in paintings. It is also applied to embellish clothing, to write monograms and inscriptions on the backgrounds, and as a golden border along the outer edge of miniatures.  
+
+<div class="blog--image-row blog--image-row--height-16">
+    <img alt="B/MIN/28 (left)" src="../assets/terminology/gold (left).jpg">
+    <img alt="NPG 6947 (centre)" src="../assets/terminology/gold (centre).jpg">
+    <img alt="RCIN 420031 (right)" src="">
+</div>
+
+<i>B/MIN/28 (left), NPG 6947 (centre), RCIN 420031 (right)</i>
 
 ## Gum arabic
 A polysaccharide-based material obtained from the sap of two species of the Acacia tree
