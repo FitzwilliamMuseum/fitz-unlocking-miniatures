@@ -115,7 +115,7 @@ Vermilion has been widely identified in portrait miniatures, both unadulterated 
 
 <div class="blog--image-row blog--image-row--height-16">
     <img alt="AGOID.29736 (left)" src="../assets/terminology/Vermilion (left).jpg">
-    <img alt="NPG 4852 (centre)" src="">
+    <img alt="NPG 4852 (centre)" src="../assets/terminology/Vermilion (centre).jpg">
     <img alt="NT 1183954 (right)" src="../assets/terminology/Vermilion (right).jpg">
 </div>
 
@@ -152,7 +152,7 @@ Brochantite has been identified on several portrait miniatures in the mint green
 
 <div class="blog--image-row blog--image-row--height-16">
     <img alt="NPG 6947 (left)" src="../assets/terminology/Cu sulphates (left).jpg">
-    <img alt="NMB 976 (centre)" src="">
+    <img alt="NMB 976 (centre)" src="../assets/terminology/Cu sulphate (centre).jpg">
     <img alt="MIN 0102 (right)" src="../assets/terminology/Cu sulphates (right).jpg">
 </div>
 
@@ -214,7 +214,7 @@ Gold is used extensively in portrait miniatures to paint jewellery, usually appl
 <div class="blog--image-row blog--image-row--height-16">
     <img alt="B/MIN/28 (left)" src="../assets/terminology/gold (left).jpg">
     <img alt="NPG 6947 (centre)" src="../assets/terminology/gold (centre).jpg">
-    <img alt="RCIN 420031 (right)" src="">
+    <img alt="RCIN 420031 (right)" src="../assets/terminology/gold (right).jpg">
 </div>
 
 <i>B/MIN/28 (left), NPG 6947 (centre), RCIN 420031 (right)</i>
@@ -283,7 +283,7 @@ Malachite has been identified in green passages of landscapes and foliage and of
 
 <div class="blog--image-row blog--image-row--height-16">
     <img alt="MIN 0102 (left)" src="../assets/terminology/malachite (left).jpg">
-    <img alt="NT 1183954 (centre)" src="">
+    <img alt="NT 1183954 (centre)" src="../assets/terminology/malachite (centre).jpg">
     <img alt="KMS 6938 (right)" src="../assets/terminology/malachite (right).jpg">
 </div>
 
@@ -335,9 +335,9 @@ Non-invasive scientific analyses can distinguish between plant and insect-based 
 Red organic colourants are used extensively for red backgrounds for Isaac Oliver’s miniatures (insect-based); a more brownish red colourant is used routinely for the dark line between lips.
 
 <div class="blog--image-row blog--image-row--height-16">
-    <img alt="B-MIN-12 (left)" src="">
+    <img alt="B-MIN-12 (left)" src="../assets/terminology/red lake (left).jpg">
     <img alt="FM 3865 (centre)" src="../assets/terminology/red lake (centre).jpg">
-    <img alt="NMB 976 (right)" src="">
+    <img alt="NMB 976 (right)" src="../assets/terminology/red lake (right).jpg">
 </div>
 
 <i>B-MIN-12 (left), FM 3865 (centre), NMB 976 (right)</i>
@@ -365,7 +365,7 @@ Smalt has been detected in landscapes, especially where buildings are evident. I
 
 <div class="blog--image-row blog--image-row--height-16">
     <img alt="KMS 6938 (left)" src="../assets/terminology/smalt (left).jpg">
-    <img alt="NPG 6947 (centre)" src="">
+    <img alt="NPG 6947 (centre)" src="../assets/terminology/smalt (cente).jpg">
     <img alt="MIN 0102 (right)" src="../assets/terminology/smalt (right).jpg">
 </div>
 
