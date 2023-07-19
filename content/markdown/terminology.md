@@ -36,7 +36,7 @@ Azurite is a mineral sourced from locations in Europe, including Germany, Hungar
 It is the typical blue pigment used to paint backgrounds and it is often employed in the blue draperies of miniatures.
 
 <div class="blog--image-row blog--image-row--height-16">
-    <img alt="B/MIN/12 (left)" src="../assets/terminology/B-MIN-12_(left)_1831_1661.jpg">
+    <img alt="B/MIN/12 (left)" src="../assets/terminology/Azurite (left).jpg">
     <img alt="NPG 6947 (centre)" src="../assets/terminology/NPG_6947_(centre)_493_370.jpg">
     <img alt="RCIN 420022 (right)" src="../assets/terminology/RCIN_420022_(right)_491_369.jpg">
 </div>
@@ -72,7 +72,7 @@ Calomel is a white mineral that has been known since antiquity. It was produced 
 It has been identified in an increasing number of miniatures, especially in the paint passages corresponding to ruffs and collars, and is most likely the ‘quicksilver white’ Nicholas Hilliard mentions in his treatise on <i>The Arte of Limning</i>. 
 
 <div class="blog--image-row blog--image-row--height-16">
-    <img alt="FM 3868 (left)" src="../assets/terminology/FM_3868_(left)_414_550.jpg">
+    <img alt="FM 3868 (left)" src="../assets/terminology/Calomel (left).jpg">
     <img alt="B/MIN/21 (centre)" src="../assets/terminology/B-MIN-21_(centre)_466_350.jpg">
     <img alt="RCIN 420025 (right)" src="../assets/terminology/RCIN_420025_(right)_561_421.jpg">
 </div>
