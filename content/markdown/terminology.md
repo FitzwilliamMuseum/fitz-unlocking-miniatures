@@ -36,9 +36,9 @@ Azurite is a mineral sourced from locations in Europe, including Germany, Hungar
 It is the typical blue pigment used to paint backgrounds and it is often employed in the blue draperies of miniatures.
 
 <div class="blog--image-row blog--image-row--height-16">
-    <img alt="B/MIN/12 (left)" src="../assets/terminology/B-MIN-12_(left)_1831_1661.jpg">
+    <img alt="B/MIN/12 (left)" src="../assets/terminology/Azurite (left).jpg">
     <img alt="NPG 6947 (centre)" src="../assets/terminology/NPG_6947_(centre)_493_370.jpg">
-    <img alt="RCIN 420022 (right)" src="../assets/terminology/RCIN_420022_(right)_491_369.jpg">
+    <img alt="RCIN 420022 (right)" src="../assets/terminology/Azurite (right).jpg">
 </div>
 
 *B/MIN/12 (left), NPG 6947 (centre), RCIN 420022 (right)*
@@ -72,7 +72,7 @@ Calomel is a white mineral that has been known since antiquity. It was produced 
 It has been identified in an increasing number of miniatures, especially in the paint passages corresponding to ruffs and collars, and is most likely the ‘quicksilver white’ Nicholas Hilliard mentions in his treatise on <i>The Arte of Limning</i>. 
 
 <div class="blog--image-row blog--image-row--height-16">
-    <img alt="FM 3868 (left)" src="../assets/terminology/FM_3868_(left)_414_550.jpg">
+    <img alt="FM 3868 (left)" src="../assets/terminology/Calomel (left).jpg">
     <img alt="B/MIN/21 (centre)" src="../assets/terminology/B-MIN-21_(centre)_466_350.jpg">
     <img alt="RCIN 420025 (right)" src="../assets/terminology/RCIN_420025_(right)_561_421.jpg">
 </div>
@@ -176,9 +176,9 @@ Red and yellow earth pigments are typically found in mixtures with other pigment
 
 
 <div class="blog--image-row blog--image-row--height-27">
-    <img alt="FM 3869 (left)" src="../assets/terminology/FM_3869_(left)_325_433.jpg">
-    <img alt="29372 (centre)" src="../assets/terminology/29372_(centre)_434_579.jpg">
-    <img alt="NPG 6947 (right)" src="../assets/terminology/NPG_6947_(right)_433_577.jpg">
+    <img alt="FM 3869 (left)" src="../assets/terminology/earth pigment (left).jpg">
+    <img alt="29372 (centre)" src="../assets/terminology/earth pigment (centre).jpg">
+    <img alt="NPG 6947 (right)" src="../assets/terminology/earth pigment (right).jpg">
 </div>
 
 *FM 3869 (left), 29372 (centre), NPG 6947 (right)*
@@ -254,10 +254,10 @@ Only lead-tin yellow type I has been detected in miniatures so far, both in mixt
 <div class="blog--image-row blog--image-row--height-16">
     <img alt="106991 (left)" src="../assets/terminology/106991_(left)_433_325.jpg">
     <img alt="NPG 6947 (centre)" src="../assets/terminology/NPG_6947_(centre)_433_325.jpg">
-    <img alt="NPG 1572" src="../assets/terminology/NPG_1572_424_565.jpg">
+    <img alt="NPG 1572" src="../assets/terminology/lead-tin yellow (right).jpg">
 </div>
 
-*106991 (left), NPG 6947 (centre), NPG 1572 (right)*
+*106991 (left), NPG 6947 (centre), B/MIN/12 (right)*
 
 
 ## Lead white
@@ -269,8 +269,8 @@ It is the preferred white pigment for mixtures to lighten the hue of other colou
 
 <div class="blog--image-row blog--image-row--height-16">
     <img alt="FM 3869 (left)" src="../assets/terminology/lead white (left).jpg">
-    <img alt="B/MIN/13 (centre)" src="../assets/terminology/B-MIN-13_(centre)_433_325.jpg">
-    <img alt="RCIN 420057 (right)" src="../assets/terminology/RCIN_420057_(right)_433_325.jpg">
+    <img alt="B/MIN/13 (centre)" src="../assets/terminology/lead white (centre).jpg">
+    <img alt="RCIN 420057 (right)" src="../assets/terminology/lead white (right).jpg">
 </div>
 
 *FM 3869 (left), B/MIN/13 (centre), RCIN 420057 (right)*
@@ -350,9 +350,9 @@ Silver can be applied as solid sheets of thinly beaten leaf, or finely ground an
 In portrait miniatures silver is always applied as ‘shell’ silver. It is used to create jewellery and features on armour and clothing, and to indicate the reflection on pearls.
 
 <div class="blog--image-row blog--image-row--height-16">
-    <img alt="FM 3902 (left)" src="../assets/terminology/FM_3902_(left)_433_325.jpg">
-    <img alt="RCIN 420031 (centre)" src="../assets/terminology/RCIN_420031_(centre)_433_325.jpg">
-    <img alt="RCIN 420057 (right)" src="../assets/terminology/RCIN_420057_(right)_2_433_325.jpg">
+    <img alt="FM 3902 (left)" src="../assets/terminology/silver (left).jpg">
+    <img alt="RCIN 420031 (centre)" src="../assets/terminology/silver (centre).jpg">
+    <img alt="RCIN 420057 (right)" src="../assets/terminology/silver (right).jpg">
 </div>
 
 *FM 3902 (left), RCIN 420031 (centre), RCIN 420057 (right)*
