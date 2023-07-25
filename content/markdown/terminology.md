@@ -98,7 +98,7 @@ It has been found occasionally in the blue backgrounds in portrait miniatures wh
 See [Calcium-based whites](#calcium-based-whites)
  
 ## Chromium oxide greens
-Chromium oxide and hydrated chromium oxide 	| 	Cr<sub>2</sub>O<sub>3</sub> and Cr<sub>2</sub>O<sub>3</sub>·2H2O
+Chromium oxide and hydrated chromium oxide 	| 	Cr<sub>2</sub>O<sub>3</sub> and Cr<sub>2</sub>O<sub>3</sub>·2H<sub>2</sub>O
  
 Chromium oxide is an opaque, olive green pigment believed to have been introduced to the artist’s palette in 1862. The hydrated form, also known as viridian, is a transparent pigment with a colder and bluish hue put into commercial production in 1859.
  
@@ -175,7 +175,7 @@ Natural earths were amongst the first colourants ever to be used by humans, as t
 Red and yellow earth pigments are typically found in mixtures with other pigments, for instance to paint hair and beards, or used as part of the orange preparatory layer for gold detailing. Manganese-rich umbers are commonly used in darker brown regions and for modelling of hair. Trace elements often found with earth pigments are titanium, calcium, potassium and silicon. 
 
 
-<div class="blog--image-row blog--image-row--height-27">
+<div class="blog--image-row blog--image-row--height-16">
     <img alt="FM 3869 (left)" src="../assets/terminology/earth pigment (left).jpg">
     <img alt="29372 (centre)" src="../assets/terminology/earth pigment (centre).jpg">
     <img alt="NPG 6947 (right)" src="../assets/terminology/earth pigment (right).jpg">
