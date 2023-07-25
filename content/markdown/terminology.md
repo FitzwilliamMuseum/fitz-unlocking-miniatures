@@ -37,7 +37,7 @@ It is the typical blue pigment used to paint backgrounds and it is often employe
 
 <div class="blog--image-row blog--image-row--height-16">
     <img alt="B/MIN/12 (left)" src="../assets/terminology/Azurite (left).jpg">
-    <img alt="NPG 6947 (centre)" src="../assets/terminology/NPG_6947_(centre)_493_370.jpg">
+    <img alt="NPG 6947 (centre)" src="../assets/terminology/Azurite (centre).jpg">
     <img alt="RCIN 420022 (right)" src="../assets/terminology/Azurite (right).jpg">
 </div>
 
@@ -73,8 +73,8 @@ It has been identified in an increasing number of miniatures, especially in the 
 
 <div class="blog--image-row blog--image-row--height-16">
     <img alt="FM 3868 (left)" src="../assets/terminology/Calomel (left).jpg">
-    <img alt="B/MIN/21 (centre)" src="../assets/terminology/B-MIN-21_(centre)_466_350.jpg">
-    <img alt="RCIN 420025 (right)" src="../assets/terminology/RCIN_420025_(right)_561_421.jpg">
+    <img alt="B/MIN/21 (centre)" src="../assets/terminology/Calomel (centre).jpg">
+    <img alt="RCIN 420025 (right)" src="../assets/terminology/Calomel (right).jpg">
 </div>
 
 *FM 3868 (left), B/MIN/21 (centre), RCIN 420025 (right)*
@@ -98,7 +98,7 @@ It has been found occasionally in the blue backgrounds in portrait miniatures wh
 See [Calcium-based whites](#calcium-based-whites)
  
 ## Chromium oxide greens
-Chromium oxide and hydrated chromium oxide 	| 	Cr<sub>2</sub>O<sub>3</sub> and Cr<sub>2</sub>O<sub>3</sub>·2H2O
+Chromium oxide and hydrated chromium oxide 	| 	Cr<sub>2</sub>O<sub>3</sub> and Cr<sub>2</sub>O<sub>3</sub>·2H<sub>2</sub>O
  
 Chromium oxide is an opaque, olive green pigment believed to have been introduced to the artist’s palette in 1862. The hydrated form, also known as viridian, is a transparent pigment with a colder and bluish hue put into commercial production in 1859.
  
@@ -175,7 +175,7 @@ Natural earths were amongst the first colourants ever to be used by humans, as t
 Red and yellow earth pigments are typically found in mixtures with other pigments, for instance to paint hair and beards, or used as part of the orange preparatory layer for gold detailing. Manganese-rich umbers are commonly used in darker brown regions and for modelling of hair. Trace elements often found with earth pigments are titanium, calcium, potassium and silicon. 
 
 
-<div class="blog--image-row blog--image-row--height-27">
+<div class="blog--image-row blog--image-row--height-16">
     <img alt="FM 3869 (left)" src="../assets/terminology/earth pigment (left).jpg">
     <img alt="29372 (centre)" src="../assets/terminology/earth pigment (centre).jpg">
     <img alt="NPG 6947 (right)" src="../assets/terminology/earth pigment (right).jpg">
@@ -252,8 +252,8 @@ Lead-tin yellow exists in two main forms: the so-called 'type I' – a lead stan
 Only lead-tin yellow type I has been detected in miniatures so far, both in mixtures and applied unadulterated. It can be used to paint draperies and is also often used to paint highlights in hair.
 
 <div class="blog--image-row blog--image-row--height-16">
-    <img alt="106991 (left)" src="../assets/terminology/106991_(left)_433_325.jpg">
-    <img alt="NPG 6947 (centre)" src="../assets/terminology/NPG_6947_(centre)_433_325.jpg">
+    <img alt="106991 (left)" src="../assets/terminology/lead-tin yellow (left).jpg">
+    <img alt="NPG 6947 (centre)" src="../assets/terminology/lead tin yellow (centre).jpg">
     <img alt="NPG 1572" src="../assets/terminology/lead-tin yellow (right).jpg">
 </div>
 
