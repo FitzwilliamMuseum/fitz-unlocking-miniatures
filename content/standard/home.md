@@ -70,7 +70,7 @@ sections:
         link:
           url: https://www.cam.ac.uk
           title: University of Cambridge
-      - image_src: ../../content/assets/FitzwilliamMuseumLogoOnBlack.png
+      - image_src: ../../content/assets/Fitz_logo_lg.jpg
         link:
           url: https://fitzmuseum.cam.ac.uk/
           title: Fitzwilliam Museum          
