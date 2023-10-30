@@ -115,7 +115,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 						<div className="object--description-references">
 							<a href="#references"><h3 id="references">References</h3></a>
 							<table>
-								{miniature?.references?.map(item => (
+								{miniature?.references?.filter(reference => reference.references_id).map(item => (
 									<tr>
 										{!!item.references_id.url && <td><a href={item.references_id.url} target="__blank">{item.references_id.display_title}</a></td>}
 										{!item.references_id.url && <td>{item.references_id.display_title}</td>}
