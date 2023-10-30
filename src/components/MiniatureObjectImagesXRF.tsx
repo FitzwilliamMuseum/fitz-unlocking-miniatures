@@ -15,7 +15,7 @@ class MiniatureObjectImagesXRF extends React.Component<MiniatureObjectImagesProp
         const { miniature } = this.props;
         return (
             <div className="object--images--xrf-scan">
-                {miniature.images_ma_xrf_scans?.map(item => {
+                {miniature.images_ma_xrf_scans?.filter(item => item.ma_xrf_scan)?.map(item => {
                     // @ts-ignore
                     const imageUrl = `${config.siteMetadata.api.url}assets/${item.ma_xrf_scan.id}?format=jpg&width=300&withoutEnlargement&quality=80`;
                     const imageAlt = item.ma_xrf_scan.title;
