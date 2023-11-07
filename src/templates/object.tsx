@@ -121,6 +121,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 										{!item.references_id.url && <td>{item.references_id.display_title}</td>}
 										<td>{item.references_id.publication_year || ''}</td>
 										<td>{item.references_id.authors
+											.filter(author => author.authors_and_editors_id)
 											.map(author => author.authors_and_editors_id.display_name).join('; ')}</td>
 									</tr>
 								)) || <div></div>}
