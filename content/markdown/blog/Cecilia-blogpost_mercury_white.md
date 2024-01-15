@@ -1,11 +1,11 @@
 ---
 slug: "/blog/Mercury-White-Used-as-a-Pigment"
 date: "2023-12-11"
-title: "Mercury White Used as a Pigment in Portrait Miniature by Isaac Oliver"
+title: "Mercury White Used as a Pigment in Portrait Miniatures by Isaac Oliver"
 intro: "As part of the ongoing research project “Unlocking the English Portrait Miniature” initiated by the Fitzwilliam Museum in Cambridge..."
 ---
 
-## Mercury White Used as a Pigment in Portrait Miniature by Isaac Oliver
+## Mercury White Used as a Pigment in Portrait Miniatures by Isaac Oliver
 *Cecilia Rönnerstam, Tom Sandström, Magnus Mårtensson*
 
 
