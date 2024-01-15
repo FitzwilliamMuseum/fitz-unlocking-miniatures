@@ -3,7 +3,7 @@ slug: "/about"
 date: "2022-09-05"
 title: "ABOUT THE PROJECT"
 ---
-The ‘Unlocking the English Portrait Miniature’ web resource is a key outcome of six years of technical research work on 16th and 17th century miniatures from a number of collections in the UK and abroad. Our aim with this resource is to provide an unprecedented level of access to the artworks showcased here, by sharing high-quality images and recently discovered information about their materials.
+The ‘Unlocking the English Portrait Miniature’ web resource is a key outcome of technical research work, commenced in 2018, on 16th and 17th century miniatures from a number of collections in the UK and abroad. Our aim with this resource is to provide an unprecedented level of access to the artworks showcased here, by sharing high-quality images and recently discovered information about their materials.
 
 Project team:
 
