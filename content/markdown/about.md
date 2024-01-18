@@ -3,7 +3,7 @@ slug: "/about"
 date: "2022-09-05"
 title: "ABOUT THE PROJECT"
 ---
-The ‘Unlocking the English Portrait Miniature’ web resource is a key outcome of four years of technical research work on 16th and 17th century miniatures from a number of collections in the UK and abroad. Our aim with this resource is to provide an unprecedented level of access to the artworks showcased here, by sharing high-quality images and recently discovered information about their materials.
+The ‘Unlocking the English Portrait Miniature’ web resource is a key outcome of technical research work, commenced in 2018, on 16th and 17th century miniatures from a number of collections in the UK and abroad. Our aim with this resource is to provide an unprecedented level of access to the artworks showcased here, by sharing high-quality images and recently discovered information about their materials.
 
 Project team:
 
@@ -22,6 +22,7 @@ With support from:
 - Alex Gushurst-Moore: Research & Impact Coordinator (2022-ongoing)
 - Dan Pett: Head of Digital and IT (2019-2022)
 - Jo Vine: Head of Research and Impact (2019-ongoing)
+- Avishi Vashisht: Trinity College project intern (2023)
 - Olivia Warren: Digital and IT Coordinator (2021-2022)
 
 The project team owes sincere thanks to numerous other colleagues at the Fitzwilliam Museum and the Hamilton Kerr Institute for their support on many fronts throughout the duration of the project.
