@@ -2,7 +2,7 @@
 slug: "/blog/Glory-in-the-Little"
 date: "2024-02-05"
 title: "Glory 'in the Little'"
-intro: "In this blog-post, we explore how..."
+intro: "In this blog-post, we explore how two extraordinary women of the early 17th century used their patronage of talented artists to..."
 ---
 
 ### A Comparative Analysis of the Political and Aesthetic Intentions Behind Miniatures of Nur Jahan and Anne of Denmark
@@ -70,7 +70,9 @@ We find a parallel in Paul van Somer’s 1617 large-scale portrait of Anne of De
 
 In this post, I have made a comparison between two remarkable females who lived at more or less opposite ends of the known world in the early 17<sup>th</sup> century. And yet, I have attempted to draw out the striking similarities between them, in the way that they both pushed the boundaries of female power in each of their individual circumstances. In particular, I have illustrated how their patronage of talented artists, and the way in which they had those artists express idealised versions of themselves as wielding independent power to rival their royal husbands in a strongly male-dominated society, in many ways unites them in spite of their considerable cultural differences.
 
-## REFERENCES 
+
+
+<ins>REFERENCES</ins>
 
 <sup id="fn1">1. Roe, Thomas, *The Embassy of Sir Thomas Roe to the Court of the Great Mogul, 1615-1619 as narrated in his journal and correspondence*, Volumes I-II, William Foster (ed.), Hakluyt Society, 2010. vol. 1. pp. 212-3.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
