@@ -12,7 +12,7 @@ intro: "In this blog-post, we explore how..."
 
 In this blog-post, we explore how—through the vehicle of portraiture executed mainly in the miniature medium—two extraordinary women of the early 17<sup>th</sup> century used their patronage of talented artists to help fashion and expand, in sophisticated ways, their considerable individual powers alongside their royal husbands.
 
-On the 13<sup>th</sup> of July 1616, the court of Padshah Jahangir anxiously awaited the results of an unpremeditated but pivotal artistic competition between East and West, between India and Britain. The prestige of Timuriya artistry and, by extension, the very credibility of the wealthiest monarch in the world were on the line: could the Timuriyas actually surpass Britain in the art of ‘limning’ or miniature-painting? The British ambassador to India, Sir Thomas Roe, had made the boastful claim that a ‘Pikture of a frend of myne’ in his possession would surpass in beauty, grace, form, and arrangement any miniature produced by an Indian artist[[1]]([1]). 
+On the 13<sup>th</sup> of July 1616, the court of Padshah Jahangir anxiously awaited the results of an unpremeditated but pivotal artistic competition between East and West, between India and Britain. The prestige of Timuriya artistry and, by extension, the very credibility of the wealthiest monarch in the world were on the line: could the Timuriyas actually surpass Britain in the art of ‘limning’ or miniature-painting? The British ambassador to India, Sir Thomas Roe, had made the boastful claim that a ‘Pikture of a frend of myne’ in his possession would surpass in beauty, grace, form, and arrangement any miniature produced by an Indian artist <sup><a href="#fn1" id="ref1">1</a></sup>. <a href="id2">2</a>
 
 The claim had a precipitous effect and an affronted Jahangir immediately summoned his ‘Cheefe Paynter’ along with four of his greatest court-artists. A few days later – so we are informed by Roe’s detailed journals – six identical miniatures were placed before Roe. Five were Indian reproductions and one was Roe’s original – the Isaac Oliver miniature on which he had placed his wager. His challenge was to find, by candlelight, this miniature from amongst Jahangir’s copies.
 
@@ -73,30 +73,23 @@ In this post, I have made a comparison between two remarkable females who lived 
 
 ## REFERENCES 
 
-[1] Roe, Thomas, *The Embassy of Sir Thomas Roe to the Court of the Great Mogul, 1615-1619 as narrated in his journal and correspondence*, Volumes I-II, William Foster (ed.), Hakluyt Society, 2010. vol. 1. pp. 212-3.
+<sup id="fn1">1. Roe, Thomas, *The Embassy of Sir Thomas Roe to the Court of the Great Mogul, 1615-1619 as narrated in his journal and correspondence*, Volumes I-II, William Foster (ed.), Hakluyt Society, 2010. vol. 1. pp. 212-3.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
-[2] 
-*Ibid.*, p. 120.
+<a id="2">[2]</a> *Ibid.*, p. 120.
 
 [3] *Ibid.*, p. 214.
 
-[4] 
-*Ibid.*, p. 113. Roe deems “Mogoll” India ‘the dullest, basest place that ever I saw and maketh me weary speaking of it’, before hoping for an expedited return to England.
+[4] *Ibid.*, p. 113. Roe deems “Mogoll” India ‘the dullest, basest place that ever I saw and maketh me weary speaking of it’, before hoping for an expedited return to England.
 
-[5] 
-Brown, Michael J., *Itinerant Ambassador: The Life of Sir Thomas Roe*, University Press of Kentucky, 2014, p. 40.
+[5] Brown, Michael J., *Itinerant Ambassador: The Life of Sir Thomas Roe*, University Press of Kentucky, 2014, p. 40.
 
-[6] 
-Branfoot, Crispin, *Portraiture in South Asia since the Mughals: Art, Representation and History*, I. B. Tauris & Company Limited, 2018, pp. 86-7.   
+[6] Branfoot, Crispin, *Portraiture in South Asia since the Mughals: Art, Representation and History*, I. B. Tauris & Company Limited, 2018, pp. 86-7.   
 
-[7] 
-Portrait of King Edward VI by workshop associated with Master John, NPG 5511 (https://www.npg.org.uk/collections/search/portrait/mw07313/King-Edward-VI)
+[7] Portrait of King Edward VI by workshop associated with Master John, NPG 5511 (https://www.npg.org.uk/collections/search/portrait/mw07313/King-Edward-VI)
 
-[8] 
-Portrait miniature of Anne of Denmark, c.1611-12 (https://www.rct.uk/collection/420041/anne-of-denmark-1574-1619) 
+[8] Portrait miniature of Anne of Denmark, c.1611-12 (https://www.rct.uk/collection/420041/anne-of-denmark-1574-1619) 
 
-[9] 
-Eaton, Richard M., *India in the Persianate Age: 1000–1765*, Berkeley: University of California Press, 2019, pp. 247-49.
+[9] Eaton, Richard M., *India in the Persianate Age: 1000–1765*, Berkeley: University of California Press, 2019, pp. 247-49.
 
 [10] 
 Ibid., pp. 250-1.
