@@ -31,9 +31,9 @@ Today, it is evident that Roe regarded India and Europe – with Britain at its 
 However, here, I would like to bring to the forefront two remarkable women of the early 17<sup>th</sup> century – both queens and patrons of innovative artists, whose skills at portraiture in miniature they wielded to create a visual expression of their politically charged personages: Nur Jahan (1573-1645), the empress of India and Jahangir’s most beloved wife, and Anne of Denmark (1574-1619), the queen-consort of James I.
 
 ![FIGURE 2-3](../../assets/Avishi_NurJahan_blogpost_figs.2&3.jpg)
-*Fig.2 (left). Unknown artist, Empress Nur Jahan Begam, (IM.37-1912).(C)V&A.* 
+*Fig.2 (left). Unknown artist, Empress Nur Jahan Begam, (IM.37-1912).&#169;V&A.* 
 
-*Fig.3 (right). Isaac Oliver, Anne of Denmark, 1610, Royal Collection Trust (RCIN 420025). (C)Fitzwilliam Museum. (See more images of this miniature here)*
+*Fig.3 (right). Isaac Oliver, Anne of Denmark, 1610, Royal Collection Trust (RCIN 420025).&#169;Fitzwilliam Museum. (See more images of this miniature here)*
 
 
 While Jahangir remained constantly in the throes of an addiction to opium and alcohol, James I’s ineptitude in leading the Protestant English court was apparent from the onset. Jahangir lost the rich, fertile lands of the Punjab and Kandahar to Safavid rivals and James I’s alliance with Catholic Spain had resulted in country-wide resentment. It was within this context that their queens consolidated personal regal autonomy to a surprising extent.
@@ -47,23 +47,23 @@ Deeply conscious of the anonymity of her birth as well as of her Iranian roots �
 At the apex of her supremacy, Nur Jahan was consigning assignments to Timuriya ships, issuing ‘firmans’ or imperial edicts in her own seal, signing commercial treaties with international diplomats, leading hunting expeditions on holidays and amassing lucrative properties in her name. The emperor of India was inert, his throne alive only in paintings, and his true heir-apparent, Prince Khurram, was duly banished to the Deccan, i.e. southern India, in order to remove the potential threat he embodied.<sup>[10](#[10])</sup>
 
 ![FIGURE 4-5](../../assets/Avishi_NurJahan_blogpost_figs.4&5.jpg)
-*Fig.4 (left). Bishandas, Nur Jahan holding a portrait of Jahangir, c.1627.  The Cleveland Museum of Art*
+*Fig.4 (left). Bishandas, Nur Jahan holding a portrait of Jahangir, c.1627. &#169;The Cleveland Museum of Art*
 
-*Fig.5 (right). Mir Hashim, Abu al Hasan, Emperor Jahangir With a Portrait of Akbar, his father, 1600-15. (OA 3676 B Recto ; OA 3676 b). © 2016 RMN-Grand Palais (musée du Louvre) / Mathieu Rabeau*
+*Fig.5 (right). Mir Hashim, Abu al Hasan, Emperor Jahangir With a Portrait of Akbar, his father, 1600-15. (OA 3676 B Recto ; OA 3676 b).&#169;2016 RMN-Grand Palais (musée du Louvre) / Mathieu Rabeau*
 
 An Indian ‘miniature’ in the Cleveland Museum of Art encapsulates this authority-shift (fig.4).<sup>[11](#[11])</sup> In it, we view a lone Nur Jahan. She stands barefoot. There is neither marble nor sand underneath her delicate feet clad with ‘ghungroo’, or dancing bells, round her ankles. In her elegant hands rests the portrait of a powder-faced Jahangir. His whitened moustache is a declaration of old age, the torpor of submission to death. Nur Jahan’s neck is draped in loop upon loop of pearls, symbolising youth and royalty. The dupatta that covers her torso for modesty (perhaps made of Dakkai muslin – the finest in the world – much of whose trade she supervised) is enticingly translucent, while her small lips, sharp nose and lotus-eyes are framed by jet black ringlets of hair. She exudes ethereal youth and beauty while gazing reverently at Jahangir’s visage. But his entire person is contained between her two hands and *she* is the future of the Timuriya House.
 
 It is impossible to separate politics from art when it comes to Nur Jahan. This portrait borrows directly from an earlier one of Jahangir, within which he too held his dying father’s image to indicate his right to the throne (fig.5). Nur Jahan’s portrait was completed in 1627, by which time Jahangir needed ever-increasing doses of opium to carry out his daily-tasks, even suffering from withdrawal symptoms like shivering when he resisted the drug. The time is thus perfect to portray the queen’s own ‘right’ to inherit the throne by casting herself in the role of Jahangir’s successor to the throne. Much like her overseas counterpart, Nur Jahan was fascinated by the power that art could symbolically signify.<sup>[12](#[12])</sup>
 
 ![FIGURE 6](../../assets/Avishi_NurJahan_blogpost_fig.6.jpg)
-*Fig.6. Isaac Oliver, Anne of Denmark, c.1611-12, Royal Collection Trust (RCIN 420041). (C)Fitzwilliam Museum. (See more images of this miniature here)*
+*Fig.6. Isaac Oliver, Anne of Denmark, c.1611-12, Royal Collection Trust (RCIN 420041). &#169;Fitzwilliam Museum. (See more images of this miniature here)*
 
 Though both women were portrayed in idealised ‘masques’, Isaac Oliver’s Anne of Denmark retained her strong, individualistic features; it is clear from his miniatures that she had a prominent, hooked nose (fig.3).<sup>[13](#[13])</sup> The queen’s features were not conventionally beautiful, but she had herself portrayed repeatedly in a fashion that highlighted both the uniqueness of her face and the material wealth she commanded, ultimately exalting her imperfections. Since these limned portraits were bestowed upon court-favourites, the acceptance of this new trend was not to be questioned. The receiver could only praise that which was presented.<sup>[14](#[14])</sup> This contrasts with Nur Jahan’s depictions, who prized eternal youth in a bid for legitimacy and longevity not dissimilar to that of Queen Elizabeth I of England in her mask of youth as ‘the Virgin Queen’, expressed in numerous portraits of her late reign.<sup>[15](#[15])</sup>
 
 ![FIGURE 7-8](../../assets/Avishi_NurJahan_blogpost_figs.7&8.jpg)
-*Fig.7 (left). Abul-Hasan Nasiruz Zaman, Nur Jahan holding a gun, 17th century, (C)Rampur Raza Library*
+*Fig.7 (left). Abul-Hasan Nasiruz Zaman, Nur Jahan holding a gun, 17th century, &#169;Rampur Raza Library*
 
-*Fig.8 (right). Paul van Somer, Anne of Denmark and a groom, 1617,  Royal Collection Trust (RCIN 405887)*
+*Fig.8 (right). Paul van Somer, Anne of Denmark and a groom, 1617, &#169;Royal Collection Trust (RCIN 405887)*
 
 There is, however, much in common between the two queens’ understanding of the potency of art. In the Rampur Raza Library resides an astonishing miniature called ‘Nur Jahan Holding a Gun’ (fig.7). We see that the queen has tied her hair and tucked it completely inside a turban. In Jahangir’s style, she wears baloony ‘pyjamas’ and, unlike in the previous portrait, her jewels recede into a kind of insignificance. The focus of this picture is not youth as expressed by lithe beauty. Rather, she shows herself to possess manliness and extreme confidence. She proudly displays her musket, which travels the entire length of the composition. Her gaze is turned upwards in a fearless gestures. She seems to contemplate the best strategy to tackle any rival, treating them as nothing more than a trembling target. After all, legends of the queen’s expertise as a shooter and hunter abounded in Timurid India. Once, she slayed four tigers with only six bullets. Such unabashed pride at her own mastery at a masculine sport seems to be the subject of this portrait.<sup>[16](#[16])</sup>
 
