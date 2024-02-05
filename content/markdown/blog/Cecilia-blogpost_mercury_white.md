@@ -63,7 +63,7 @@ In comparing the collars of the two Nationalmuseum miniatures under the microsco
 *Fig.8. MA-XRF scanning in action using the Bruker Elio XRF scanner. ©C.Rönnerstam*
 
 
-<u>REFERENCES</u>
+<ins>REFERENCES</ins>
 
 <sup id="fn1">1. Fitzwilliam Museum, Cambridge, FM 3868, [Unlocking the English Portrait Miniature](https://unlocking-miniatures.fitzmuseum.cam.ac.uk)<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
