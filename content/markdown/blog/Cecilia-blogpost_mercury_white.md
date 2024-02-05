@@ -83,11 +83,11 @@ In comparing the collars of the two Nationalmuseum miniatures under the microsco
 
 <sup id="fn9">9. *Edward Norgate - Miniatura or the art of limning*, Jeffrey M. Muller and Jim Murrell (eds), Paul Mellon Centre for British Art, Yale University Press, 1997.<a href="#ref9" title="Jump back to footnote 9 in the text.">↩</a></sup>
 
-<sup id="fn10">10. Crippa, M., Legnaioli, S., Kimbriel, C.S., Ricciardi, P., ”New evidence for the intentional use of calomel as a white pigment”, *Journal of Raman Spectroscopy*, volume 52, issue 1, 2021, pp.15-22.<a href="#ref10" title="Jump back to footnote 10 in the text.">↩</a></sup>
+<sup id="fn10">10. Crippa, M., Legnaioli, S., Kimbriel, C.S., Ricciardi, P., "New evidence for the intentional use of calomel as a white pigment", *Journal of Raman Spectroscopy*, volume 52, issue 1, 2021, pp.15-22.<a href="#ref10" title="Jump back to footnote 10 in the text.">↩</a></sup>
 
 <sup id="fn11">11. Richard Haydocke wrote about this as an addition to his translation of Giovanni Paolo Lomazzo’s A Tracte Containing the Artes of Curious Paintinge Carvinge and Buildinge (1598), as has already been noted in Christine S. Kimbriel and Paola Ricciardi, ”Secrets of a silent miniaturist: findings from a technical study of miniatures attributed to Isaac Oliver”, British Art Studies issue 17, 2020, https://doi.org/10.17658/issn.2058-5462/issue-17/kimbrielricciardi<a href="#ref11" title="Jump back to footnote 11 in the text.">↩</a></sup>
 
 <sup id="fn12">12. Richard M. Swiderski, *Calomel in America: Mercurial Panacea, War, Song and Ghosts*, Brown Waler Press, 2008.<a href="#ref12" title="Jump back to footnote 12 in the text.">↩</a></sup>
 
-<sup id="fn13">13. Jennifer Schmid, “Beautiful Black Poison: The History of Mercury as a Medicine in America, The Weston A. Price Foundation, *Wise Traditions*, vol.9, number 2, summer 2009, p.17-31.<a href="#ref13" title="Jump back to footnote 13 in the text.">↩</a></sup> 
+<sup id="fn13">13. Jennifer Schmid, "Beautiful Black Poison: The History of Mercury as a Medicine in America", The Weston A. Price Foundation, *Wise Traditions*, vol.9, number 2, summer 2009, p.17-31.<a href="#ref13" title="Jump back to footnote 13 in the text.">↩</a></sup> 
 
