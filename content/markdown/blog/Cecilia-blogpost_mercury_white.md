@@ -5,7 +5,6 @@ title: "Mercury White Used as a Pigment in Portrait Miniatures by Isaac Oliver"
 intro: "As part of the ongoing research project “Unlocking the English Portrait Miniature” initiated by the Fitzwilliam Museum in Cambridge..."
 ---
 
-## Mercury White Used as a Pigment in Portrait Miniatures by Isaac Oliver
 *Cecilia Rönnerstam, Tom Sandström, Magnus Mårtensson*
 
 
@@ -66,29 +65,29 @@ In comparing the collars of the two Nationalmuseum miniatures under the microsco
 
 <u>REFERENCES</u>
 
-[1] Fitzwilliam Museum, Cambridge, FM 3868, [Unlocking the English Portrait Miniature](https://unlocking-miniatures.fitzmuseum.cam.ac.uk)
+[1] Fitzwilliam Museum, Cambridge, FM 3868, [Unlocking the English Portrait Miniature](https://unlocking-miniatures.fitzmuseum.cam.ac.uk)<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
-[2] Heritage Laboratory | Riksantikvarieämbetet (raa.se) Project ID: Dnr: RAÄ-2019-2238.
+[2] Heritage Laboratory | Riksantikvarieämbetet (raa.se) Project ID: Dnr: RAÄ-2019-2238.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
-[3] Paola Ricciardi, Unpublished technical report on NMB 973, The Fitzwilliam Museum, 1.3.2023. While the Fitzwilliam brought a FORS and a Bruker Elio XRF scanner, the Heritage Laboratory contributed with a B&W Tek Raman 785 nm laser equipped with a probe and microscope, a Bruker ARTAX 800 micro XRF equipped with a polycapilary lens for pigment identification, and a General Electric Eresco 42MF4 X-ray unit and CRxFlex digital scanner for radiographic imaging.
+[3] Paola Ricciardi, Unpublished technical report on NMB 973, The Fitzwilliam Museum, 1.3.2023. While the Fitzwilliam brought a FORS and a Bruker Elio XRF scanner, the Heritage Laboratory contributed with a B&W Tek Raman 785 nm laser equipped with a probe and microscope, a Bruker ARTAX 800 micro XRF equipped with a polycapilary lens for pigment identification, and a General Electric Eresco 42MF4 X-ray unit and CRxFlex digital scanner for radiographic imaging.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
-[4] The antique art of writing in gold, including polishing the letters with animals’ teeth, was originally known as *chrysography*. Instructions on how to do it can be found in every text on illumination since the early Middle Ages. The tradition for writing in gold was continued in the first independent portrait miniatures painted in France and England in the 1520’s. It was by no means an invention by Hilliard as sometimes claimed in the literature.
+[4] The antique art of writing in gold, including polishing the letters with animals’ teeth, was originally known as *chrysography*. Instructions on how to do it can be found in every text on illumination since the early Middle Ages. The tradition for writing in gold was continued in the first independent portrait miniatures painted in France and England in the 1520’s. It was by no means an invention by Hilliard as sometimes claimed in the literature.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
-[5] While the sitter in the two portrait miniatures (NMB 973 and NMB 974) was registered as George Clifford 3<sup>rd</sup> Earl of Cumberland in the Nationalmuseum’s inventory of Hjalmar Wicander’s (1860-1939) donation in 1927, along with a note saying they were first acquired from England by the Swedish art dealer A-B. H. Bukowski’s in 1921, Catharine MacLeod recently suggested that the sitter is more likely to be Henry Danvers, Earl of Danby (1573–1644). (see Catharine MacLeod, "Isaac Oliver and the Essex Circle", British Art Studies, Issue 17, 2020, https://doi.org/10.17658/issn.2058-5462/issue-17/cmacleod 
+[5] While the sitter in the two portrait miniatures (NMB 973 and NMB 974) was registered as George Clifford 3<sup>rd</sup> Earl of Cumberland in the Nationalmuseum’s inventory of Hjalmar Wicander’s (1860-1939) donation in 1927, along with a note saying they were first acquired from England by the Swedish art dealer A-B. H. Bukowski’s in 1921, Catharine MacLeod recently suggested that the sitter is more likely to be Henry Danvers, Earl of Danby (1573–1644). (see Catharine MacLeod, "Isaac Oliver and the Essex Circle", British Art Studies, Issue 17, 2020, https://doi.org/10.17658/issn.2058-5462/issue-17/cmacleod<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup> 
 
-[6] The painting support used for limning was vellum, very thin parchment that needed to be stuck to a card to prevent cockling while painting, sometimes called a tablet. Edward Norgate wrote that “Mr Hillyard and his rare disciple, Mr Isaac Olivier (…)” had several tablets ready prepared with a first thin layer of flesh colour to choose from for each sitter. *Edward Norgate - Miniatura or the art of limning*, Jeffrey M. Muller and Jim Murrell (eds), Paul Mellon Centre for British Art, Yale University Press, 1997, p. 67-69.
+[6] The painting support used for limning was vellum, very thin parchment that needed to be stuck to a card to prevent cockling while painting, sometimes called a tablet. Edward Norgate wrote that “Mr Hillyard and his rare disciple, Mr Isaac Olivier (…)” had several tablets ready prepared with a first thin layer of flesh colour to choose from for each sitter. *Edward Norgate - Miniatura or the art of limning*, Jeffrey M. Muller and Jim Murrell (eds), Paul Mellon Centre for British Art, Yale University Press, 1997, p. 67-69.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
-[7] The terms white lead and ceruse have been used interchangeably in written sources on illumination since antiquity, in both cases meaning lead white (lead carbonate). See Muller and Murrell 1997 note 329 about Hilliard’s and Norgate’s changing terms.
+[7] The terms white lead and ceruse have been used interchangeably in written sources on illumination since antiquity, in both cases meaning lead white (lead carbonate). See Muller and Murrell 1997 note 329 about Hilliard’s and Norgate’s changing terms.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
-[8] Nicholas Hilliard, *The Arte of Limning*, R.K.R. Thornton and T.G.S. Cain (eds), Carcanet Press, 1992.
+[8] Nicholas Hilliard, *The Arte of Limning*, R.K.R. Thornton and T.G.S. Cain (eds), Carcanet Press, 1992.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
-[9] *Edward Norgate - Miniatura or the art of limning*, Jeffrey M. Muller and Jim Murrell (eds), Paul Mellon Centre for British Art, Yale University Press, 1997.
+[9] *Edward Norgate - Miniatura or the art of limning*, Jeffrey M. Muller and Jim Murrell (eds), Paul Mellon Centre for British Art, Yale University Press, 1997.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
-[10] Crippa, M., Legnaioli, S., Kimbriel, C.S., Ricciardi, P., ”New evidence for the intentional use of calomel as a white pigment”, *Journal of Raman Spectroscopy*, volume 52, issue 1, 2021, pp.15-22.
+[10] Crippa, M., Legnaioli, S., Kimbriel, C.S., Ricciardi, P., ”New evidence for the intentional use of calomel as a white pigment”, *Journal of Raman Spectroscopy*, volume 52, issue 1, 2021, pp.15-22.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
-[11] Richard Haydocke wrote about this as an addition to his translation of Giovanni Paolo Lomazzo’s A Tracte Containing the Artes of Curious Paintinge Carvinge and Buildinge (1598), as has already been noted in Christine S. Kimbriel and Paola Ricciardi, ”Secrets of a silent miniaturist: findings from a technical study of miniatures attributed to Isaac Oliver”, British Art Studies issue 17, 2020, https://doi.org/10.17658/issn.2058-5462/issue-17/kimbrielricciardi
+[11] Richard Haydocke wrote about this as an addition to his translation of Giovanni Paolo Lomazzo’s A Tracte Containing the Artes of Curious Paintinge Carvinge and Buildinge (1598), as has already been noted in Christine S. Kimbriel and Paola Ricciardi, ”Secrets of a silent miniaturist: findings from a technical study of miniatures attributed to Isaac Oliver”, British Art Studies issue 17, 2020, https://doi.org/10.17658/issn.2058-5462/issue-17/kimbrielricciardi<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
-[12] Richard M. Swiderski, *Calomel in America: Mercurial Panacea, War, Song and Ghosts*, Brown Waler Press, 2008.
+[12] Richard M. Swiderski, *Calomel in America: Mercurial Panacea, War, Song and Ghosts*, Brown Waler Press, 2008.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
-[13] Jennifer Schmid, “Beautiful Black Poison: The History of Mercury as a Medicine in America, The Weston A. Price Foundation, *Wise Traditions*, vol.9, number 2, summer 2009, p.17-31. 
+[13] Jennifer Schmid, “Beautiful Black Poison: The History of Mercury as a Medicine in America, The Weston A. Price Foundation, *Wise Traditions*, vol.9, number 2, summer 2009, p.17-31.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup> 
 
