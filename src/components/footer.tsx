@@ -35,6 +35,8 @@ export default function Footer() {
         return <div key={item.line + index} className="contact--line">{item.line}</div>
     })
 
+    const getCurrentYear = () => { return new Date().getFullYear();};
+
     return (
         <React.Fragment>
             <div className="footer row">
@@ -65,7 +67,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="col-12 col--sm-12 footer--copyright">
-                    <span className="footer--copyright-item">© 2022 The University of Cambridge</span>
+                    <span className="footer--copyright-item">© 2022 - {getCurrentYear()} The University of Cambridge</span>
                     <a
                         className="footer--copyright-item"
                         target="__blank"
