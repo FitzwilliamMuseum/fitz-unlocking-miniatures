@@ -5,11 +5,11 @@ title: "Glory 'in the Little'"
 intro: "In this blog-post, we explore how two extraordinary women of the early 17th century used their patronage of talented artists to..."
 ---
 
-### A Comparative Analysis of the Political and Aesthetic Intentions Behind Miniatures of Nur Jahan and Anne of Denmark
+### A Comparative Analysis of the Political and Aesthetic Intentions Behind the Miniatures of Nur Jahan and Anne of Denmark
 
 *By Avishi Vashisht*
 
-In this blog-post, we explore how—through the vehicle of portraiture executed mainly in the miniature medium—two extraordinary women of the early 17<sup>th</sup> century used their patronage of talented artists to help fashion and expand, in sophisticated ways, their considerable individual powers alongside their royal husbands.
+In this blog-post, we explore how – through the vehicle of portraiture executed mainly in the miniature medium – two extraordinary women of the early 17<sup>th</sup> century used their patronage of talented artists to help fashion and expand, in sophisticated ways, their considerable individual powers alongside their royal husbands.
 
 On the 13<sup>th</sup> of July 1616, the court of Padshah Jahangir anxiously awaited the results of an unpremeditated but pivotal artistic competition between East and West, between India and Britain. The prestige of Timuriya artistry and, by extension, the very credibility of the wealthiest monarch in the world were on the line: could the Timuriyas actually surpass Britain in the art of ‘limning’ or miniature-painting? The British ambassador to India, Sir Thomas Roe, had made the boastful claim that a ‘Pikture of a frend of myne’ in his possession would surpass in beauty, grace, form, and arrangement any miniature produced by an Indian artist<sup><a href="#fn1" id="ref1">1</a></sup>. 
 
