@@ -165,10 +165,7 @@ class ObjectPage extends React.Component<ObjectPageContext> {
 													<span className="icon"><ViewerIcon /></span><span>Viewer</span>
 												</a>
 											</>}
-											<a
-												className="miniature-item__button miniature-item__button_micrograph" href={micrographImageDownloadUrl} target="__blank">
-												<span className="icon"><DownloadIcon /></span><span>Download</span>
-											</a>
+											
 										</div>
 									</div>
 								)
